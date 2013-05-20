@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--Healty Mama First View Controller - First-->
+        <scene sceneID="11">
+            <objects>
+                <viewController title="First" id="2" customClass="HealtyMamaFirstViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="16">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You are preggers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q7w-4e-vr9">
+                                <rect key="frame" x="44" y="94" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Healthy Mama" id="htd-Cr-3eS">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="u3i-mT-tg4">
+                            <connections>
+                                <segue destination="aXS-bi-5gK" kind="push" id="JjI-hf-ZZv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="-144"/>
+        </scene>
+        <!--Healty Mama Settings Controllers View Controller - Settings-->
+        <scene sceneID="FyU-oq-QHH">
+            <objects>
+                <viewController id="aXS-bi-5gK" customClass="HealtyMamaSettingsControllersViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dm1-cd-78N">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="e8e-qF-Zi2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="EB1-Mj-bmb">
+                                        <rect key="frame" x="20" y="50" width="280" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pre-pregnancy weight (in lbs)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vq5-OM-7Dl">
+                                        <rect key="frame" x="20" y="21" width="440" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView tag="1" contentMode="scaleToFill" id="T59-fo-pXY">
+                                        <rect key="frame" x="0.0" y="385" width="320" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="aXS-bi-5gK" id="oPN-EA-Xm3"/>
+                                            <outlet property="delegate" destination="aXS-bi-5gK" id="XJS-zF-HBG"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Height" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x2g-LC-2Qz">
+                                        <rect key="frame" x="9" y="348" width="50" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Estimated due date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wcc-3v-c1N">
+                                        <rect key="frame" x="20" y="89" width="440" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="cA3-jD-Eue">
+                                        <rect key="frame" x="-80" y="121" width="480" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="390374037.06249702">
+                                            <!--2013-05-16 05:13:57 +0000-->
+                                        </date>
+                                        <timeZone key="timeZone" name="America/Los_Angeles">
+                                            <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                        </timeZone>
+                                        <connections>
+                                            <action selector="dueDatePickerChanged:" destination="aXS-bi-5gK" eventType="valueChanged" id="Cog-aW-oZv"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="320" height="700"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="3qJ-Yj-N1N"/>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="e8e-qF-Zi2" id="0i5-vp-tVS"/>
+                        <outlet property="heightInFeetPicker" destination="T59-fo-pXY" id="oej-K6-50Z"/>
+                        <outlet property="prePregnancyWeightField" destination="EB1-Mj-bmb" id="JyR-lg-Wcn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Db2-HH-EiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="-144"/>
+        </scene>
+        <!--Healty Mama First View Controller - Food Journal-->
+        <scene sceneID="gI8-Ck-kjL">
+            <objects>
+                <viewController id="JpS-rJ-sMJ" customClass="HealtyMamaFirstViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AFF-Pf-x8D">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="47J-nx-vzM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Food Journal" id="JIj-uO-Iiu"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Food Journal" id="5YF-tL-ooT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hc2-yb-PTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="1165"/>
+        </scene>
+        <!--Healty Mama Second View Controller - Second-->
+        <scene sceneID="13">
+            <objects>
+                <viewController title="Second" id="3" customClass="HealtyMamaSecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="17">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="84r-xa-z5y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Weight Tracker" id="8Ur-P9-C7R"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weight Tracker" image="second" id="6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="501"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="15">
+            <objects>
+                <tabBarController id="4" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="b9A-K6-QKe" kind="relationship" relationship="viewControllers" id="26"/>
+                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
+                        <segue destination="JpS-rJ-sMJ" kind="relationship" relationship="viewControllers" id="DNP-Mv-5Sl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="168"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="Pds-g5-zGy">
+            <objects>
+                <navigationController id="b9A-K6-QKe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="first" id="7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bfk-Ya-yQS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="ctZ-nG-Tmb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyB-Bl-geh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="16" height="16"/>
+        <image name="second" width="16" height="16"/>
+    </resources>
+    <classes>
+        <class className="HealtyMamaFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealtyMamaFirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showOptionsView:"/>
+            </relationships>
+        </class>
+        <class className="HealtyMamaSecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealtyMamaSecondViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="HealtyMamaSettingsControllersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HealtyMamaSettingsControllersViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dueDatePickerChanged:"/>
+                <relationship kind="outlet" name="dueDatePicker" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="heightInFeetPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="prePregnancyWeightField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
