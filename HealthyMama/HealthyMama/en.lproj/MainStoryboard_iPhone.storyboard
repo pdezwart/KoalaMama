@@ -12,8 +12,65 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You are preggers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q7w-4e-vr9">
-                                <rect key="frame" x="44" y="94" width="132" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Estimated Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UCc-r3-qwz">
+                                <rect key="frame" x="20" y="20" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your pregnancy:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6J9-dS-Tb8">
+                                <rect key="frame" x="20" y="78" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rx8-Bh-Juu">
+                                <rect key="frame" x="147" y="49" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DUEDATEHERE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Hs-Gd-EFF">
+                                <rect key="frame" x="20" y="49" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DUEDATEHERE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEy-HL-9qO">
+                                <rect key="frame" x="20" y="107" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recommended Daily Calories:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CQH-db-9vv">
+                                <rect key="frame" x="20" y="136" width="230" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DUEDATEHERE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rmk-3f-Y8s">
+                                <rect key="frame" x="20" y="165" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current weight gain:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ghb-FC-0fY">
+                                <rect key="frame" x="20" y="194" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DUEDATEHERE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CV5-Ge-u4M">
+                                <rect key="frame" x="20" y="223" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,6 +85,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelCurrentWeightGain" destination="CV5-Ge-u4M" id="VbA-sv-ufl"/>
+                        <outlet property="labelEstimatedDueDate" destination="9Hs-Gd-EFF" id="3aD-rU-TNw"/>
+                        <outlet property="labelRecommendedDailyCalories" destination="Rmk-3f-Y8s" id="ot6-lh-042"/>
+                        <outlet property="labelYourPregnancy" destination="fEy-HL-9qO" id="bZP-yi-GcE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,14 +119,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView tag="1" contentMode="scaleToFill" id="T59-fo-pXY">
-                                        <rect key="frame" x="0.0" y="385" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="374" width="320" height="216"/>
                                         <connections>
                                             <outlet property="dataSource" destination="aXS-bi-5gK" id="oPN-EA-Xm3"/>
                                             <outlet property="delegate" destination="aXS-bi-5gK" id="XJS-zF-HBG"/>
                                         </connections>
                                     </pickerView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Height" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x2g-LC-2Qz">
-                                        <rect key="frame" x="9" y="348" width="50" height="21"/>
+                                        <rect key="frame" x="20" y="345" width="50" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,9 +163,6 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                         </timeZone>
-                                        <connections>
-                                            <action selector="dueDatePickerChanged:" destination="aXS-bi-5gK" eventType="valueChanged" id="Cog-aW-oZv"/>
-                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
@@ -116,7 +176,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="3qJ-Yj-N1N"/>
                     <connections>
-                        <outlet property="dueDatePicker" destination="e8e-qF-Zi2" id="0i5-vp-tVS"/>
+                        <outlet property="estimatedDueDatePicker" destination="cA3-jD-Eue" id="M4v-d0-lWc"/>
                         <outlet property="heightInFeetPicker" destination="T59-fo-pXY" id="oej-K6-50Z"/>
                         <outlet property="prePregnancyWeightField" destination="EB1-Mj-bmb" id="JyR-lg-Wcn"/>
                     </connections>
@@ -219,7 +279,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="HealtyMamaFirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HealtyMamaFirstViewController.h"/>
             <relationships>
-                <relationship kind="action" name="showOptionsView:"/>
+                <relationship kind="outlet" name="labelCurrentWeightGain" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelEstimatedDueDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelRecommendedDailyCalories" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelYourPregnancy" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="HealtyMamaSecondViewController" superclassName="UIViewController">
@@ -231,8 +294,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="HealtyMamaSettingsControllersViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HealtyMamaSettingsControllersViewController.h"/>
             <relationships>
-                <relationship kind="action" name="dueDatePickerChanged:"/>
-                <relationship kind="outlet" name="dueDatePicker" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="estimatedDueDatePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="heightInFeetPicker" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="prePregnancyWeightField" candidateClass="UITextField"/>
             </relationships>

@@ -33,6 +33,8 @@
 		4E1B92CD1749CD6B0073E3B4 /* HealthyMama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B92CB1749CD6B0073E3B4 /* HealthyMama.xcdatamodeld */; };
 		4E3443871744A8AE0009D5BA /* HealtyMamaSettingsControllersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3443861744A8AE0009D5BA /* HealtyMamaSettingsControllersViewController.m */; };
 		4E34438A1744AB210009D5BA /* HealtyMamaFoodJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3443891744AB210009D5BA /* HealtyMamaFoodJournalViewController.m */; };
+		4EBD86BE174AF42B00CC1343 /* Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD86BD174AF42B00CC1343 /* Mother.m */; };
+		4EBD86C2174AF8BE00CC1343 /* Mother+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD86C1174AF8BE00CC1343 /* Mother+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		4E3443861744A8AE0009D5BA /* HealtyMamaSettingsControllersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealtyMamaSettingsControllersViewController.m; sourceTree = "<group>"; };
 		4E3443881744AB210009D5BA /* HealtyMamaFoodJournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealtyMamaFoodJournalViewController.h; sourceTree = "<group>"; };
 		4E3443891744AB210009D5BA /* HealtyMamaFoodJournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealtyMamaFoodJournalViewController.m; sourceTree = "<group>"; };
+		4EBD86BC174AF42B00CC1343 /* Mother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mother.h; sourceTree = "<group>"; };
+		4EBD86BD174AF42B00CC1343 /* Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mother.m; sourceTree = "<group>"; };
+		4EBD86C0174AF8BE00CC1343 /* Mother+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mother+Extension.h"; sourceTree = "<group>"; };
+		4EBD86C1174AF8BE00CC1343 /* Mother+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mother+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,10 @@
 				4E3443881744AB210009D5BA /* HealtyMamaFoodJournalViewController.h */,
 				4E3443891744AB210009D5BA /* HealtyMamaFoodJournalViewController.m */,
 				4E1B92CB1749CD6B0073E3B4 /* HealthyMama.xcdatamodeld */,
+				4EBD86BC174AF42B00CC1343 /* Mother.h */,
+				4EBD86BD174AF42B00CC1343 /* Mother.m */,
+				4EBD86C0174AF8BE00CC1343 /* Mother+Extension.h */,
+				4EBD86C1174AF8BE00CC1343 /* Mother+Extension.m */,
 			);
 			path = HealthyMama;
 			sourceTree = "<group>";
@@ -320,6 +330,8 @@
 				4E3443871744A8AE0009D5BA /* HealtyMamaSettingsControllersViewController.m in Sources */,
 				4E34438A1744AB210009D5BA /* HealtyMamaFoodJournalViewController.m in Sources */,
 				4E1B92CD1749CD6B0073E3B4 /* HealthyMama.xcdatamodeld in Sources */,
+				4EBD86BE174AF42B00CC1343 /* Mother.m in Sources */,
+				4EBD86C2174AF8BE00CC1343 /* Mother+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

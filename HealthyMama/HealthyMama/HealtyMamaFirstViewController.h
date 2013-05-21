@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HealtyMamaFirstViewController : UIViewController
-- (IBAction)showOptionsView:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *labelEstimatedDueDate;
+@property (weak, nonatomic) IBOutlet UILabel *labelYourPregnancy;
+@property (weak, nonatomic) IBOutlet UILabel *labelRecommendedDailyCalories;
+@property (weak, nonatomic) IBOutlet UILabel *labelCurrentWeightGain;
 
 @end
 

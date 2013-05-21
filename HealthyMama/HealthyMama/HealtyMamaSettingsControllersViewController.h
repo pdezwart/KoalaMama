@@ -11,7 +11,7 @@
 @interface HealtyMamaSettingsControllersViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
 }
 @property (weak, nonatomic) IBOutlet UITextField *prePregnancyWeightField;
-@property (weak, nonatomic) IBOutlet UIScrollView *dueDatePicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *heightInFeetPicker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *estimatedDueDatePicker;
 
 @end
