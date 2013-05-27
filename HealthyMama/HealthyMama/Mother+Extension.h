@@ -10,4 +10,5 @@
 
 @interface Mother (Extension)
 - (NSString *) timeTillDue;
++ (void) getMotherWithContext:(NSManagedObjectContext *) completion:(void (^)(Mother *mother))callback;
 @end

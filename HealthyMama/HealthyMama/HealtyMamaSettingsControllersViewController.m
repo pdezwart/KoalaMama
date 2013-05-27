@@ -8,11 +8,20 @@
 
 #import "HealtyMamaSettingsControllersViewController.h"
 
+typedef void(^MotherLoadedCallback)(Mother* mother);
+
+
 @interface HealtyMamaSettingsControllersViewController ()
+
+    @property (nonatomic, copy) MotherLoadedCallback callback;
 
 @end
 
+
 @implementation HealtyMamaSettingsControllersViewController
+
+@synthesize managedObjectContext;
+@synthesize callback;
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 2;
@@ -37,36 +46,58 @@
 
     [super viewDidLoad];
     
+        
 	self.navigationItem.hidesBackButton = YES; // Important
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
         style:UIBarButtonItemStyleBordered
         target:self action:@selector(myCustomBack)];
     
-    [self loadViewData];
+    [Mother getMotherWithContext:self.document.managedObjectContext :<#^(Mother *mother)callback#>
 }
 
-- (void) loadViewData {
-    self.prePregnancyWeightField.text = @"110";
+- (void) loadMother:(Mother *mother) {
+    managedObjectContext = self.document.managedObjectContext;
     
-    NSInteger totalHeightInInches = 64;
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setDay:10];
-    [comps setMonth:8];
-    [comps setYear:2013];
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate *date = [gregorian dateFromComponents:comps];
+    // Set the person's current weight:
+    self.prePregnancyWeightField.text = [NSString stringWithFormat:@"%@", self.mother.prePregnancyWeight];
     
     // Break down height and weight into its components:
-    NSInteger heightInches = totalHeightInInches % 12;
-    NSInteger heightFeet = (totalHeightInInches - (heightInches)) / 12;
+    int height = [self.mother.height intValue];
+    NSInteger heightInches = height % 12;
+    NSInteger heightFeet = (height - (heightInches)) / 12;
     
     // Load them into the UI
     [self.heightInFeetPicker selectRow:(heightFeet - 4) inComponent:0 animated:NO];
     [self.heightInFeetPicker selectRow:(heightInches) inComponent:1 animated:NO];
     
     // Load the date into the UI
-    [self.estimatedDueDatePicker setDate:date animated:NO];
+    [self.estimatedDueDatePicker setDate:self.mother.expectedDueDate animated:NO];
+    
+    self.mother.height = [NSNumber numberWithInt:70];
+    NSLog(@"Set");
 }
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    // Save the pre-preganancy weight:
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    self.mother.prePregnancyWeight = [f numberFromString:[self.prePregnancyWeightField text]];
+    
+    // Save the estimated due date:
+    self.mother.expectedDueDate = [self.estimatedDueDatePicker date];
+    
+    // Save the person's height:
+    
+    self.mother.height = [NSNumber numberWithInt:(([self.heightInFeetPicker selectedRowInComponent:0] + 4) * 12 + [self.heightInFeetPicker selectedRowInComponent:1])];
+    NSLog(@"Saving mother... %@", self.mother);
+
+    NSError *error = nil;
+    [self.managedObjectContext save:&error];
+    NSLog(@"%@", error);
+    self.mother = nil;
+}
+
 
 -(void) myCustomBack {
 	// Some anything you need to do before leaving
