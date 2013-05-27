@@ -51,11 +51,10 @@ typedef void(^MotherLoadedCallback)(Mother* mother);
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
         style:UIBarButtonItemStyleBordered
         target:self action:@selector(myCustomBack)];
-    
-    [Mother getMotherWithContext:self.document.managedObjectContext :<#^(Mother *mother)callback#>
+   
 }
 
-- (void) loadMother:(Mother *mother) {
+- (void) loadMother {
     managedObjectContext = self.document.managedObjectContext;
     
     // Set the person's current weight:
@@ -74,7 +73,6 @@ typedef void(^MotherLoadedCallback)(Mother* mother);
     [self.estimatedDueDatePicker setDate:self.mother.expectedDueDate animated:NO];
     
     self.mother.height = [NSNumber numberWithInt:70];
-    NSLog(@"Set");
 }
 
 - (void) viewDidDisappear:(BOOL)animated {

@@ -149,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				4E14FE9917449F1A0036DDBF /* MainStoryboard_iPhone.storyboard */,
+				4E14FE9017449F1A0036DDBF /* HealtyMamaAppDelegate.h */,
+				4E14FE9117449F1A0036DDBF /* HealtyMamaAppDelegate.m */,
 				4E14FE9C17449F1A0036DDBF /* MainStoryboard_iPad.storyboard */,
 				4E14FE9F17449F1A0036DDBF /* HealtyMamaFirstViewController.h */,
 				4E14FEA017449F1A0036DDBF /* HealtyMamaFirstViewController.m */,
@@ -175,8 +177,6 @@
 		4E14FE8817449F1A0036DDBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E14FE9017449F1A0036DDBF /* HealtyMamaAppDelegate.h */,
-				4E14FE9117449F1A0036DDBF /* HealtyMamaAppDelegate.m */,
 				4E14FE8917449F1A0036DDBF /* HealthyMama-Info.plist */,
 				4E14FE8A17449F1A0036DDBF /* InfoPlist.strings */,
 				4E14FE8D17449F1A0036DDBF /* main.m */,
