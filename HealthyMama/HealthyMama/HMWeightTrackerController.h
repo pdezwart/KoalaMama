@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSMutableArray *data;
 @property (nonatomic, retain) CPTGraphHostingView *hostingView;
 @property (nonatomic, retain) CPTXYGraph *graph;
+@property (weak, nonatomic) IBOutlet UIView *graphContainerView;
 
 @end

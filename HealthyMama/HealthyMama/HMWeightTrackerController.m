@@ -29,30 +29,30 @@
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    if ( [plot.identifier isEqual:@"chocoplot"] )
+    if ([plot.identifier isEqual:@"chocoplot"]) {
         return [self.data count];
+    }
     
     return 0;
 }
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
-    if ( [plot.identifier isEqual:@"chocoplot"] )
-    {
+    if ([plot.identifier isEqual:@"chocoplot"]) {
         NSDictionary *bar = [self.data objectAtIndex:index];
         
-        if(fieldEnum == CPTBarPlotFieldBarLocation)
+        if(fieldEnum == CPTBarPlotFieldBarLocation) {
             return [bar valueForKey:BAR_POSITION];
-        else if(fieldEnum ==CPTBarPlotFieldBarTip)
+        } else if(fieldEnum ==CPTBarPlotFieldBarTip) {
             return [bar valueForKey:BAR_HEIGHT];
+        }
     }
     return [NSNumber numberWithFloat:0];
 }
 
 -(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
 {
-    if ( [plot.identifier isEqual: @"chocoplot"] )
-    {
+    if ([plot.identifier isEqual: @"chocoplot"]) {
         CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
         textStyle.fontName = @"Helvetica";
         textStyle.fontSize = 14;
@@ -70,11 +70,9 @@
     
 }
 
--(CPTFill *)barFillForBarPlot:(CPTBarPlot *)barPlot
-                  recordIndex:(NSUInteger)index
+-(CPTFill *)barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSUInteger)index
 {
-    if ( [barPlot.identifier isEqual:@"chocoplot"] )
-    {
+    if ([barPlot.identifier isEqual:@"chocoplot"]) {
         NSDictionary *bar = [self.data objectAtIndex:index];
         CPTGradient *gradient = [CPTGradient gradientWithBeginningColor:[CPTColor whiteColor]
                                                             endingColor:[bar valueForKey:@"COLOR"]
@@ -94,11 +92,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"view did appear");
-
     if (self) {
         
-        NSLog(@"There is a self");
         self.data = [NSMutableArray array];
         
         int bar_heights[] = {20,30,10,40};
@@ -128,10 +123,9 @@
 
 - (void)generateBarPlot
 {
-    NSLog(@"drawing plot");
     //Create host view
-    self.hostingView = [[CPTGraphHostingView alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
-    [self.view addSubview:self.hostingView];
+    self.hostingView = [[CPTGraphHostingView alloc] initWithFrame:[self.graphContainerView bounds]];
+    [self.graphContainerView addSubview:self.hostingView];
     
     //Create graph and set it as host view's graph
     self.graph = [[CPTXYGraph alloc] initWithFrame:self.hostingView.bounds];
@@ -204,7 +198,6 @@
     // Identifiers are handy if you want multiple plots in one graph
     plot.identifier = @"chocoplot";
     [self.graph addPlot:plot];
-    NSLog(@"I drew it all");
 }
 
 @end

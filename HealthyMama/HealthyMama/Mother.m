@@ -26,7 +26,6 @@
         NSTimeInterval nineMonths = weekInSeconds * 40 - weekInSeconds - 3;
         mother.estimatedDueDate = [NSDate dateWithTimeIntervalSinceNow:nineMonths];
     }
-    
     return mother;
 }
 
