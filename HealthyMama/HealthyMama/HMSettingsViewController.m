@@ -56,7 +56,7 @@
     // Load the date into the UI
     [self.estimatedDueDatePicker setDate:mother.estimatedDueDate animated:NO];
     
-    // NSLog(@"%@", self.expectingTwinsSwitch);
+    [self.expectingTwinsSwitch setOn:NO];
     
     // Hook up the back button
     self.navigationItem.hidesBackButton = YES; // Important

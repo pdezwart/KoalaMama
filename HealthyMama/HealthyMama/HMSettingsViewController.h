@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *prePregnancyWeightField;
 @property (weak, nonatomic) IBOutlet UIPickerView *heightPicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *estimatedDueDatePicker;
+@property (weak, nonatomic) IBOutlet UISwitch *expectingTwinsSwitch;
 
 @end
