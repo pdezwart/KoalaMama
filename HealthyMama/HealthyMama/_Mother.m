@@ -4,9 +4,14 @@
 #import "_Mother.h"
 
 const struct MotherAttributes MotherAttributes = {
+	.dateOfBirth = @"dateOfBirth",
 	.estimatedDueDate = @"estimatedDueDate",
-	.height = @"height",
-	.prePregnancyWeight = @"prePregnancyWeight",
+	.expectingTwins = @"expectingTwins",
+	.imperialHeight = @"imperialHeight",
+	.imperialPrePregnancyWeight = @"imperialPrePregnancyWeight",
+	.measurementSystem = @"measurementSystem",
+	.metricHeight = @"metricHeight",
+	.metricPrePregnancyWeight = @"metricPrePregnancyWeight",
 };
 
 const struct MotherRelationships MotherRelationships = {
@@ -42,19 +47,41 @@ const struct MotherFetchedProperties MotherFetchedProperties = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
-	if ([key isEqualToString:@"heightValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"height"];
+	if ([key isEqualToString:@"expectingTwinsValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"expectingTwins"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"prePregnancyWeightValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"prePregnancyWeight"];
+	if ([key isEqualToString:@"imperialHeightValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"imperialHeight"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"imperialPrePregnancyWeightValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"imperialPrePregnancyWeight"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"metricHeightValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"metricHeight"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"metricPrePregnancyWeightValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"metricPrePregnancyWeight"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
 
 	return keyPaths;
 }
+
+
+
+
+@dynamic dateOfBirth;
+
+
 
 
 
@@ -66,52 +93,137 @@ const struct MotherFetchedProperties MotherFetchedProperties = {
 
 
 
-@dynamic height;
+@dynamic expectingTwins;
 
 
 
-- (int16_t)heightValue {
-	NSNumber *result = [self height];
+- (BOOL)expectingTwinsValue {
+	NSNumber *result = [self expectingTwins];
+	return [result boolValue];
+}
+
+- (void)setExpectingTwinsValue:(BOOL)value_ {
+	[self setExpectingTwins:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveExpectingTwinsValue {
+	NSNumber *result = [self primitiveExpectingTwins];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveExpectingTwinsValue:(BOOL)value_ {
+	[self setPrimitiveExpectingTwins:[NSNumber numberWithBool:value_]];
+}
+
+
+
+
+
+@dynamic imperialHeight;
+
+
+
+- (int16_t)imperialHeightValue {
+	NSNumber *result = [self imperialHeight];
 	return [result shortValue];
 }
 
-- (void)setHeightValue:(int16_t)value_ {
-	[self setHeight:[NSNumber numberWithShort:value_]];
+- (void)setImperialHeightValue:(int16_t)value_ {
+	[self setImperialHeight:[NSNumber numberWithShort:value_]];
 }
 
-- (int16_t)primitiveHeightValue {
-	NSNumber *result = [self primitiveHeight];
+- (int16_t)primitiveImperialHeightValue {
+	NSNumber *result = [self primitiveImperialHeight];
 	return [result shortValue];
 }
 
-- (void)setPrimitiveHeightValue:(int16_t)value_ {
-	[self setPrimitiveHeight:[NSNumber numberWithShort:value_]];
+- (void)setPrimitiveImperialHeightValue:(int16_t)value_ {
+	[self setPrimitiveImperialHeight:[NSNumber numberWithShort:value_]];
 }
 
 
 
 
 
-@dynamic prePregnancyWeight;
+@dynamic imperialPrePregnancyWeight;
 
 
 
-- (int16_t)prePregnancyWeightValue {
-	NSNumber *result = [self prePregnancyWeight];
+- (int16_t)imperialPrePregnancyWeightValue {
+	NSNumber *result = [self imperialPrePregnancyWeight];
 	return [result shortValue];
 }
 
-- (void)setPrePregnancyWeightValue:(int16_t)value_ {
-	[self setPrePregnancyWeight:[NSNumber numberWithShort:value_]];
+- (void)setImperialPrePregnancyWeightValue:(int16_t)value_ {
+	[self setImperialPrePregnancyWeight:[NSNumber numberWithShort:value_]];
 }
 
-- (int16_t)primitivePrePregnancyWeightValue {
-	NSNumber *result = [self primitivePrePregnancyWeight];
+- (int16_t)primitiveImperialPrePregnancyWeightValue {
+	NSNumber *result = [self primitiveImperialPrePregnancyWeight];
 	return [result shortValue];
 }
 
-- (void)setPrimitivePrePregnancyWeightValue:(int16_t)value_ {
-	[self setPrimitivePrePregnancyWeight:[NSNumber numberWithShort:value_]];
+- (void)setPrimitiveImperialPrePregnancyWeightValue:(int16_t)value_ {
+	[self setPrimitiveImperialPrePregnancyWeight:[NSNumber numberWithShort:value_]];
+}
+
+
+
+
+
+@dynamic measurementSystem;
+
+
+
+
+
+
+@dynamic metricHeight;
+
+
+
+- (int16_t)metricHeightValue {
+	NSNumber *result = [self metricHeight];
+	return [result shortValue];
+}
+
+- (void)setMetricHeightValue:(int16_t)value_ {
+	[self setMetricHeight:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveMetricHeightValue {
+	NSNumber *result = [self primitiveMetricHeight];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveMetricHeightValue:(int16_t)value_ {
+	[self setPrimitiveMetricHeight:[NSNumber numberWithShort:value_]];
+}
+
+
+
+
+
+@dynamic metricPrePregnancyWeight;
+
+
+
+- (int16_t)metricPrePregnancyWeightValue {
+	NSNumber *result = [self metricPrePregnancyWeight];
+	return [result shortValue];
+}
+
+- (void)setMetricPrePregnancyWeightValue:(int16_t)value_ {
+	[self setMetricPrePregnancyWeight:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveMetricPrePregnancyWeightValue {
+	NSNumber *result = [self primitiveMetricPrePregnancyWeight];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveMetricPrePregnancyWeightValue:(int16_t)value_ {
+	[self setPrimitiveMetricPrePregnancyWeight:[NSNumber numberWithShort:value_]];
 }
 
 

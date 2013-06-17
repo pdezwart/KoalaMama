@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Mother" representedClassName="Mother" syncable="YES">
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="estimatedDueDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="prePregnancyWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="expectingTwins" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="imperialHeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="imperialPrePregnancyWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="measurementSystem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metricHeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricPrePregnancyWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="weighIns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeighIn" inverseName="mother" inverseEntity="WeighIn" syncable="YES"/>
     </entity>
     <entity name="WeighIn" representedClassName="WeighIn" syncable="YES">
+        <attribute name="imperialWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="mother" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Mother" inverseName="weighIns" inverseEntity="Mother" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Mother" positionX="-90" positionY="180" width="128" height="105"/>
-        <element name="WeighIn" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Mother" positionX="-90" positionY="180" width="128" height="180"/>
+        <element name="WeighIn" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

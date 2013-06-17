@@ -4,8 +4,9 @@
 #import "_WeighIn.h"
 
 const struct WeighInAttributes WeighInAttributes = {
+	.imperialWeight = @"imperialWeight",
+	.metricWeight = @"metricWeight",
 	.time = @"time",
-	.weight = @"weight",
 };
 
 const struct WeighInRelationships WeighInRelationships = {
@@ -41,8 +42,13 @@ const struct WeighInFetchedProperties WeighInFetchedProperties = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
-	if ([key isEqualToString:@"weightValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"weight"];
+	if ([key isEqualToString:@"imperialWeightValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"imperialWeight"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"metricWeightValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"metricWeight"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -53,34 +59,60 @@ const struct WeighInFetchedProperties WeighInFetchedProperties = {
 
 
 
+@dynamic imperialWeight;
+
+
+
+- (int16_t)imperialWeightValue {
+	NSNumber *result = [self imperialWeight];
+	return [result shortValue];
+}
+
+- (void)setImperialWeightValue:(int16_t)value_ {
+	[self setImperialWeight:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveImperialWeightValue {
+	NSNumber *result = [self primitiveImperialWeight];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveImperialWeightValue:(int16_t)value_ {
+	[self setPrimitiveImperialWeight:[NSNumber numberWithShort:value_]];
+}
+
+
+
+
+
+@dynamic metricWeight;
+
+
+
+- (int16_t)metricWeightValue {
+	NSNumber *result = [self metricWeight];
+	return [result shortValue];
+}
+
+- (void)setMetricWeightValue:(int16_t)value_ {
+	[self setMetricWeight:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveMetricWeightValue {
+	NSNumber *result = [self primitiveMetricWeight];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveMetricWeightValue:(int16_t)value_ {
+	[self setPrimitiveMetricWeight:[NSNumber numberWithShort:value_]];
+}
+
+
+
+
+
 @dynamic time;
 
-
-
-
-
-
-@dynamic weight;
-
-
-
-- (int16_t)weightValue {
-	NSNumber *result = [self weight];
-	return [result shortValue];
-}
-
-- (void)setWeightValue:(int16_t)value_ {
-	[self setWeight:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveWeightValue {
-	NSNumber *result = [self primitiveWeight];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveWeightValue:(int16_t)value_ {
-	[self setPrimitiveWeight:[NSNumber numberWithShort:value_]];
-}
 
 
 

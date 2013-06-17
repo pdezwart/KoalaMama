@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *heightPicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *estimatedDueDatePicker;
 @property (weak, nonatomic) IBOutlet UISwitch *expectingTwinsSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *measurementSystemControl;
+@property (weak, nonatomic) IBOutlet UIDatePicker *dateOfBirthPicker;
 
 @end

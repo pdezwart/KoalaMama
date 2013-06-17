@@ -42,10 +42,10 @@
     Mother *mother = [Mother getMother];
     
     // Load mom's info:
-    self.prePregnancyWeightField.text = [NSString stringWithFormat:@"%@", mother.prePregnancyWeight];
+    self.prePregnancyWeightField.text = [NSString stringWithFormat:@"%@", mother.imperialPrePregnancyWeight];
     
     // Break down height and weight into its components:
-    int height = [mother.height intValue];
+    int height = [mother.imperialHeight intValue];
     NSInteger heightInches = height % 12;
     NSInteger heightFeet = (height - (heightInches)) / 12;
     
@@ -53,10 +53,12 @@
     [self.heightPicker selectRow:(heightFeet - 4) inComponent:0 animated:NO];
     [self.heightPicker selectRow:(heightInches) inComponent:1 animated:NO];
     
-    // Load the date into the UI
+    // Load everything else:
+    [self.measurementSystemControl setEnabled:YES forSegmentAtIndex:[mother isMetric] == YES ? 1 : 0];
+    [self.measurementSystemControl setEnabled:NO forSegmentAtIndex:[mother isMetric] == YES ? 0 : 1];
     [self.estimatedDueDatePicker setDate:mother.estimatedDueDate animated:NO];
-    
-    [self.expectingTwinsSwitch setOn:NO];
+    [self.dateOfBirthPicker setDate:mother.dateOfBirth animated:NO];
+    [self.expectingTwinsSwitch setOn:[mother.expectingTwins boolValue]];
     
     // Hook up the back button
     self.navigationItem.hidesBackButton = YES; // Important
@@ -70,13 +72,17 @@
 - (void) viewDidDisappear:(BOOL)animated {
     Mother *mother = [Mother getMother];
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-    mother.prePregnancyWeight = [f numberFromString:[self.prePregnancyWeightField text]];
+    mother.imperialPrePregnancyWeight = [f numberFromString:[self.prePregnancyWeightField text]];
     
-    // Save the estimated due date:
+    // Save all the other basic fields:
+    [self.measurementSystemControl isEnabledForSegmentAtIndex:0] ? [mother makeImperial] : [mother makeMetric];
     mother.estimatedDueDate = [self.estimatedDueDatePicker date];
+    mother.expectingTwins = [NSNumber numberWithBool:[self.expectingTwinsSwitch isOn]];
+    mother.dateOfBirth = [self.dateOfBirthPicker date];
+    
     
     // Save the person's height:
-    mother.height = [NSNumber numberWithInt:(([self.heightPicker selectedRowInComponent:0] + 4) * 12 + [self.heightPicker selectedRowInComponent:1])];
+    mother.imperialHeight = [NSNumber numberWithInt:(([self.heightPicker selectedRowInComponent:0] + 4) * 12 + [self.heightPicker selectedRowInComponent:1])];
     NSLog(@"Saving mother... %@", mother);
     
     // Call save
