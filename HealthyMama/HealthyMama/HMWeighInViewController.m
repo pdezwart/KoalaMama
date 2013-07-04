@@ -21,5 +21,23 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
+- (IBAction)saveButtonClicked:(id)sender {
+    WeighIn *event = [WeighIn factory];
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    event.imperialWeight = [f numberFromString:[self.weightField text]];
+    
+    event.time = [self.weighInDatePicker date];
+    [event save];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (IBAction)cancelButtonClicked:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end

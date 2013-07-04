@@ -10,16 +10,19 @@
 
 @implementation Mother
 
-#define CM_TO_IN            2.5
-#define KG_TO_LBS           0.45
+#define CM_TO_IN                2.5
+#define KG_TO_LBS               0.45
 
-#define DEFAULT_HEIGHT_IN   64
-#define DEFAULT_WEIGHT_LBS  120
+#define DEFAULT_HEIGHT_IN       64
+#define DEFAULT_WEIGHT_LBS      120
+#define DEFAULT_AGE             25
+#define DEFAULT_ACTIVITY_LEVEL  1.5
 
-#define DEFAULT_AGE         25
+#define METRIC                  @"metric"
+#define IMPERIAL                @"imperial"
 
-#define METRIC              @"metric"
-#define IMPERIAL            @"imperial"
+#define YEAR_IN_SECONDS         60 * 60 * 24 * 365
+
 
 + (NSNumber *)convertWeightToKilos:(NSNumber *)weight {
     return [NSNumber numberWithDouble:[weight doubleValue] * KG_TO_LBS];
@@ -56,8 +59,7 @@
         mother.estimatedDueDate = [NSDate dateWithTimeIntervalSinceNow:nineMonths];
         
         // Figure out when 25 years ago was:
-        int yearsInSeconds = 60 * 60 * 24 * 365;
-        NSTimeInterval defaultAge = -1 * yearsInSeconds * DEFAULT_AGE;
+        NSTimeInterval defaultAge = -1 * YEAR_IN_SECONDS * DEFAULT_AGE;
         mother.dateOfBirth = [NSDate dateWithTimeIntervalSinceNow:defaultAge];
     }
     return mother;
@@ -97,6 +99,25 @@
 }
 - (void) makeImperial {
     self.measurementSystem = IMPERIAL;
+}
+
+- (NSNumber *) age {
+    // Always return the age at estimated due date:
+    NSTimeInterval ageInSeconds = [self.estimatedDueDate timeIntervalSinceDate:self.dateOfBirth];
+    return [NSNumber numberWithDouble:ageInSeconds / YEAR_IN_SECONDS];
+}
+
+- (void) generateHighWeightGraphPoints {
+    NSNumber *age = [self age];
+    double hbValue = 655.1
+    + (9.563 * [self.metricPrePregnancyWeight doubleValue])
+    + (1.850 * [self.metricHeight doubleValue])
+    - (4.676 * [[self age] doubleValue]);
+    
+    hbValue *= DEFAULT_ACTIVITY_LEVEL;
+    
+    NSArray *caloriesPerWeek;
+    
 }
 
 @end

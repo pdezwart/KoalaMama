@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "_WeighIn.h"
+#import "Mother.h"
 
-@class Mother;
+@interface WeighIn : _WeighIn {}
 
-@interface WeighIn : NSManagedObject
-
-@property (nonatomic, retain) NSDate * time;
-@property (nonatomic, retain) NSNumber * weight;
-@property (nonatomic, retain) Mother *mother;
-
++ (WeighIn *) factory;
++ (NSArray *) getWeighIns;
+- (void) save;
 @end

@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HMSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
 - (IBAction)closeModalWindow:(id)sender;
+- (void)measurementSystemControlValueChanged:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextField *prePregnancyWeightField;
 @property (weak, nonatomic) IBOutlet UIPickerView *heightPicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *estimatedDueDatePicker;

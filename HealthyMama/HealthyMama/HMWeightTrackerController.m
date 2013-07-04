@@ -10,14 +10,18 @@
 
 @interface HMWeightTrackerController ()
 
+@property (strong, nonatomic) NSArray * tableData;
+
 @end
 
 @implementation HMWeightTrackerController
 
-#define BAR_POSITION @"POSITION"
-#define BAR_HEIGHT @"HEIGHT"
-#define COLOR @"COLOR"
-#define CATEGORY @"CATEGORY"
+
+
+#define BAR_POSITION    @"POSITION"
+#define BAR_HEIGHT      @"HEIGHT"
+#define COLOR           @"COLOR"
+#define CATEGORY        @"CATEGORY"
 
 #define AXIS_START 0
 #define AXIS_END 50
@@ -25,11 +29,85 @@
 @synthesize data;
 @synthesize graph;
 @synthesize hostingView;
+@synthesize tableView;
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    
+    self.tableData = [WeighIn getWeighIns];
+    
+    // Build the weigh in graph data
+    self.data = [NSMutableArray array];
+    
+    int bar_heights[] = {20,30,10,40};
+    UIColor *colors[] = {
+        [UIColor redColor],
+        [UIColor blueColor],
+        [UIColor orangeColor],
+        [UIColor purpleColor]};
+    NSString *categories[] = {@"Plain Milk", @"Milk + Caramel", @"White", @"Dark"};
+    
+    for (int i = 0; i < 4 ; i++){
+        double position = i*10; //Bars will be 10 pts away from each other
+        double height = bar_heights[i];
+        
+        NSDictionary *bar = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithDouble:position],BAR_POSITION,
+                             [NSNumber numberWithDouble:height],BAR_HEIGHT,
+                             colors[i], COLOR,
+                             categories[i], CATEGORY,
+                             nil];
+        [self.data addObject:bar];
+        
+    }
+    [self generateBarPlot];
+    
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"Reloading");
+    
+    self.tableData = [WeighIn getWeighIns];
+    [self.tableView reloadData];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Keep a copy
+    self.tableView = tableView;
+    return [self.tableData count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"WeighInTrackerTableCellView";
+    
+    HMWeighInTrackerTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"WeighInTrackerTableCellView" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+    WeighIn *event = self.tableData[indexPath.row];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+
+    
+    // Configure the cell.
+    cell.date.text = [dateFormatter stringFromDate:event.time];
+    cell.weight.text = [[event.imperialWeight stringValue] stringByAppendingString:@" lbs"];
+
+    return cell;
+}
 
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    if ([plot.identifier isEqual:@"chocoplot"]) {
+    if ([plot.identifier isEqual:@"weightTracker"]) {
         return [self.data count];
     }
     
@@ -38,7 +116,7 @@
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
-    if ([plot.identifier isEqual:@"chocoplot"]) {
+    if ([plot.identifier isEqual:@"weightTracker"]) {
         NSDictionary *bar = [self.data objectAtIndex:index];
         
         if(fieldEnum == CPTBarPlotFieldBarLocation) {
@@ -52,7 +130,7 @@
 
 -(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
 {
-    if ([plot.identifier isEqual: @"chocoplot"]) {
+    if ([plot.identifier isEqual: @"weightTracker"]) {
         CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
         textStyle.fontName = @"Helvetica";
         textStyle.fontSize = 14;
@@ -72,7 +150,7 @@
 
 -(CPTFill *)barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSUInteger)index
 {
-    if ([barPlot.identifier isEqual:@"chocoplot"]) {
+    if ([barPlot.identifier isEqual:@"weightTracker"]) {
         NSDictionary *bar = [self.data objectAtIndex:index];
         CPTGradient *gradient = [CPTGradient gradientWithBeginningColor:[CPTColor whiteColor]
                                                             endingColor:[bar valueForKey:@"COLOR"]
@@ -87,38 +165,6 @@
     }
     return [CPTFill fillWithColor:[CPTColor colorWithComponentRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
     
-}
-
-- (void) viewDidLoad {
-    [super viewDidLoad];
-    
-    if (self) {
-        
-        self.data = [NSMutableArray array];
-        
-        int bar_heights[] = {20,30,10,40};
-        UIColor *colors[] = {
-            [UIColor redColor],
-            [UIColor blueColor],
-            [UIColor orangeColor],
-            [UIColor purpleColor]};
-        NSString *categories[] = {@"Plain Milk", @"Milk + Caramel", @"White", @"Dark"};
-        
-        for (int i = 0; i < 4 ; i++){
-            double position = i*10; //Bars will be 10 pts away from each other
-            double height = bar_heights[i];
-            
-            NSDictionary *bar = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 [NSNumber numberWithDouble:position],BAR_POSITION,
-                                 [NSNumber numberWithDouble:height],BAR_HEIGHT,
-                                 colors[i],COLOR,
-                                 categories[i],CATEGORY,
-                                 nil];
-            [self.data addObject:bar];
-            
-        }
-        [self generateBarPlot];
-    }
 }
 
 - (void)generateBarPlot
@@ -136,7 +182,7 @@
     self.graph.plotAreaFrame.paddingRight = 20.0f;
     self.graph.plotAreaFrame.paddingBottom = 70.0f;
     self.graph.plotAreaFrame.paddingLeft = 70.0f;
-    [self.graph applyTheme:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
+    //[self.graph applyTheme:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
     
     //set axes ranges
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
@@ -196,7 +242,7 @@
     borderLineStyle.lineColor = [CPTColor clearColor];
     plot.lineStyle = borderLineStyle;
     // Identifiers are handy if you want multiple plots in one graph
-    plot.identifier = @"chocoplot";
+    plot.identifier = @"weightTracker";
     [self.graph addPlot:plot];
 }
 

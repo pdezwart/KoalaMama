@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeighIn.h"
 
 @interface HMWeighInViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
@@ -14,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
+- (IBAction)saveButtonClicked:(id)sender;
+- (IBAction)cancelButtonClicked:(id)sender;
 @end

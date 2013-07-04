@@ -12,8 +12,18 @@
 
 @implementation WeighIn
 
-@dynamic time;
-@dynamic weight;
-@dynamic mother;
++ (NSArray *)getWeighIns {
+    return [WeighIn findAllSortedBy:@"time" ascending:NO];
+}
+
++ (WeighIn *) factory {
+    NSManagedObjectContext *localContext = [NSManagedObjectContext contextForCurrentThread];
+    return [WeighIn createInContext:localContext];
+}
+
+- (void) save {
+    NSManagedObjectContext *localContext = [NSManagedObjectContext contextForCurrentThread];
+    [localContext saveNestedContexts];
+}
 
 @end

@@ -67,7 +67,14 @@
        target:self
        action:@selector(myCustomBack)];
 
+    // Hook up the measurement system controller
+    [self.measurementSystemControl addTarget:self action:@selector(measurementSystemControlValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
+
+- (void)measurementSystemControlValueChanged:(id)sender {
+    NSLog(@"Clicked?");
+}
+
 
 - (void) viewDidDisappear:(BOOL)animated {
     Mother *mother = [Mother getMother];
@@ -91,5 +98,7 @@
 
 - (IBAction)closeModalWindow:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+- (IBAction)measurementSystemControlChanged:(id)sender {
 }
 @end
