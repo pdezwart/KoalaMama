@@ -339,12 +339,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" id="rjy-dn-thZ">
-                                <rect key="frame" x="0.0" y="44" width="322" height="165"/>
+                                <rect key="frame" x="0.0" y="44" width="322" height="217"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Q10-0U-Qn8">
-                                <rect key="frame" x="0.0" y="211" width="322" height="288"/>
+                                <rect key="frame" x="0.0" y="262" width="322" height="237"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -379,7 +379,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <navigationItem title="Add Weigh-In" id="1N3-OL-V3x"/>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="sm4-pr-EQZ">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="sm4-pr-EQZ">
                                 <rect key="frame" x="0.0" y="128" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="393125182.73419899">
@@ -480,50 +480,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="841" y="1125"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="HMFoodJournalViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMFoodJournalViewController.h"/>
-        </class>
-        <class className="HMMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="currentWeightGainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="estimatedDueDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="recommendedDailyCaloriesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yourPregnancyLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeModalWindow:"/>
-                <relationship kind="action" name="measurementSystemControlChanged:"/>
-                <relationship kind="outlet" name="dateOfBirthPicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="estimatedDueDatePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="expectingTwinsSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="heightPicker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="measurementSystemControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="prePregnancyWeightField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HMWeighInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMWeighInViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonClicked:"/>
-                <relationship kind="action" name="saveButtonClicked:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="weighInDatePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="weightField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HMWeightTrackerController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMWeightTrackerController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="graphContainerView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

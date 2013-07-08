@@ -16,4 +16,5 @@
 + (WeighIn *) factory;
 + (NSArray *) getWeighIns;
 - (void) save;
+- (int) daysIntoPregnancy;
 @end

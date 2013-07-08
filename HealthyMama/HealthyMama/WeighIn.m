@@ -13,6 +13,7 @@
 @implementation WeighIn
 
 + (NSArray *)getWeighIns {
+    
     return [WeighIn findAllSortedBy:@"time" ascending:NO];
 }
 
@@ -25,5 +26,15 @@
     NSManagedObjectContext *localContext = [NSManagedObjectContext contextForCurrentThread];
     [localContext saveNestedContexts];
 }
+
+- (int) daysIntoPregnancy {
+    NSDate *conception = [NSDate dateWithTimeInterval:-(60 * 60 * 24 * 7 * 40) sinceDate:self.mother.estimatedDueDate];
+    
+    float daysSinceConception = -1 * [conception timeIntervalSinceDate:self.time] / (60 * 60 * 24);
+    
+    return (int)daysSinceConception;
+}
+
+
 
 @end

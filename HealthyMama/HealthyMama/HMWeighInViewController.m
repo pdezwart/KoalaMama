@@ -30,7 +30,7 @@
     WeighIn *event = [WeighIn factory];
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     event.imperialWeight = [f numberFromString:[self.weightField text]];
-    
+    event.mother = [Mother getMother];
     event.time = [self.weighInDatePicker date];
     [event save];
     
