@@ -91,7 +91,7 @@
 }
 
 - (BOOL) isMetric {
-    return self.measurementSystem == METRIC ? YES : NO;
+    return [self.measurementSystem isEqualToString:METRIC] ? YES : NO;
 }
 
 - (void) makeMetric {

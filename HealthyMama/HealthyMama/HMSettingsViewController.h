@@ -10,14 +10,16 @@
 
 @interface HMSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
+- (IBAction)measurementSystemChanged:(id)sender;
 - (IBAction)closeModalWindow:(id)sender;
-- (void)measurementSystemControlValueChanged:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *prePregnancyWeightField;
 @property (weak, nonatomic) IBOutlet UIPickerView *heightPicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *estimatedDueDatePicker;
-@property (weak, nonatomic) IBOutlet UISwitch *expectingTwinsSwitch;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *measurementSystemControl;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateOfBirthPicker;
+@property (weak, nonatomic) IBOutlet UISwitch *expectingTwinsSwitch;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *measurementSystemController;
 
 @end

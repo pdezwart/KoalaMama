@@ -273,6 +273,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <segment title="Imperial (lbs)"/>
                                             <segment title="Metric (kg)"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="measurementSystemChanged:" destination="Mqu-XL-1EW" eventType="valueChanged" id="MbG-gi-ckl"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
@@ -289,7 +292,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="estimatedDueDatePicker" destination="5hJ-77-Mnt" id="kMt-0b-MI4"/>
                         <outlet property="expectingTwinsSwitch" destination="6nS-SH-3GQ" id="FSw-dH-E3O"/>
                         <outlet property="heightPicker" destination="wT2-Ok-dIA" id="Ufw-ac-YkG"/>
-                        <outlet property="measurementSystemControl" destination="nWL-9D-q0l" id="bur-kg-SPK"/>
+                        <outlet property="measurementSystemController" destination="nWL-9D-q0l" id="mIx-yk-shE"/>
                         <outlet property="prePregnancyWeightField" destination="gk2-WN-d4U" id="ki2-Se-HoK"/>
                     </connections>
                 </viewController>
