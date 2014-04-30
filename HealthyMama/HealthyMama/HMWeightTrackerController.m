@@ -42,17 +42,17 @@
     [self generateBarPlot];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
 {
     // Keep a copy
-    self.tableView = tableView;
+    self.tableView = tView;
     return [self.tableData count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"WeighInTrackerTableCellView";
     
-    HMWeighInTrackerTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HMWeighInTrackerTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"WeighInTrackerTableCellView" owner:self options:nil];
         cell = [topLevelObjects objectAtIndex:0];
@@ -150,7 +150,7 @@
     //set axes' title, labels and their text styles
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
     textStyle.fontName = @"Helvetica";
-    textStyle.fontSize = 14;
+    textStyle.fontSize = 12;
     textStyle.color = [CPTColor whiteColor];
     
     axisSet.xAxis.title = @"Weeks";
@@ -168,23 +168,23 @@
     //set axes' line styles and interval ticks
     CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
     lineStyle.lineColor = [CPTColor whiteColor];
-    lineStyle.lineWidth = 3.0f;
+    lineStyle.lineWidth = 2.0f;
     
     axisSet.xAxis.axisLineStyle = lineStyle;
     axisSet.xAxis.majorTickLineStyle = lineStyle;
     axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(5.0f);
-    axisSet.xAxis.majorTickLength = 7.0f;
+    axisSet.xAxis.majorTickLength = 2.0f;
     axisSet.xAxis.minorTickLineStyle = lineStyle;
     axisSet.xAxis.minorTicksPerInterval = 1;
-    axisSet.xAxis.minorTickLength = 5.0f;
+    axisSet.xAxis.minorTickLength = 1.0f;
     
     axisSet.yAxis.axisLineStyle = lineStyle;
     axisSet.yAxis.majorTickLineStyle = lineStyle;
     axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(5.0f);
-    axisSet.yAxis.majorTickLength = 7.0f;
+    axisSet.yAxis.majorTickLength = 2.0f;
     axisSet.yAxis.minorTickLineStyle = lineStyle;
-    axisSet.yAxis.minorTicksPerInterval = 1;
-    axisSet.yAxis.minorTickLength = 5.0f;
+    axisSet.yAxis.minorTicksPerInterval = 5;
+    axisSet.yAxis.minorTickLength = 1.0f;
 
     
     // Create and add scatter plot
