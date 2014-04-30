@@ -7,16 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CorePlot-CocoaTouch.h"
 #import "WeighIn.h"
 #import "HMWeighInTrackerTableCell.h"
 
-@interface HMWeightTrackerController : UIViewController <CPTBarPlotDataSource, CPTBarPlotDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface HMWeightTrackerController : UIViewController
 
-@property (nonatomic, retain) NSMutableArray *data;
-@property (nonatomic, retain) CPTGraphHostingView *hostingView;
-@property (nonatomic, retain) UITableView *tableView;
-@property (nonatomic, retain) CPTXYGraph *graph;
-@property (weak, nonatomic) IBOutlet UIView *graphContainerView;
 
 @end
