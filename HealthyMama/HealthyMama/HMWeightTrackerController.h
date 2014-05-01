@@ -14,6 +14,7 @@
 
 @property (nonatomic, retain) NSMutableArray *data;
 @property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) NSString *chartData;
 @property (weak, nonatomic) IBOutlet UIView *graphContainerView;
 @property (weak, nonatomic) IBOutlet UIWebView *chartView;
 

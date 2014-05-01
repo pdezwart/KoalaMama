@@ -19,6 +19,7 @@
 
 @synthesize data;
 @synthesize tableView;
+@synthesize chartData;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -29,13 +30,27 @@
     
     self.tableData = [WeighIn getWeighIns];
     [self.tableView reloadData];
+    self.chartData = [WeighIn getWeighInsAsJson];
 
     // Get the base URL for referential local loading
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
 
-    // Pull the content out (encoded in UTF8)
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"chartView" ofType:@"html" inDirectory:@"js"];    
-    NSString *htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    // We need to piece together the HTML
+    // Load the Header first
+    NSString *htmlHeaderFile = [[NSBundle mainBundle] pathForResource:@"chartViewHeader" ofType:@"html" inDirectory:@"js"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:htmlHeaderFile encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
+    NSString *jsonString = [NSString stringWithFormat:@"[{\"data\": %@, \"name\": \"Weight\"}]", [WeighIn getWeighInsAsJson]];
+    
+    htmlString = [htmlString stringByAppendingString:jsonString];
+    
+    // Append the footer:
+    NSString *htmlFooterFile = [[NSBundle mainBundle] pathForResource:@"chartViewFooter" ofType:@"html" inDirectory:@"js"];
+    NSString *htmlFooterString = [NSString stringWithContentsOfFile:htmlFooterFile encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByAppendingString:htmlFooterString];
+    
     [self.chartView loadHTMLString:htmlString baseURL:baseURL];
 }
 

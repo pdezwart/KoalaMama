@@ -13,13 +13,32 @@
 @implementation WeighIn
 
 + (NSArray *)getWeighIns {
+    return [WeighIn getWeighIns:NO];
     
-    return [WeighIn findAllSortedBy:@"time" ascending:NO];
+}
+
++ (NSArray *)getWeighIns:(BOOL)ascending {
+    return [WeighIn findAllSortedBy:@"time" ascending:ascending];
 }
 
 + (WeighIn *) factory {
     NSManagedObjectContext *localContext = [NSManagedObjectContext contextForCurrentThread];
     return [WeighIn createInContext:localContext];
+}
+
++ (NSString *)getWeighInsAsJson {
+    NSArray *weighIns = [self getWeighIns:YES];
+    
+    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
+
+    for (WeighIn *obj in weighIns) {
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:obj.time];
+        
+        [dataPoints addObject:[NSString stringWithFormat:@"[Date.UTC(%d, %d, %d), %@]", [components year], [components month], [components day], obj.imperialWeight]];
+    }
+    
+    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
 }
 
 - (void) save {
@@ -35,6 +54,13 @@
     return (int)daysSinceConception;
 }
 
-
+- (NSString *) timeAsString {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *stringDate = [formatter stringFromDate:self.time];
+    
+    return stringDate;
+}
 
 @end
