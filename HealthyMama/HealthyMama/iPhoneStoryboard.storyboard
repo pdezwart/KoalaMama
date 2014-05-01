@@ -341,11 +341,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" id="rjy-dn-thZ">
-                                <rect key="frame" x="0.0" y="44" width="322" height="217"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Q10-0U-Qn8">
                                 <rect key="frame" x="0.0" y="262" width="322" height="237"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,12 +350,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <outlet property="delegate" destination="STb-Uj-JlI" id="yst-Hc-fmt"/>
                                 </connections>
                             </tableView>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="sY9-WF-9q7">
+                                <rect key="frame" x="-5" y="44" width="325" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weight Tracker" id="fDb-ao-g1A"/>
                     <connections>
-                        <outlet property="graphContainerView" destination="rjy-dn-thZ" id="hIz-yy-YmW"/>
+                        <outlet property="chartView" destination="sY9-WF-9q7" id="v99-D9-IzK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcC-7g-btc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,7 +10,11 @@
 #import "WeighIn.h"
 #import "HMWeighInTrackerTableCell.h"
 
-@interface HMWeightTrackerController : UIViewController
+@interface HMWeightTrackerController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, retain) NSMutableArray *data;
+@property (nonatomic, retain) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *graphContainerView;
+@property (weak, nonatomic) IBOutlet UIWebView *chartView;
 
 @end

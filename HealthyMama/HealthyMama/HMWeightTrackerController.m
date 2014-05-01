@@ -16,25 +16,57 @@
 
 @implementation HMWeightTrackerController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)viewDidLoad
-{
+@synthesize data;
+@synthesize tableView;
+
+- (void) viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.tableData = [WeighIn getWeighIns];
+    [self.tableView reloadData];
+
+    // Get the base URL for referential local loading
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+
+    // Pull the content out (encoded in UTF8)
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"chartView" ofType:@"html" inDirectory:@"js"];    
+    NSString *htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    [self.chartView loadHTMLString:htmlString baseURL:baseURL];
+}
+
+- (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Keep a copy
+    self.tableView = tView;
+    return [self.tableData count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"WeighInTrackerTableCellView";
+    
+    HMWeighInTrackerTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"WeighInTrackerTableCellView" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+    WeighIn *event = self.tableData[indexPath.row];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+
+    
+    // Configure the cell.
+    cell.date.text = [dateFormatter stringFromDate:event.time];
+    cell.weight.text = [[event.imperialWeight stringValue] stringByAppendingString:@" lbs"];
+
+    return cell;
 }
 
 @end

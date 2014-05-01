@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4E02B618176EA05E000E902B /* HMWeighInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E02B617176EA05E000E902B /* HMWeighInViewController.m */; };
 		4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */; };
-		4E32851B190FB2400082EDAB /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E32851A190FB2400082EDAB /* libCorePlot-CocoaTouch.a */; };
 		4E5FDBB11753357800A27A2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB01753357800A27A2A /* UIKit.framework */; };
 		4E5FDBB31753357800A27A2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB21753357800A27A2A /* Foundation.framework */; };
 		4E5FDBB51753357800A27A2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB41753357800A27A2A /* CoreGraphics.framework */; };
@@ -58,30 +57,16 @@
 		4E5FDDF317533E2500A27A2A /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5FDDD717533E2500A27A2A /* MagicalRecord.m */; };
 		4E5FDDF6175340A900A27A2A /* Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5FDDF5175340A900A27A2A /* Mother.m */; };
 		4E77B75717546E0F00F28E27 /* WeighIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B75617546E0F00F28E27 /* WeighIn.m */; };
-		4E77B7C41754763000F28E27 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E77B7C31754763000F28E27 /* QuartzCore.framework */; };
 		4E77B7C9175477B100F28E27 /* HMWeightTrackerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7C8175477B100F28E27 /* HMWeightTrackerController.m */; };
 		4E77B7CC1754789D00F28E27 /* HMFoodJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */; };
 		4E77B7CF1754834900F28E27 /* _WeighIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CE1754834900F28E27 /* _WeighIn.m */; };
 		4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EADD9C41753FF2F008604F6 /* _Mother.m */; };
+		4ECFA2D019117E6E00369396 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4ECFA2CF19117E6E00369396 /* js */; };
 		4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */; };
 		4EE6C9C91783B6D80021CD20 /* HMWeighInTrackerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4E328516190FB1C40082EDAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E32850D190FB1C40082EDAB /* CorePlot-CocoaTouch.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
-			remoteInfo = "CorePlot-CocoaTouch";
-		};
-		4E328518190FB21E0082EDAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E32850D190FB1C40082EDAB /* CorePlot-CocoaTouch.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
-			remoteInfo = "CorePlot-CocoaTouch";
-		};
 		4E5FDBD81753357900A27A2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E5FDBA31753357800A27A2A /* Project object */;
@@ -95,8 +80,6 @@
 		4E02B616176EA05E000E902B /* HMWeighInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeighInViewController.h; sourceTree = "<group>"; };
 		4E02B617176EA05E000E902B /* HMWeighInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeighInViewController.m; sourceTree = "<group>"; };
 		4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaloriesPerWeek.plist; sourceTree = "<group>"; };
-		4E32850D190FB1C40082EDAB /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../../CorePlot_1.5.1/Source/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
-		4E32851A190FB2400082EDAB /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCorePlot-CocoaTouch.a"; path = "../../CorePlot_1.5.1/Binaries/iOS/libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		4E5FDBAC1753357800A27A2A /* HealthyMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5FDBB01753357800A27A2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E5FDBB21753357800A27A2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,7 +164,6 @@
 		4E5FDDF5175340A900A27A2A /* Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mother.m; sourceTree = "<group>"; };
 		4E77B75517546E0F00F28E27 /* WeighIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeighIn.h; sourceTree = "<group>"; };
 		4E77B75617546E0F00F28E27 /* WeighIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeighIn.m; sourceTree = "<group>"; };
-		4E77B7C31754763000F28E27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4E77B7C7175477B100F28E27 /* HMWeightTrackerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeightTrackerController.h; sourceTree = "<group>"; };
 		4E77B7C8175477B100F28E27 /* HMWeightTrackerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeightTrackerController.m; sourceTree = "<group>"; };
 		4E77B7CA1754789D00F28E27 /* HMFoodJournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodJournalViewController.h; sourceTree = "<group>"; };
@@ -190,6 +172,7 @@
 		4E77B7CE1754834900F28E27 /* _WeighIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WeighIn.m; sourceTree = "<group>"; };
 		4EADD9C31753FF2F008604F6 /* _Mother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Mother.h; sourceTree = "<group>"; };
 		4EADD9C41753FF2F008604F6 /* _Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Mother.m; sourceTree = "<group>"; };
+		4ECFA2CF19117E6E00369396 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = "../../Highcharts-4.0.1/js"; sourceTree = "<group>"; };
 		4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeighInTrackerTableCellView.xib; sourceTree = "<group>"; };
 		4EE6C9C71783B6D80021CD20 /* HMWeighInTrackerTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeighInTrackerTableCell.h; sourceTree = "<group>"; };
 		4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeighInTrackerTableCell.m; sourceTree = "<group>"; };
@@ -200,9 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E77B7C41754763000F28E27 /* QuartzCore.framework in Frameworks */,
 				4E5FDBB71753357800A27A2A /* CoreData.framework in Frameworks */,
-				4E32851B190FB2400082EDAB /* libCorePlot-CocoaTouch.a in Frameworks */,
 				4E5FDBB11753357800A27A2A /* UIKit.framework in Frameworks */,
 				4E5FDBB31753357800A27A2A /* Foundation.framework in Frameworks */,
 				4E5FDBB51753357800A27A2A /* CoreGraphics.framework in Frameworks */,
@@ -223,20 +204,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E32850E190FB1C40082EDAB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4E328517190FB1C40082EDAB /* libCorePlot-CocoaTouch.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4E5FDBA11753357800A27A2A = {
 			isa = PBXGroup;
 			children = (
-				4E32851A190FB2400082EDAB /* libCorePlot-CocoaTouch.a */,
-				4E32850D190FB1C40082EDAB /* CorePlot-CocoaTouch.xcodeproj */,
-				4E77B7C31754763000F28E27 /* QuartzCore.framework */,
 				4E5FDD9E17533E2500A27A2A /* MagicalRecord */,
 				4E5FDBB81753357800A27A2A /* HealthyMama */,
 				4E5FDBDA1753357900A27A2A /* HealthyMamaTests */,
@@ -303,6 +273,7 @@
 		4E5FDBB91753357800A27A2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4ECFA2CF19117E6E00369396 /* js */,
 				4E5FDBBA1753357800A27A2A /* HealthyMama-Info.plist */,
 				4E5FDBBB1753357800A27A2A /* InfoPlist.strings */,
 				4E5FDBBE1753357800A27A2A /* main.m */,
@@ -448,7 +419,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4E328519190FB21E0082EDAB /* PBXTargetDependency */,
 			);
 			name = HealthyMama;
 			productName = HealthyMama;
@@ -494,12 +464,6 @@
 			mainGroup = 4E5FDBA11753357800A27A2A;
 			productRefGroup = 4E5FDBAD1753357800A27A2A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4E32850E190FB1C40082EDAB /* Products */;
-					ProjectRef = 4E32850D190FB1C40082EDAB /* CorePlot-CocoaTouch.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4E5FDBAB1753357800A27A2A /* HealthyMama */,
@@ -507,16 +471,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4E328517190FB1C40082EDAB /* libCorePlot-CocoaTouch.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libCorePlot-CocoaTouch.a";
-			remoteRef = 4E328516190FB1C40082EDAB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4E5FDBAA1753357800A27A2A /* Resources */ = {
@@ -530,6 +484,7 @@
 				4E5FDBEC175335C100A27A2A /* iPhoneStoryboard.storyboard in Resources */,
 				4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */,
 				4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */,
+				4ECFA2D019117E6E00369396 /* js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,11 +572,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E328519190FB21E0082EDAB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CorePlot-CocoaTouch";
-			targetProxy = 4E328518190FB21E0082EDAB /* PBXContainerItemProxy */;
-		};
 		4E5FDBD91753357900A27A2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4E5FDBAB1753357800A27A2A /* HealthyMama */;
