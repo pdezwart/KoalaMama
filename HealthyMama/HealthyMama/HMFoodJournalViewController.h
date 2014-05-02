@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMFoodJournalViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate> {
-}
+@interface HMFoodJournalViewController : UIViewController
 
-@property (nonatomic, retain) UIActionSheet *datePickerView;
-@property (nonatomic, retain) UIDatePicker *datePicker;
-
-@property (weak, nonatomic) IBOutlet UITextField *foodDate;
+    
 
 @end

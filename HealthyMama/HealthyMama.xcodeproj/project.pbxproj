@@ -62,6 +62,7 @@
 		4E77B7CF1754834900F28E27 /* _WeighIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CE1754834900F28E27 /* _WeighIn.m */; };
 		4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EADD9C41753FF2F008604F6 /* _Mother.m */; };
 		4ECFA2D019117E6E00369396 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4ECFA2CF19117E6E00369396 /* js */; };
+		4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */; };
 		4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */; };
 		4EE6C9C91783B6D80021CD20 /* HMWeighInTrackerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */; };
 /* End PBXBuildFile section */
@@ -173,6 +174,8 @@
 		4EADD9C31753FF2F008604F6 /* _Mother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Mother.h; sourceTree = "<group>"; };
 		4EADD9C41753FF2F008604F6 /* _Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Mother.m; sourceTree = "<group>"; };
 		4ECFA2CF19117E6E00369396 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = "../../Highcharts-4.0.1/js"; sourceTree = "<group>"; };
+		4ECFA2E41913098A00369396 /* HMFoodEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodEventViewController.h; sourceTree = "<group>"; };
+		4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodEventViewController.m; sourceTree = "<group>"; };
 		4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeighInTrackerTableCellView.xib; sourceTree = "<group>"; };
 		4EE6C9C71783B6D80021CD20 /* HMWeighInTrackerTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeighInTrackerTableCell.h; sourceTree = "<group>"; };
 		4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeighInTrackerTableCell.m; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4E77B7CA1754789D00F28E27 /* HMFoodJournalViewController.h */,
 				4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */,
+				4ECFA2E41913098A00369396 /* HMFoodEventViewController.h */,
+				4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */,
 				4E5FDBED1753364B00A27A2A /* HMMainViewController.h */,
 				4E5FDBEE1753364B00A27A2A /* HMMainViewController.m */,
 				4E5FDBF01753365700A27A2A /* HMSettingsViewController.h */,
@@ -558,6 +563,7 @@
 				4E77B7CF1754834900F28E27 /* _WeighIn.m in Sources */,
 				4E02B618176EA05E000E902B /* HMWeighInViewController.m in Sources */,
 				4EE6C9C91783B6D80021CD20 /* HMWeighInTrackerTableCell.m in Sources */,
+				4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

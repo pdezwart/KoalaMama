@@ -8,18 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface HMSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextInputDelegate, UIActionSheetDelegate>
 
 - (IBAction)measurementSystemChanged:(id)sender;
 - (IBAction)closeModalWindow:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *measurementSystemController;
+
+@property (weak, nonatomic) IBOutlet UITextField *estimatedDueDateInput;
+@property (weak, nonatomic) IBOutlet UITextField *dateOfBirthInput;
 
 @property (weak, nonatomic) IBOutlet UITextField *prePregnancyWeightField;
 @property (weak, nonatomic) IBOutlet UIPickerView *heightPicker;
-@property (weak, nonatomic) IBOutlet UIDatePicker *estimatedDueDatePicker;
-@property (weak, nonatomic) IBOutlet UIDatePicker *dateOfBirthPicker;
 @property (weak, nonatomic) IBOutlet UISwitch *expectingTwinsSwitch;
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *measurementSystemController;
+/* Storage for the ActionSheet elements */
+@property (nonatomic, retain) UIActionSheet *datePickerView;
+@property (nonatomic, retain) UIDatePicker *datePicker;
+@property (nonatomic, weak) UITextField *sender;
+
+@property (nonatomic, retain) NSDate *estimatedDueDate;
+@property (nonatomic, retain) NSDate *dateOfBirth;
+
 
 @end
