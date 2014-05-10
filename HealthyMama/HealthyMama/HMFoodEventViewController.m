@@ -16,7 +16,9 @@
 
 @synthesize datePickerView;
 @synthesize datePicker;
-
+@synthesize autocompleteTableView;
+@synthesize autocompleteFoodNames;
+@synthesize allFoodNames;
 
 - (void)viewDidLoad
 {
@@ -24,6 +26,18 @@
     
     NSDate *now = [NSDate date];
     [self storeDate:now];
+    
+    autocompleteTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 165, 320, 120) style:UITableViewStylePlain];
+    autocompleteTableView.delegate = self;
+    autocompleteTableView.dataSource = self;
+    autocompleteTableView.scrollEnabled = YES;
+    autocompleteTableView.hidden = YES;
+    [self.view addSubview:autocompleteTableView];
+
+    self.autocompleteFoodNames = [[NSMutableArray alloc] init];
+    self.allFoodNames = [[NSMutableArray alloc] initWithObjects:@"Apple", @"Yoghurt", @"Turkey", @"Tuna Bowl", @"Burrito", @"Burrata Cheese", nil];
+
+    
 }
 
 - (void) storeDate:(NSDate *)date {
@@ -36,7 +50,31 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
-    [self showDatePicker];
+    // Needs to be re-enabled once I can differentiate between the input objs
+    // [self showDatePicker];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    autocompleteTableView.hidden = NO;
+    
+    NSString *substring = [NSString stringWithString:textField.text];
+    NSLog(@"Searching for %@", substring);
+    substring = [substring stringByReplacingCharactersInRange:range withString:string];
+    [self searchAutocompleteEntriesWithSubstring:substring];
+    return YES;
+}
+
+- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
+    // Put anything that starts with this substring into the autocompleteUrls array
+    // The items in this array is what will show up in the table view
+    [autocompleteFoodNames removeAllObjects];
+    for(NSString *curString in allFoodNames) {
+        NSRange substringRange = [curString rangeOfString:substring];
+        if (substringRange.location == 0) {
+            [autocompleteFoodNames addObject:curString];
+        }
+    }
+    [autocompleteTableView reloadData];
 }
 
 -(void) showDatePicker
@@ -71,6 +109,35 @@
     
     [self storeDate:[datePicker date]];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
+    NSLog(@"Count: %d", [autocompleteFoodNames count]);
+    return [autocompleteFoodNames count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = nil;
+    static NSString *AutoCompleteRowIdentifier = @"AutoCompleteRowIdentifier";
+    cell = [tableView dequeueReusableCellWithIdentifier:AutoCompleteRowIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
+    }
+    
+    cell.textLabel.text = [autocompleteFoodNames objectAtIndex:indexPath.row];
+    return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    self.foodName.text = selectedCell.textLabel.text;
+    
+    autocompleteTableView.hidden = YES;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
