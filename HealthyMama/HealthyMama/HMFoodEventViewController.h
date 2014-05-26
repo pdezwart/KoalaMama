@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodJournal.h"
 
 @interface HMFoodEventViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -16,12 +17,15 @@
 
 @property (nonatomic, retain) UITableView *autocompleteTableView;
 @property (nonatomic, retain) NSMutableArray *autocompleteFoodNames;
-@property (nonatomic, retain) NSMutableArray *allFoodNames;
+@property (nonatomic, retain) NSArray *allFoodNames;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *foodDate;
 @property (weak, nonatomic) IBOutlet UITextField *foodName;
+@property (weak, nonatomic) IBOutlet UITextField *foodCalories;
 
+- (IBAction)saveButtonClicked:(id)sender;
+- (IBAction)cancelButtonClicked:(id)sender;
 
 
 @end

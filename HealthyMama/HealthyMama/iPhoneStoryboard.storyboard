@@ -35,14 +35,17 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="STb-Uj-JlI" id="ebF-2M-SV5"/>
-                                    <outlet property="delegate" destination="STb-Uj-JlI" id="bp2-FX-oW3"/>
+                                    <outlet property="dataSource" destination="WHS-yc-mmF" id="XnT-ZR-Jxo"/>
+                                    <outlet property="delegate" destination="WHS-yc-mmF" id="h5C-Zf-xdt"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food Journal" id="4AV-IV-t8K"/>
+                    <connections>
+                        <outlet property="tableView" destination="bC4-oe-rxN" id="HVC-K3-UMr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8me-ib-gdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +78,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveButtonClicked:" destination="p3N-hG-EJW" eventType="touchUpInside" id="Orc-Zw-PVr"/>
+                                    <action selector="saveButtonClicked:" destination="YNa-1G-iWh" eventType="touchUpInside" id="0rr-f0-sZX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D1T-hS-mX1">
@@ -90,7 +93,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButtonClicked:" destination="p3N-hG-EJW" eventType="touchUpInside" id="oma-uZ-RXi"/>
+                                    <action selector="cancelButtonClicked:" destination="YNa-1G-iWh" eventType="touchUpInside" id="83F-7t-O6w"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Food:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e6I-WK-ASj">
@@ -142,6 +145,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="foodCalories" destination="5fW-0O-aB0" id="Ou1-uz-IPd"/>
                         <outlet property="foodDate" destination="FBV-S9-AGe" id="wSA-ao-Cmt"/>
                         <outlet property="foodName" destination="C7Y-yx-Sl8" id="277-Gg-yLj"/>
                     </connections>
@@ -567,6 +571,64 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="841" y="1125"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="HMFoodEventViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMFoodEventViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonClicked:"/>
+                <relationship kind="action" name="saveButtonClicked:"/>
+                <relationship kind="outlet" name="foodCalories" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="foodDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="foodName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HMFoodJournalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMFoodJournalViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="HMMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="currentWeightGainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="estimatedDueDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recommendedDailyCaloriesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourPregnancyLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeModalWindow:"/>
+                <relationship kind="action" name="measurementSystemChanged:"/>
+                <relationship kind="outlet" name="dateOfBirthInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="estimatedDueDateInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="expectingTwinsSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="heightPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="measurementSystemController" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="prePregnancyWeightField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HMWeighInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMWeighInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonClicked:"/>
+                <relationship kind="action" name="saveButtonClicked:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="weighInDatePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="weightField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HMWeightTrackerController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMWeightTrackerController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chartView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="graphContainerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

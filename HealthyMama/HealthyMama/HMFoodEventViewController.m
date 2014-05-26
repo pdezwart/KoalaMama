@@ -14,6 +14,9 @@
 
 @implementation HMFoodEventViewController
 
+#define INPUT_DATE 100
+#define INPUT_FOOD 101
+
 @synthesize datePickerView;
 @synthesize datePicker;
 @synthesize autocompleteTableView;
@@ -23,6 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Add ability to resign keyboard when touch outside of the text field:
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
     
     NSDate *now = [NSDate date];
     [self storeDate:now];
@@ -35,9 +44,17 @@
     [self.view addSubview:autocompleteTableView];
 
     self.autocompleteFoodNames = [[NSMutableArray alloc] init];
-    self.allFoodNames = [[NSMutableArray alloc] initWithObjects:@"Apple", @"Yoghurt", @"Turkey", @"Tuna Bowl", @"Burrito", @"Burrata Cheese", nil];
+    self.allFoodNames = [FoodJournal getDistinctFoodNames];
 
+    // Add tags to the text views:
+    self.foodDate.tag = INPUT_DATE;
+    self.foodName.tag = INPUT_FOOD;
     
+}
+
+-(void)dismissKeyboard {
+    [self.foodName resignFirstResponder];
+    [self.foodCalories resignFirstResponder];
 }
 
 - (void) storeDate:(NSDate *)date {
@@ -50,15 +67,15 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
-    // Needs to be re-enabled once I can differentiate between the input objs
-    // [self showDatePicker];
+    if (sender.tag == INPUT_DATE) {
+        [self showDatePicker];
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     autocompleteTableView.hidden = NO;
     
     NSString *substring = [NSString stringWithString:textField.text];
-    NSLog(@"Searching for %@", substring);
     substring = [substring stringByReplacingCharactersInRange:range withString:string];
     [self searchAutocompleteEntriesWithSubstring:substring];
     return YES;
@@ -69,7 +86,7 @@
     // The items in this array is what will show up in the table view
     [autocompleteFoodNames removeAllObjects];
     for(NSString *curString in allFoodNames) {
-        NSRange substringRange = [curString rangeOfString:substring];
+        NSRange substringRange = [curString rangeOfString:substring options:NSCaseInsensitiveSearch];
         if (substringRange.location == 0) {
             [autocompleteFoodNames addObject:curString];
         }
@@ -111,7 +128,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
-    NSLog(@"Count: %d", [autocompleteFoodNames count]);
     return [autocompleteFoodNames count];
 }
 
@@ -134,15 +150,25 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
     self.foodName.text = selectedCell.textLabel.text;
+    // Find the most recent calories for that food:
+    self.foodCalories.text = [[FoodJournal getMostRecentCaloriesOfFood:self.foodName.text] stringValue];
     
     autocompleteTableView.hidden = YES;
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)saveButtonClicked:(id)sender {
+    
+    FoodJournal *fj = [FoodJournal factory];
+    fj.calories = [NSNumber numberWithInt:[self.foodCalories.text integerValue]];
+    fj.label = self.foodName.text;
+    fj.time = self.date;
+    [fj save];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+- (IBAction)cancelButtonClicked:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end

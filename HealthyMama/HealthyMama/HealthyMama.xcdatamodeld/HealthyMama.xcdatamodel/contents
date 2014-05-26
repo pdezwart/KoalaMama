@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="FoodJournal" syncable="YES">
+    <entity name="FoodJournal" representedClassName="FoodJournal" syncable="YES">
         <attribute name="calories" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
@@ -23,8 +23,8 @@
         <relationship name="mother" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Mother" inverseName="weighIns" inverseEntity="Mother" syncable="YES"/>
     </entity>
     <elements>
+        <element name="FoodJournal" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Mother" positionX="-90" positionY="180" width="128" height="180"/>
         <element name="WeighIn" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="FoodJournal" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

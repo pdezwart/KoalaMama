@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodJournal.h"
+#import "HMFoodJournalTableCell.h"
 
-@interface HMFoodJournalViewController : UIViewController
+@interface HMFoodJournalViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-    
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSArray *data;
 
 @end

@@ -28,12 +28,41 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.data = [FoodJournal getJournal];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Keep a copy
+    self.tableView = tView;
+    return [self.data count];
 }
+
+-(UITableViewCell *)tableView:(UITableView *)tView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"FoodJournalTableCellView";
+    
+    HMFoodJournalTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"FoodJournalTableCellView" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+    FoodJournal *event = self.data[indexPath.row];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    
+    // Configure the cell.
+    cell.label.text = event.label;
+    cell.calories.text = [event.calories stringValue];
+    
+    return cell;
+}
+
 
 @end
