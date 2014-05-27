@@ -11,8 +11,8 @@
 		4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */; };
 		4E2069CA1931BC8A006C5825 /* FoodJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069C91931BC8A006C5825 /* FoodJournal.m */; };
 		4E2069CE1931BE04006C5825 /* _FoodJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069CD1931BE04006C5825 /* _FoodJournal.m */; };
-		4E2069D219330D0C006C5825 /* HMFoodJournalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069D019330D0C006C5825 /* HMFoodJournalTableCell.m */; };
-		4E2069D319330D0C006C5825 /* HMFoodJournalTableCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2069D119330D0C006C5825 /* HMFoodJournalTableCellController.xib */; };
+		4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */; };
+		4E2069DA19345495006C5825 /* FoodJournalTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */; };
 		4E5FDBB11753357800A27A2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB01753357800A27A2A /* UIKit.framework */; };
 		4E5FDBB31753357800A27A2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB21753357800A27A2A /* Foundation.framework */; };
 		4E5FDBB51753357800A27A2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB41753357800A27A2A /* CoreGraphics.framework */; };
@@ -89,9 +89,9 @@
 		4E2069C91931BC8A006C5825 /* FoodJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodJournal.m; sourceTree = "<group>"; };
 		4E2069CC1931BE04006C5825 /* _FoodJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FoodJournal.h; sourceTree = "<group>"; };
 		4E2069CD1931BE04006C5825 /* _FoodJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FoodJournal.m; sourceTree = "<group>"; };
-		4E2069CF19330D0C006C5825 /* HMFoodJournalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodJournalTableCell.h; sourceTree = "<group>"; };
-		4E2069D019330D0C006C5825 /* HMFoodJournalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodJournalTableCell.m; sourceTree = "<group>"; };
-		4E2069D119330D0C006C5825 /* HMFoodJournalTableCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMFoodJournalTableCellController.xib; sourceTree = "<group>"; };
+		4E2069D4193452A6006C5825 /* HMFoodJournalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodJournalTableCell.h; sourceTree = "<group>"; };
+		4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodJournalTableCell.m; sourceTree = "<group>"; };
+		4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodJournalTableCellView.xib; sourceTree = "<group>"; };
 		4E5FDBAC1753357800A27A2A /* HealthyMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5FDBB01753357800A27A2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E5FDBB21753357800A27A2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -272,6 +272,9 @@
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4E77B7CA1754789D00F28E27 /* HMFoodJournalViewController.h */,
 				4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */,
+				4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */,
+				4E2069D4193452A6006C5825 /* HMFoodJournalTableCell.h */,
+				4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */,
 				4ECFA2E41913098A00369396 /* HMFoodEventViewController.h */,
 				4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */,
 				4E5FDBED1753364B00A27A2A /* HMMainViewController.h */,
@@ -283,12 +286,9 @@
 				4E77B7C7175477B100F28E27 /* HMWeightTrackerController.h */,
 				4E77B7C8175477B100F28E27 /* HMWeightTrackerController.m */,
 				4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */,
-				4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */,
 				4EE6C9C71783B6D80021CD20 /* HMWeighInTrackerTableCell.h */,
 				4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */,
-				4E2069CF19330D0C006C5825 /* HMFoodJournalTableCell.h */,
-				4E2069D019330D0C006C5825 /* HMFoodJournalTableCell.m */,
-				4E2069D119330D0C006C5825 /* HMFoodJournalTableCellController.xib */,
+				4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */,
 			);
 			path = HealthyMama;
 			sourceTree = "<group>";
@@ -508,7 +508,7 @@
 				4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */,
 				4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */,
 				4ECFA2D019117E6E00369396 /* js in Resources */,
-				4E2069D319330D0C006C5825 /* HMFoodJournalTableCellController.xib in Resources */,
+				4E2069DA19345495006C5825 /* FoodJournalTableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +585,7 @@
 				4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */,
 				4E2069CA1931BC8A006C5825 /* FoodJournal.m in Sources */,
 				4E2069CE1931BE04006C5825 /* _FoodJournal.m in Sources */,
-				4E2069D219330D0C006C5825 /* HMFoodJournalTableCell.m in Sources */,
+				4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
