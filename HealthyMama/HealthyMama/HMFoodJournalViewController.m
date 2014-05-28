@@ -20,6 +20,7 @@
 
 @implementation HMFoodJournalViewController
 
+@synthesize chartData;
 @synthesize tableSections;
 @synthesize tableSectionDates;
 @synthesize tableSectionDateFormatter;
@@ -44,22 +45,44 @@
     [self buildTableSectionHeaderData];
     
     [self.tableView reloadData];
+    
+    [self loadChart];
 }
 
-- (NSDate *)stripTimeFromDate:(NSDate *)date
+- (void)loadChart
 {
-    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:flags fromDate:date];
-    return [calendar dateFromComponents:components];
+    self.chartData = [FoodJournal getJournalAsJson];
+    
+    // Get the base URL for referential local loading
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    
+    // We need to piece together the HTML
+    // Load the Header first
+    NSString *htmlHeaderFile = [[NSBundle mainBundle] pathForResource:@"chartViewHeader" ofType:@"html" inDirectory:@"js"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:htmlHeaderFile encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
+    NSString *jsonString = [NSString stringWithFormat:@"[{\"data\": %@, \"name\": \"Calories\"}]", self.chartData];
+    
+    htmlString = [htmlString stringByAppendingString:jsonString];
+    
+    // Append the footer:
+    NSString *htmlFooterFile = [[NSBundle mainBundle] pathForResource:@"chartViewFooter" ofType:@"html" inDirectory:@"js"];
+    NSString *htmlFooterString = [NSString stringWithContentsOfFile:htmlFooterFile encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByAppendingString:htmlFooterString];
+    
+    [self.chartView loadHTMLString:htmlString baseURL:baseURL];
+
 }
+
 
 - (void)buildTableSectionHeaderData
 {
     // Build the table headers
     self.tableSections = [NSMutableDictionary dictionary];
     for (FoodJournal *event in self.data) {
-        NSDate *key = [self stripTimeFromDate:event.time];
+        NSDate *key = [event getDate];
         NSMutableArray *eventsOfDay = [self.tableSections objectForKey:key];
         if (eventsOfDay == nil) {
             eventsOfDay = [NSMutableArray array];

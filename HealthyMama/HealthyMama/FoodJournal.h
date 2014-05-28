@@ -2,12 +2,14 @@
 
 @interface FoodJournal : _FoodJournal {}
 
-+(FoodJournal *) factory;
-+(NSArray *) getJournal;
-+(NSArray *) getJournal:(BOOL)ascending;
-+(NSNumber *) getMostRecentCaloriesOfFood:(NSString *) foodName;
-+(NSArray *) getDistinctFoodNames;
++ (FoodJournal *) factory;
++ (NSArray *) getJournal;
++ (NSArray *) getJournal:(BOOL)ascending;
++ (NSString *)getJournalAsJson;
++ (NSNumber *) getMostRecentCaloriesOfFood:(NSString *) foodName;
++ (NSArray *) getDistinctFoodNames;
 
--(void) save;
+- (void) save;
+- (NSDate *)getDate;
 
 @end

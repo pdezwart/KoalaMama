@@ -39,7 +39,7 @@
     
     
     // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
-    NSString *jsonString = [NSString stringWithFormat:@"[{\"data\": %@, \"name\": \"Weight\"}]", [WeighIn getWeighInsAsJson]];
+    NSString *jsonString = [NSString stringWithFormat:@"[{\"data\": %@, \"name\": \"Weight\"}]", self.chartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     
