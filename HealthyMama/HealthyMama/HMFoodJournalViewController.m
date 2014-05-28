@@ -73,8 +73,6 @@
     NSArray *unsortedDays = [self.tableSections allKeys];
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(compare:)];
     self.tableSectionDates = [unsortedDays sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
-    NSLog(@"%@", self.tableSectionDates);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
