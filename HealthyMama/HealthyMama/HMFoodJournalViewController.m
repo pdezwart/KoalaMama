@@ -28,12 +28,6 @@
 {
     [super viewDidLoad];
 
-    // Get all of the existing journal entries
-    self.data = [FoodJournal getJournal];
-    
-    // Build the table section headers
-    [self buildTableSectionHeaderData];
-    
     // Initialize the date formatter:
     self.tableSectionDateFormatter = [[NSDateFormatter alloc] init];
     [self.tableSectionDateFormatter setDateStyle:NSDateFormatterLongStyle];
@@ -41,23 +35,46 @@
 
 }
 
-- (void)buildTableSectionHeaderData {
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Get all of the existing journal entries
+    self.data = [FoodJournal getJournal];
+    
+    // Build the table section headers
+    [self buildTableSectionHeaderData];
+    
+    [self.tableView reloadData];
+}
+
+- (NSDate *)stripTimeFromDate:(NSDate *)date
+{
+    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:date];
+    return [calendar dateFromComponents:components];
+}
+
+- (void)buildTableSectionHeaderData
+{
     // Build the table headers
     self.tableSections = [NSMutableDictionary dictionary];
     for (FoodJournal *event in self.data) {
-        
-        NSMutableArray *eventsOfDay = [self.tableSections objectForKey:event.time];
+        NSDate *key = [self stripTimeFromDate:event.time];
+        NSMutableArray *eventsOfDay = [self.tableSections objectForKey:key];
         if (eventsOfDay == nil) {
             eventsOfDay = [NSMutableArray array];
             
-            [self.tableSections setObject:eventsOfDay forKey:event.time];
+            [self.tableSections setObject:eventsOfDay forKey:key];
         }
         
         [eventsOfDay addObject:event];
     }
     
     NSArray *unsortedDays = [self.tableSections allKeys];
-    self.tableSectionDates = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(compare:)];
+    self.tableSectionDates = [unsortedDays sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSLog(@"%@", self.tableSectionDates);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

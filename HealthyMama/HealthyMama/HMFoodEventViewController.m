@@ -28,9 +28,8 @@
     [super viewDidLoad];
     
     // Add ability to resign keyboard when touch outside of the text field:
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.delegate = self;
     [self.view addGestureRecognizer:tap];
     
     NSDate *now = [NSDate date];
@@ -42,7 +41,7 @@
     autocompleteTableView.scrollEnabled = YES;
     autocompleteTableView.hidden = YES;
     [self.view addSubview:autocompleteTableView];
-
+    
     self.autocompleteFoodNames = [[NSMutableArray alloc] init];
     self.allFoodNames = [FoodJournal getDistinctFoodNames];
 
@@ -52,7 +51,18 @@
     
 }
 
--(void)dismissKeyboard {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([touch.view isDescendantOfView:self.autocompleteTableView]) {
+        // Don't let selections of auto-complete entries fire the
+        // gesture recognizer
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)dismissKeyboard {
     [self.foodName resignFirstResponder];
     [self.foodCalories resignFirstResponder];
 }
@@ -85,7 +95,7 @@
     // Put anything that starts with this substring into the autocompleteUrls array
     // The items in this array is what will show up in the table view
     [autocompleteFoodNames removeAllObjects];
-    for(NSString *curString in allFoodNames) {
+    for(NSString *curString in self.allFoodNames) {
         NSRange substringRange = [curString rangeOfString:substring options:NSCaseInsensitiveSearch];
         if (substringRange.location == 0) {
             [autocompleteFoodNames addObject:curString];
@@ -94,7 +104,7 @@
     [autocompleteTableView reloadData];
 }
 
--(void) showDatePicker
+- (void) showDatePicker
 {
     // Prevent keyboard from showing up when ActionSheet is dismissed
     [self.foodDate resignFirstResponder];
@@ -154,6 +164,9 @@
     self.foodCalories.text = [[FoodJournal getMostRecentCaloriesOfFood:self.foodName.text] stringValue];
     
     autocompleteTableView.hidden = YES;
+    
+    // Make sure the keyboard is hidden:
+    [self dismissKeyboard];
 }
 
 

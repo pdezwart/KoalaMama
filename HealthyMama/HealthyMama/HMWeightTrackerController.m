@@ -21,9 +21,6 @@
 @synthesize tableView;
 @synthesize chartData;
 
-- (void) viewDidLoad {
-    [super viewDidLoad];
-}
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FoodJournal.h"
 
-@interface HMFoodEventViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface HMFoodEventViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, retain) UIActionSheet *datePickerView;
 @property (nonatomic, retain) UIDatePicker *datePicker;
@@ -27,5 +27,6 @@
 - (IBAction)saveButtonClicked:(id)sender;
 - (IBAction)cancelButtonClicked:(id)sender;
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch;
 
 @end

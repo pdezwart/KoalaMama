@@ -47,7 +47,15 @@
     fetchRequest.returnsDistinctResults = YES;
     
     // Now it should yield an NSArray of distinct values in dictionaries.
-    return [localContext executeFetchRequest:fetchRequest error:nil];
+    NSArray *data = [localContext executeFetchRequest:fetchRequest error:nil];
+    NSMutableArray *response = [[NSMutableArray alloc] init];
+    
+    for (NSObject *obj in data) {
+        [response addObject:[obj valueForKey:@"label"]];
+    }
+    
+    // Convert from mutable to immutable array
+    return [[NSArray alloc] initWithArray:response];
 }
 
 
