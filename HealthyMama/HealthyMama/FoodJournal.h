@@ -8,6 +8,7 @@
 + (NSString *)getJournalAsJson;
 + (NSNumber *) getMostRecentCaloriesOfFood:(NSString *) foodName;
 + (NSArray *) getDistinctFoodNames;
++ (NSNumber *) getCalorieIntake;
 
 - (void) save;
 - (NSDate *)getDate;

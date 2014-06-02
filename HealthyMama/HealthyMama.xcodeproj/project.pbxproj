@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4E02B618176EA05E000E902B /* HMWeighInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E02B617176EA05E000E902B /* HMWeighInViewController.m */; };
 		4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */; };
+		4E165B4F193C33980083AF45 /* _CalorieRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E165B4C193C33980083AF45 /* _CalorieRequirement.m */; };
+		4E165B50193C33980083AF45 /* CalorieRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E165B4E193C33980083AF45 /* CalorieRequirement.m */; };
+		4E165B5F193C39DF0083AF45 /* HMDataLoader.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */; };
+		4E165B60193C39DF0083AF45 /* HMDataLoader.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */; };
 		4E2069CA1931BC8A006C5825 /* FoodJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069C91931BC8A006C5825 /* FoodJournal.m */; };
 		4E2069CE1931BE04006C5825 /* _FoodJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069CD1931BE04006C5825 /* _FoodJournal.m */; };
 		4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */; };
@@ -85,6 +89,11 @@
 		4E02B616176EA05E000E902B /* HMWeighInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeighInViewController.h; sourceTree = "<group>"; };
 		4E02B617176EA05E000E902B /* HMWeighInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeighInViewController.m; sourceTree = "<group>"; };
 		4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaloriesPerWeek.plist; sourceTree = "<group>"; };
+		4E165B4B193C33980083AF45 /* _CalorieRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CalorieRequirement.h; sourceTree = "<group>"; };
+		4E165B4C193C33980083AF45 /* _CalorieRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CalorieRequirement.m; sourceTree = "<group>"; };
+		4E165B4D193C33980083AF45 /* CalorieRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalorieRequirement.h; sourceTree = "<group>"; };
+		4E165B4E193C33980083AF45 /* CalorieRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalorieRequirement.m; sourceTree = "<group>"; };
+		4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HMDataLoader.sqlite; sourceTree = "<group>"; };
 		4E2069C81931BC8A006C5825 /* FoodJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodJournal.h; sourceTree = "<group>"; };
 		4E2069C91931BC8A006C5825 /* FoodJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodJournal.m; sourceTree = "<group>"; };
 		4E2069CC1931BE04006C5825 /* _FoodJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FoodJournal.h; sourceTree = "<group>"; };
@@ -253,6 +262,10 @@
 		4E5FDBB81753357800A27A2A /* HealthyMama */ = {
 			isa = PBXGroup;
 			children = (
+				4E165B4B193C33980083AF45 /* _CalorieRequirement.h */,
+				4E165B4C193C33980083AF45 /* _CalorieRequirement.m */,
+				4E165B4D193C33980083AF45 /* CalorieRequirement.h */,
+				4E165B4E193C33980083AF45 /* CalorieRequirement.m */,
 				4E2069CC1931BE04006C5825 /* _FoodJournal.h */,
 				4E2069CD1931BE04006C5825 /* _FoodJournal.m */,
 				4E77B7CD1754834900F28E27 /* _WeighIn.h */,
@@ -264,6 +277,7 @@
 				4E5FDBC11753357800A27A2A /* HMAppDelegate.h */,
 				4E5FDBC21753357800A27A2A /* HMAppDelegate.m */,
 				4E5FDBCA1753357900A27A2A /* HealthyMama.xcdatamodeld */,
+				4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */,
 				4E2069C81931BC8A006C5825 /* FoodJournal.h */,
 				4E2069C91931BC8A006C5825 /* FoodJournal.m */,
 				4E77B75517546E0F00F28E27 /* WeighIn.h */,
@@ -509,6 +523,7 @@
 				4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */,
 				4ECFA2D019117E6E00369396 /* js in Resources */,
 				4E2069DA19345495006C5825 /* FoodJournalTableCellView.xib in Resources */,
+				4E165B5F193C39DF0083AF45 /* HMDataLoader.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5FDBDF1753357900A27A2A /* InfoPlist.strings in Resources */,
+				4E165B60193C39DF0083AF45 /* HMDataLoader.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +602,8 @@
 				4E2069CA1931BC8A006C5825 /* FoodJournal.m in Sources */,
 				4E2069CE1931BE04006C5825 /* _FoodJournal.m in Sources */,
 				4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */,
+				4E165B4F193C33980083AF45 /* _CalorieRequirement.m in Sources */,
+				4E165B50193C33980083AF45 /* CalorieRequirement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

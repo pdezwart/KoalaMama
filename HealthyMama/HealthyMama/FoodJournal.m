@@ -101,6 +101,40 @@
     return [[NSArray alloc] initWithArray:response];
 }
 
++ (NSNumber *) getCalorieIntake
+{
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit ) fromDate:[NSDate date]];
+
+    // Create midnight of this morning
+    [components setHour:0];
+    [components setMinute:0];
+    [components setSecond:0];
+    
+    NSDate *morning = [calendar dateByAddingComponents:components toDate:now options:0];
+    
+    // Create midnight of this evening
+    [components setHour:23];
+    [components setMinute:59];
+    [components setSecond:59];
+    
+    NSDate *night = [calendar dateByAddingComponents:components toDate:now options:0];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(time >= %@) AND (time <= %@)", morning, night];
+
+    NSArray *todaysMeals = [FoodJournal findAllWithPredicate:predicate];
+    
+    // Iterate through all of today and add the calories
+    int calories = 0;
+    for (FoodJournal *event in todaysMeals) {
+        calories += event.caloriesValue;
+    }
+    
+    return [[NSNumber alloc] initWithInteger:calories];
+}
+
 
 - (void) save {
     NSManagedObjectContext *localContext = [NSManagedObjectContext contextForCurrentThread];

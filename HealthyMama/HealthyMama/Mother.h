@@ -14,4 +14,6 @@
 - (BOOL)isMetric;
 - (void)makeMetric;
 - (void)makeImperial;
+- (NSNumber *) age;
+
 @end
