@@ -17,6 +17,8 @@
 + (NSArray *) getWeighIns;
 + (NSArray *) getWeighIns:(BOOL)ascending;
 + (NSString *) getWeighInsAsJson;
++ (int) getWeightGain;
+
 - (void) save;
 - (int) daysIntoPregnancy;
 @end

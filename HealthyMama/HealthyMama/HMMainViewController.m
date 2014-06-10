@@ -8,6 +8,7 @@
 
 #import "HMMainViewController.h"
 #import "FoodJournal.h"
+#import "WeighIn.h"
 #import "CalorieRequirement.h"
 
 @interface HMMainViewController ()
@@ -43,12 +44,11 @@
     
     self.yourPregnancyLabel.text = [mother timeLeftInPregnancy];
     
-    self.recommendedDailyCaloriesLabel.text = [NSString stringWithFormat:@"%d/%d", [[FoodJournal getCalorieIntake] intValue], 2000];
-    self.currentWeightGainLabel.text = @"15 lbs";
+    int dailyCalorieRequirements = [CalorieRequirement getRequirementsForAge:[[mother age] intValue] forActivityLevel:2];
+    self.recommendedDailyCaloriesLabel.text = [NSString stringWithFormat:@"%d/%d", [[FoodJournal getCalorieIntake] intValue], dailyCalorieRequirements];
+
     
-    int age = [[mother age] intValue];
-    
-    NSLog(@"%d", [CalorieRequirement getRequirements:age :2]);
+    self.currentWeightGainLabel.text = [NSString stringWithFormat:@"%d lbs", [mother getWeightGain]];
 }
 
 

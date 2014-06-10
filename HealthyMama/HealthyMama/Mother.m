@@ -1,4 +1,5 @@
 #import "Mother.h"
+#import "WeighIn.h"
 
 
 @interface Mother ()
@@ -119,6 +120,15 @@
     NSArray *caloriesPerWeek;
     
 }
+
+- (int) getWeightGain
+{
+    
+    WeighIn* last = [WeighIn findFirstOrderedByAttribute:@"time" ascending:NO];
+    
+    return last.imperialWeightValue - self.imperialPrePregnancyWeightValue;
+}
+
 
 
 @end

@@ -10,10 +10,9 @@
 
 @implementation CalorieRequirement
 
-+ (int) getRequirements:(int)forAge:(int)forActivityLevel
++ (int) getRequirementsForAge:(int)age forActivityLevel:(int)activityLevel;
 {
-    NSLog(@"Hunting for age %d with activity level %d", forAge, forActivityLevel);
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((startAge >= %d) AND (endAge <= %d)) AND (activityLevel = %d)", forAge, forActivityLevel];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((startAge >= %d) AND (endAge <= %d)) AND (activityLevel = %d)", age, activityLevel];
     
     CalorieRequirement *row = [CalorieRequirement findFirstWithPredicate:predicate];
 

@@ -15,5 +15,6 @@
 - (void)makeMetric;
 - (void)makeImperial;
 - (NSNumber *) age;
+- (int) getWeightGain;
 
 @end

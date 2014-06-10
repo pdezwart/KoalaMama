@@ -83,6 +83,7 @@
     self.tableSections = [NSMutableDictionary dictionary];
     for (FoodJournal *event in self.data) {
         NSDate *key = [event getDate];
+        NSLog(@"%@", key);
         NSMutableArray *eventsOfDay = [self.tableSections objectForKey:key];
         if (eventsOfDay == nil) {
             eventsOfDay = [NSMutableArray array];
