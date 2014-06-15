@@ -7,6 +7,7 @@
 //
 
 #import "HMMainViewController.h"
+#import "HMIntroOneViewController.h"
 #import "FoodJournal.h"
 #import "WeighIn.h"
 #import "CalorieRequirement.h"
@@ -24,6 +25,20 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]) {
+        
+        NSLog(@"Loading first time!");
+        
+        HMIntroOneViewController *obj = [[HMIntroOneViewController alloc] initWithNibName:@"HMIntroOneViewcontroller" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+
+    }
+    
+    [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated

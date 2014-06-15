@@ -69,6 +69,9 @@
 		4E77B7CC1754789D00F28E27 /* HMFoodJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */; };
 		4E77B7CF1754834900F28E27 /* _WeighIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CE1754834900F28E27 /* _WeighIn.m */; };
 		4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EADD9C41753FF2F008604F6 /* _Mother.m */; };
+		4EC219D9194D6139003E5768 /* HMIntroOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219D8194D6139003E5768 /* HMIntroOneViewController.m */; };
+		4EC219E0194D6199003E5768 /* HMIntroTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219DF194D6199003E5768 /* HMIntroTwoViewController.m */; };
+		4EC219E3194D61A7003E5768 /* HMIntroThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219E2194D61A7003E5768 /* HMIntroThreeViewController.m */; };
 		4ECFA2D019117E6E00369396 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4ECFA2CF19117E6E00369396 /* js */; };
 		4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */; };
 		4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */; };
@@ -193,6 +196,12 @@
 		4E77B7CE1754834900F28E27 /* _WeighIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WeighIn.m; sourceTree = "<group>"; };
 		4EADD9C31753FF2F008604F6 /* _Mother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Mother.h; sourceTree = "<group>"; };
 		4EADD9C41753FF2F008604F6 /* _Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Mother.m; sourceTree = "<group>"; };
+		4EC219D7194D6139003E5768 /* HMIntroOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroOneViewController.h; sourceTree = "<group>"; };
+		4EC219D8194D6139003E5768 /* HMIntroOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroOneViewController.m; sourceTree = "<group>"; };
+		4EC219DE194D6199003E5768 /* HMIntroTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroTwoViewController.h; sourceTree = "<group>"; };
+		4EC219DF194D6199003E5768 /* HMIntroTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroTwoViewController.m; sourceTree = "<group>"; };
+		4EC219E1194D61A7003E5768 /* HMIntroThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroThreeViewController.h; sourceTree = "<group>"; };
+		4EC219E2194D61A7003E5768 /* HMIntroThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroThreeViewController.m; sourceTree = "<group>"; };
 		4ECFA2CF19117E6E00369396 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = "../../Highcharts-4.0.1/js"; sourceTree = "<group>"; };
 		4ECFA2E41913098A00369396 /* HMFoodEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodEventViewController.h; sourceTree = "<group>"; };
 		4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodEventViewController.m; sourceTree = "<group>"; };
@@ -262,28 +271,14 @@
 		4E5FDBB81753357800A27A2A /* HealthyMama */ = {
 			isa = PBXGroup;
 			children = (
-				4E165B4B193C33980083AF45 /* _CalorieRequirement.h */,
-				4E165B4C193C33980083AF45 /* _CalorieRequirement.m */,
-				4E2069CC1931BE04006C5825 /* _FoodJournal.h */,
-				4E2069CD1931BE04006C5825 /* _FoodJournal.m */,
-				4EADD9C31753FF2F008604F6 /* _Mother.h */,
-				4EADD9C41753FF2F008604F6 /* _Mother.m */,
-				4E77B7CD1754834900F28E27 /* _WeighIn.h */,
-				4E77B7CE1754834900F28E27 /* _WeighIn.m */,
+				4EC219DA194D614C003E5768 /* Introduction */,
+				4EC219E4194D61BC003E5768 /* MRClasses */,
+				4EC219E6194D624C003E5768 /* Data */,
+				4EC219E5194D61DE003E5768 /* Classes */,
+				4E5FDBB91753357800A27A2A /* www */,
+				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4E5FDBC11753357800A27A2A /* HMAppDelegate.h */,
 				4E5FDBC21753357800A27A2A /* HMAppDelegate.m */,
-				4E5FDBCA1753357900A27A2A /* HealthyMama.xcdatamodeld */,
-				4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */,
-				4E165B4D193C33980083AF45 /* CalorieRequirement.h */,
-				4E165B4E193C33980083AF45 /* CalorieRequirement.m */,
-				4E5FDDF4175340A900A27A2A /* Mother.h */,
-				4E5FDDF5175340A900A27A2A /* Mother.m */,
-				4E2069C81931BC8A006C5825 /* FoodJournal.h */,
-				4E2069C91931BC8A006C5825 /* FoodJournal.m */,
-				4E77B75517546E0F00F28E27 /* WeighIn.h */,
-				4E77B75617546E0F00F28E27 /* WeighIn.m */,
-				4E5FDBB91753357800A27A2A /* Supporting Files */,
-				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4E77B7CA1754789D00F28E27 /* HMFoodJournalViewController.h */,
 				4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */,
 				4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */,
@@ -302,24 +297,21 @@
 				4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */,
 				4EE6C9C71783B6D80021CD20 /* HMWeighInTrackerTableCell.h */,
 				4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */,
-				4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */,
 			);
 			path = HealthyMama;
 			sourceTree = "<group>";
 		};
-		4E5FDBB91753357800A27A2A /* Supporting Files */ = {
+		4E5FDBB91753357800A27A2A /* www */ = {
 			isa = PBXGroup;
 			children = (
 				4ECFA2CF19117E6E00369396 /* js */,
-				4E5FDBBA1753357800A27A2A /* HealthyMama-Info.plist */,
-				4E5FDBBB1753357800A27A2A /* InfoPlist.strings */,
 				4E5FDBBE1753357800A27A2A /* main.m */,
 				4E5FDBC01753357800A27A2A /* HealthyMama-Prefix.pch */,
 				4E5FDBC41753357800A27A2A /* Default.png */,
 				4E5FDBC61753357800A27A2A /* Default@2x.png */,
 				4E5FDBC81753357800A27A2A /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			name = www;
 			sourceTree = "<group>";
 		};
 		4E5FDBDA1753357900A27A2A /* HealthyMamaTests */ = {
@@ -440,6 +432,61 @@
 				4E5FDDD817533E2500A27A2A /* MagicalRecordShorthand.h */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		4EC219DA194D614C003E5768 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				4EC219D7194D6139003E5768 /* HMIntroOneViewController.h */,
+				4EC219D8194D6139003E5768 /* HMIntroOneViewController.m */,
+				4EC219DE194D6199003E5768 /* HMIntroTwoViewController.h */,
+				4EC219DF194D6199003E5768 /* HMIntroTwoViewController.m */,
+				4EC219E1194D61A7003E5768 /* HMIntroThreeViewController.h */,
+				4EC219E2194D61A7003E5768 /* HMIntroThreeViewController.m */,
+			);
+			name = Introduction;
+			sourceTree = "<group>";
+		};
+		4EC219E4194D61BC003E5768 /* MRClasses */ = {
+			isa = PBXGroup;
+			children = (
+				4E165B4B193C33980083AF45 /* _CalorieRequirement.h */,
+				4E165B4C193C33980083AF45 /* _CalorieRequirement.m */,
+				4E2069CC1931BE04006C5825 /* _FoodJournal.h */,
+				4E2069CD1931BE04006C5825 /* _FoodJournal.m */,
+				4EADD9C31753FF2F008604F6 /* _Mother.h */,
+				4EADD9C41753FF2F008604F6 /* _Mother.m */,
+				4E77B7CD1754834900F28E27 /* _WeighIn.h */,
+				4E77B7CE1754834900F28E27 /* _WeighIn.m */,
+			);
+			name = MRClasses;
+			sourceTree = "<group>";
+		};
+		4EC219E5194D61DE003E5768 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4E165B4D193C33980083AF45 /* CalorieRequirement.h */,
+				4E165B4E193C33980083AF45 /* CalorieRequirement.m */,
+				4E5FDDF4175340A900A27A2A /* Mother.h */,
+				4E5FDDF5175340A900A27A2A /* Mother.m */,
+				4E2069C81931BC8A006C5825 /* FoodJournal.h */,
+				4E2069C91931BC8A006C5825 /* FoodJournal.m */,
+				4E77B75517546E0F00F28E27 /* WeighIn.h */,
+				4E77B75617546E0F00F28E27 /* WeighIn.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4EC219E6194D624C003E5768 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4E5FDBCA1753357900A27A2A /* HealthyMama.xcdatamodeld */,
+				4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */,
+				4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */,
+				4E5FDBBA1753357800A27A2A /* HealthyMama-Info.plist */,
+				4E5FDBBB1753357800A27A2A /* InfoPlist.strings */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,6 +651,9 @@
 				4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */,
 				4E165B4F193C33980083AF45 /* _CalorieRequirement.m in Sources */,
 				4E165B50193C33980083AF45 /* CalorieRequirement.m in Sources */,
+				4EC219D9194D6139003E5768 /* HMIntroOneViewController.m in Sources */,
+				4EC219E0194D6199003E5768 /* HMIntroTwoViewController.m in Sources */,
+				4EC219E3194D61A7003E5768 /* HMIntroThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

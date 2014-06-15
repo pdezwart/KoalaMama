@@ -155,6 +155,81 @@
             </objects>
             <point key="canvasLocation" x="836" y="451"/>
         </scene>
+        <!--Intro One View Controller-->
+        <scene sceneID="Qiu-zN-Joc">
+            <objects>
+                <viewController id="T2I-sT-bOd" customClass="HMIntroOneViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iLO-iz-G0y">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to HealthyMama!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="btu-pc-0K1">
+                                <rect key="frame" x="58" y="46" width="205" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" id="Evf-MW-zgB">
+                                <rect key="frame" x="10" y="109" width="301" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">This app is designed to help you track and manage your calorie intake and weight gain throughout your pregnancy, because a healthy mama makes for a healthy and happy baby.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="I67-Vx-Rgt">
+                                <rect key="frame" x="141" y="441" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o56-E3-i3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436" y="-937"/>
+        </scene>
+        <!--Intro Two View Controller-->
+        <scene sceneID="xas-Hb-oo8">
+            <objects>
+                <viewController id="lJ4-71-K93" customClass="HMIntroTwoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UgR-pC-XzC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" id="Z8w-2V-lzo">
+                                <rect key="frame" x="141" y="447" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yI7-cO-lem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="-940"/>
+        </scene>
+        <!--Intro Three View Controller-->
+        <scene sceneID="VOi-fO-rtJ">
+            <objects>
+                <viewController id="rMY-ib-zlY" customClass="HMIntroThreeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ZH-iV-39t">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" id="fsF-JV-MD7">
+                                <rect key="frame" x="141" y="436" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvv-P7-pqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="-941"/>
+        </scene>
         <!--Main View Controller - Home-->
         <scene sceneID="KCY-NL-tYt">
             <objects>
