@@ -272,9 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				4EC219DA194D614C003E5768 /* Introduction */,
-				4EC219E4194D61BC003E5768 /* MRClasses */,
+				4EC219E4194D61BC003E5768 /* MR_Models */,
 				4EC219E6194D624C003E5768 /* Data */,
-				4EC219E5194D61DE003E5768 /* Classes */,
+				4EC219E5194D61DE003E5768 /* Models */,
 				4E5FDBB91753357800A27A2A /* www */,
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4E5FDBC11753357800A27A2A /* HMAppDelegate.h */,
@@ -447,7 +447,7 @@
 			name = Introduction;
 			sourceTree = "<group>";
 		};
-		4EC219E4194D61BC003E5768 /* MRClasses */ = {
+		4EC219E4194D61BC003E5768 /* MR_Models */ = {
 			isa = PBXGroup;
 			children = (
 				4E165B4B193C33980083AF45 /* _CalorieRequirement.h */,
@@ -459,10 +459,10 @@
 				4E77B7CD1754834900F28E27 /* _WeighIn.h */,
 				4E77B7CE1754834900F28E27 /* _WeighIn.m */,
 			);
-			name = MRClasses;
+			name = MR_Models;
 			sourceTree = "<group>";
 		};
-		4EC219E5194D61DE003E5768 /* Classes */ = {
+		4EC219E5194D61DE003E5768 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4E165B4D193C33980083AF45 /* CalorieRequirement.h */,
@@ -474,7 +474,7 @@
 				4E77B75517546E0F00F28E27 /* WeighIn.h */,
 				4E77B75617546E0F00F28E27 /* WeighIn.m */,
 			);
-			name = Classes;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		4EC219E6194D624C003E5768 /* Data */ = {

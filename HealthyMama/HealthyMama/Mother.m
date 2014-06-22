@@ -22,7 +22,8 @@
 #define METRIC                  @"metric"
 #define IMPERIAL                @"imperial"
 
-#define YEAR_IN_SECONDS         60 * 60 * 24 * 365
+
+#define YEAR_IN_SECONDS         31536000
 
 
 + (NSNumber *)convertWeightToKilos:(NSNumber *)weight {
@@ -103,9 +104,13 @@
 }
 
 - (NSNumber *) age {
-    // Always return the age at estimated due date:
-    NSTimeInterval ageInSeconds = [self.estimatedDueDate timeIntervalSinceDate:self.dateOfBirth];
-    return [NSNumber numberWithDouble:ageInSeconds / YEAR_IN_SECONDS];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSUInteger unitFlags = NSYearCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:self.dateOfBirth toDate:self.estimatedDueDate options:0];
+    
+    return [NSNumber numberWithInteger:[components year]];
 }
 
 - (void) generateHighWeightGraphPoints {

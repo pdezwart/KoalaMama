@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasSeenTutorial"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
 }
 
 - (void)didReceiveMemoryWarning
