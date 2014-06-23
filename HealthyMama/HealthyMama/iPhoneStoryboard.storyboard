@@ -155,82 +155,105 @@
             </objects>
             <point key="canvasLocation" x="836" y="451"/>
         </scene>
-        <!--Intro One View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="Qiu-zN-Joc">
             <objects>
-                <viewController id="T2I-sT-bOd" customClass="HMIntroOneViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iLO-iz-G0y">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to HealthyMama!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="btu-pc-0K1">
-                                <rect key="frame" x="58" y="46" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" id="Evf-MW-zgB">
-                                <rect key="frame" x="10" y="109" width="301" height="219"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">This app is designed to help you track and manage your calorie intake and weight gain throughout your pregnancy, because a healthy mama makes for a healthy and happy baby.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="I67-Vx-Rgt">
-                                <rect key="frame" x="141" y="441" width="38" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="TSS-sj-oai"/>
-                </viewController>
+                <viewController storyboardIdentifier="HMIntroViewController" id="T2I-sT-bOd" customClass="HMIntroViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o56-E3-i3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="436" y="-937"/>
         </scene>
-        <!--Intro Two View Controller-->
-        <scene sceneID="xas-Hb-oo8">
+        <!--Intro One View Controller-->
+        <scene sceneID="wk3-TA-hOE">
             <objects>
-                <viewController id="lJ4-71-K93" customClass="HMIntroTwoViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UgR-pC-XzC">
+                <viewController storyboardIdentifier="HMIntroOneViewController" id="8qF-ph-WfH" customClass="HMIntroOneViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XHG-2o-eWs">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" id="Z8w-2V-lzo">
-                                <rect key="frame" x="141" y="447" width="38" height="36"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XMX-bK-BOx">
+                                <rect key="frame" x="125" y="263" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ale-1V-cnU"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yI7-cO-lem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ju-ge-fBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-937"/>
+            <point key="canvasLocation" x="831" y="-934"/>
+        </scene>
+        <!--Intro Two View Controller-->
+        <scene sceneID="J7d-yK-cpZ">
+            <objects>
+                <viewController storyboardIdentifier="HMIntroTwoViewController" id="Xsx-f4-s7M" customClass="HMIntroTwoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5WN-Co-W08">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Track Height &amp; weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rBD-e0-PwE">
+                                <rect key="frame" x="77" y="263" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGK-A0-aOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="-934"/>
         </scene>
         <!--Intro Three View Controller-->
-        <scene sceneID="VOi-fO-rtJ">
+        <scene sceneID="gXA-Ja-vDb">
             <objects>
-                <viewController id="rMY-ib-zlY" customClass="HMIntroThreeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0ZH-iV-39t">
+                <viewController storyboardIdentifier="HMIntroThreeViewController" id="xdx-wI-UlV" customClass="HMIntroThreeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P8B-z2-Avz">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" id="fsF-JV-MD7">
-                                <rect key="frame" x="141" y="436" width="38" height="36"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YBl-9u-wXw">
+                                <rect key="frame" x="124" y="263" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvv-P7-pqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MnK-jx-cRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="-941"/>
+            <point key="canvasLocation" x="1547" y="-934"/>
+        </scene>
+        <!--Intro Four View Controller-->
+        <scene sceneID="Kky-Xq-3Qu">
+            <objects>
+                <viewController storyboardIdentifier="HMIntroFourViewController" id="jFq-5C-hW1" customClass="HMIntroFourViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jmt-0f-5Jm">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Birthday &amp; Pre-pregnancy Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Beh-Ec-DP4">
+                                <rect key="frame" x="34" y="263" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eG2-gS-rLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="-934"/>
         </scene>
         <!--Main View Controller - Home-->
         <scene sceneID="KCY-NL-tYt">
@@ -466,10 +489,10 @@
             </objects>
             <point key="canvasLocation" x="836" y="-238"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="uFE-1Z-GHz">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="Bcq-lg-zRD" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="Bcq-lg-zRD" customClass="HMTabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="El5-sa-gKV">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -480,6 +503,7 @@
                         <segue destination="CvR-vd-rA3" kind="relationship" relationship="viewControllers" id="cth-o9-FJw"/>
                         <segue destination="WHS-yc-mmF" kind="relationship" relationship="viewControllers" id="7dq-au-AFx"/>
                         <segue destination="STb-Uj-JlI" kind="relationship" relationship="viewControllers" id="Ynu-Ra-lot"/>
+                        <segue destination="T2I-sT-bOd" kind="modal" id="Lmt-Za-Cob"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st1-t6-H1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -667,6 +691,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="HMIntroFourViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMIntroFourViewController.h"/>
+        </class>
         <class className="HMIntroOneViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMIntroOneViewController.h"/>
         </class>
@@ -675,6 +702,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="HMIntroTwoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMIntroTwoViewController.h"/>
+        </class>
+        <class className="HMIntroViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMIntroViewController.h"/>
         </class>
         <class className="HMMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMainViewController.h"/>
@@ -697,6 +727,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="measurementSystemController" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="prePregnancyWeightField" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="HMTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
         </class>
         <class className="HMWeighInViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMWeighInViewController.h"/>

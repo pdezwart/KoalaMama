@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4E02B618176EA05E000E902B /* HMWeighInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E02B617176EA05E000E902B /* HMWeighInViewController.m */; };
 		4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */; };
+		4E0ECA7D1957B9E200D879B8 /* HMIntroOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ECA7C1957B9E200D879B8 /* HMIntroOneViewController.m */; };
+		4E0ECA801957B9F800D879B8 /* HMIntroTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ECA7F1957B9F800D879B8 /* HMIntroTwoViewController.m */; };
+		4E0ECA831957BA0400D879B8 /* HMIntroThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ECA821957BA0400D879B8 /* HMIntroThreeViewController.m */; };
+		4E0ECA861957BA1200D879B8 /* HMIntroFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ECA851957BA1200D879B8 /* HMIntroFourViewController.m */; };
 		4E165B4F193C33980083AF45 /* _CalorieRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E165B4C193C33980083AF45 /* _CalorieRequirement.m */; };
 		4E165B50193C33980083AF45 /* CalorieRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E165B4E193C33980083AF45 /* CalorieRequirement.m */; };
 		4E165B5F193C39DF0083AF45 /* HMDataLoader.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */; };
@@ -69,9 +73,8 @@
 		4E77B7CC1754789D00F28E27 /* HMFoodJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */; };
 		4E77B7CF1754834900F28E27 /* _WeighIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CE1754834900F28E27 /* _WeighIn.m */; };
 		4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EADD9C41753FF2F008604F6 /* _Mother.m */; };
-		4EC219D9194D6139003E5768 /* HMIntroOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219D8194D6139003E5768 /* HMIntroOneViewController.m */; };
-		4EC219E0194D6199003E5768 /* HMIntroTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219DF194D6199003E5768 /* HMIntroTwoViewController.m */; };
-		4EC219E3194D61A7003E5768 /* HMIntroThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219E2194D61A7003E5768 /* HMIntroThreeViewController.m */; };
+		4EB3315D1957AFDF0041956D /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */; };
+		4EC219D9194D6139003E5768 /* HMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219D8194D6139003E5768 /* HMIntroViewController.m */; };
 		4ECFA2D019117E6E00369396 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4ECFA2CF19117E6E00369396 /* js */; };
 		4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */; };
 		4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */; };
@@ -92,6 +95,14 @@
 		4E02B616176EA05E000E902B /* HMWeighInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeighInViewController.h; sourceTree = "<group>"; };
 		4E02B617176EA05E000E902B /* HMWeighInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeighInViewController.m; sourceTree = "<group>"; };
 		4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaloriesPerWeek.plist; sourceTree = "<group>"; };
+		4E0ECA7B1957B9E200D879B8 /* HMIntroOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroOneViewController.h; sourceTree = "<group>"; };
+		4E0ECA7C1957B9E200D879B8 /* HMIntroOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroOneViewController.m; sourceTree = "<group>"; };
+		4E0ECA7E1957B9F800D879B8 /* HMIntroTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroTwoViewController.h; sourceTree = "<group>"; };
+		4E0ECA7F1957B9F800D879B8 /* HMIntroTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroTwoViewController.m; sourceTree = "<group>"; };
+		4E0ECA811957BA0400D879B8 /* HMIntroThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroThreeViewController.h; sourceTree = "<group>"; };
+		4E0ECA821957BA0400D879B8 /* HMIntroThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroThreeViewController.m; sourceTree = "<group>"; };
+		4E0ECA841957BA1200D879B8 /* HMIntroFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroFourViewController.h; sourceTree = "<group>"; };
+		4E0ECA851957BA1200D879B8 /* HMIntroFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroFourViewController.m; sourceTree = "<group>"; };
 		4E165B4B193C33980083AF45 /* _CalorieRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CalorieRequirement.h; sourceTree = "<group>"; };
 		4E165B4C193C33980083AF45 /* _CalorieRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CalorieRequirement.m; sourceTree = "<group>"; };
 		4E165B4D193C33980083AF45 /* CalorieRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalorieRequirement.h; sourceTree = "<group>"; };
@@ -196,12 +207,10 @@
 		4E77B7CE1754834900F28E27 /* _WeighIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WeighIn.m; sourceTree = "<group>"; };
 		4EADD9C31753FF2F008604F6 /* _Mother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Mother.h; sourceTree = "<group>"; };
 		4EADD9C41753FF2F008604F6 /* _Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Mother.m; sourceTree = "<group>"; };
-		4EC219D7194D6139003E5768 /* HMIntroOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroOneViewController.h; sourceTree = "<group>"; };
-		4EC219D8194D6139003E5768 /* HMIntroOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroOneViewController.m; sourceTree = "<group>"; };
-		4EC219DE194D6199003E5768 /* HMIntroTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroTwoViewController.h; sourceTree = "<group>"; };
-		4EC219DF194D6199003E5768 /* HMIntroTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroTwoViewController.m; sourceTree = "<group>"; };
-		4EC219E1194D61A7003E5768 /* HMIntroThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroThreeViewController.h; sourceTree = "<group>"; };
-		4EC219E2194D61A7003E5768 /* HMIntroThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroThreeViewController.m; sourceTree = "<group>"; };
+		4EB3315B1957AFDF0041956D /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
+		4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
+		4EC219D7194D6139003E5768 /* HMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroViewController.h; sourceTree = "<group>"; };
+		4EC219D8194D6139003E5768 /* HMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroViewController.m; sourceTree = "<group>"; };
 		4ECFA2CF19117E6E00369396 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = "../../Highcharts-4.0.1/js"; sourceTree = "<group>"; };
 		4ECFA2E41913098A00369396 /* HMFoodEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodEventViewController.h; sourceTree = "<group>"; };
 		4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodEventViewController.m; sourceTree = "<group>"; };
@@ -297,6 +306,8 @@
 				4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */,
 				4EE6C9C71783B6D80021CD20 /* HMWeighInTrackerTableCell.h */,
 				4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */,
+				4EB3315B1957AFDF0041956D /* HMTabBarViewController.h */,
+				4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */,
 			);
 			path = HealthyMama;
 			sourceTree = "<group>";
@@ -437,12 +448,16 @@
 		4EC219DA194D614C003E5768 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
-				4EC219D7194D6139003E5768 /* HMIntroOneViewController.h */,
-				4EC219D8194D6139003E5768 /* HMIntroOneViewController.m */,
-				4EC219DE194D6199003E5768 /* HMIntroTwoViewController.h */,
-				4EC219DF194D6199003E5768 /* HMIntroTwoViewController.m */,
-				4EC219E1194D61A7003E5768 /* HMIntroThreeViewController.h */,
-				4EC219E2194D61A7003E5768 /* HMIntroThreeViewController.m */,
+				4EC219D7194D6139003E5768 /* HMIntroViewController.h */,
+				4EC219D8194D6139003E5768 /* HMIntroViewController.m */,
+				4E0ECA7B1957B9E200D879B8 /* HMIntroOneViewController.h */,
+				4E0ECA7C1957B9E200D879B8 /* HMIntroOneViewController.m */,
+				4E0ECA7E1957B9F800D879B8 /* HMIntroTwoViewController.h */,
+				4E0ECA7F1957B9F800D879B8 /* HMIntroTwoViewController.m */,
+				4E0ECA811957BA0400D879B8 /* HMIntroThreeViewController.h */,
+				4E0ECA821957BA0400D879B8 /* HMIntroThreeViewController.m */,
+				4E0ECA841957BA1200D879B8 /* HMIntroFourViewController.h */,
+				4E0ECA851957BA1200D879B8 /* HMIntroFourViewController.m */,
 			);
 			name = Introduction;
 			sourceTree = "<group>";
@@ -651,9 +666,12 @@
 				4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */,
 				4E165B4F193C33980083AF45 /* _CalorieRequirement.m in Sources */,
 				4E165B50193C33980083AF45 /* CalorieRequirement.m in Sources */,
-				4EC219D9194D6139003E5768 /* HMIntroOneViewController.m in Sources */,
-				4EC219E0194D6199003E5768 /* HMIntroTwoViewController.m in Sources */,
-				4EC219E3194D61A7003E5768 /* HMIntroThreeViewController.m in Sources */,
+				4EC219D9194D6139003E5768 /* HMIntroViewController.m in Sources */,
+				4EB3315D1957AFDF0041956D /* HMTabBarViewController.m in Sources */,
+				4E0ECA7D1957B9E200D879B8 /* HMIntroOneViewController.m in Sources */,
+				4E0ECA801957B9F800D879B8 /* HMIntroTwoViewController.m in Sources */,
+				4E0ECA831957BA0400D879B8 /* HMIntroThreeViewController.m in Sources */,
+				4E0ECA861957BA1200D879B8 /* HMIntroFourViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  HMIntroTwoViewController.h
+//  HMTabBarViewController.h
 //  HealthyMama
 //
 //  Created by Pieter de Zwart on 6/22/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMIntroTwoViewController : UIViewController
+@interface HMTabBarViewController : UITabBarController
 
 @end

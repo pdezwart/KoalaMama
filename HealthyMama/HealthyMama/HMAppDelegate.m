@@ -32,7 +32,7 @@
     }
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HealthyMamaDB.sqlite"];
-
+    
     return YES;
 }
 
