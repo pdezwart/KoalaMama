@@ -10,7 +10,7 @@
 
 @interface HMIntroViewController : UIViewController <UIPageViewControllerDataSource>
 
-@property (assign, nonatomic) NSInteger index;
+@property int index;
 @property (strong, nonatomic) UIPageViewController *pageController;
 
 @end

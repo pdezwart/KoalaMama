@@ -12,6 +12,8 @@
 #import "HMIntroThreeViewController.h"
 #import "HMIntroFourViewController.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 @interface HMIntroViewController ()
 
 
@@ -37,13 +39,11 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
-    self.index = 0;
-    
-    HMIntroOneViewController *initialViewController = [self viewControllerAtIndex:0];
+    HMIntroBaseViewController *initialViewController = [self viewControllerAtIndex:0];
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
-    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self addChildViewController:self.pageController];
     [[self view] addSubview:[self.pageController view]];
@@ -51,39 +51,39 @@
 }
 
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    
-    index--;
+- (HMIntroBaseViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(HMIntroBaseViewController *)viewController {
 
-    if (index < 0) {
+    int previousIndex = viewController.index - 1;
+
+    if (previousIndex < 0) {
         return nil;
     }
     
+    NSLog(@"Current: %d, previous: %d", viewController.index, previousIndex);
     
-    return [self viewControllerAtIndex:index];
-    
+    return [self viewControllerAtIndex:previousIndex];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+- (HMIntroBaseViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(HMIntroBaseViewController *)viewController {
     
+    int nextIndex = viewController.index + 1;
     
-    index++;
-    
-    if (index >= 4) {
+    if (nextIndex > 3) {
         return nil;
     }
     
-    return [self viewControllerAtIndex:index];
-    
+    NSLog(@"Current: %d, next: %d", viewController.index, nextIndex);
+
+    return [self viewControllerAtIndex:nextIndex];
 }
 
-- (UIViewController *)viewControllerAtIndex:(NSUInteger)index {
-    
-    UIViewController *childViewController;
+- (HMIntroBaseViewController *)viewControllerAtIndex:(NSUInteger)controllerIndex {
+
+    HMIntroBaseViewController *childViewController;
     
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"iPhoneStoryboard" bundle:nil];
 
-    switch (index) {
+    switch (controllerIndex) {
         case 0:
             childViewController = [board instantiateViewControllerWithIdentifier:@"HMIntroOneViewController"];
             break;
@@ -97,11 +97,8 @@
             childViewController = [board instantiateViewControllerWithIdentifier:@"HMIntroFourViewController"];
             break;
     }
-
-    self.index = index;
     
     return childViewController;
-    
 }
 
 @end

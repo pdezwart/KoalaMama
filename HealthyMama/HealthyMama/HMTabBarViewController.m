@@ -29,7 +29,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhoneStoryboard" bundle:nil];
         HMIntroViewController *intro = [storyboard instantiateViewControllerWithIdentifier:@"HMIntroViewController"];
         [intro setModalPresentationStyle:UIModalPresentationFullScreen];
-        [self presentModalViewController:intro animated:YES];
+        [self presentViewController:intro animated:YES completion:nil];
         
         NSLog(@"Loading intro");
     }

@@ -7,6 +7,7 @@
 //
 
 #import "HMAppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation HMAppDelegate
 
@@ -14,7 +15,7 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(void)applicationDidFinishLaunching:(UIApplication *)application
 {
     // Attempt to pre-load data if there is none:
     NSArray *paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
@@ -33,7 +34,9 @@
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HealthyMamaDB.sqlite"];
     
-    return YES;
+    // Setup Crashlytics
+    // Only include in release mode
+    // [Crashlytics startWithAPIKey:@"e90b96e538046fef4eb9a54ab15156968bee5389"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

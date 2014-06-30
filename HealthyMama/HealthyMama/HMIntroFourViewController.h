@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMIntroBaseViewController.h"
 
-@interface HMIntroFourViewController : UIViewController
+
+@interface HMIntroFourViewController : HMIntroBaseViewController
 
 @end

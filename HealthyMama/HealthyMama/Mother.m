@@ -85,9 +85,9 @@
     
     NSString *ret = @"";
     if (weeks > 0) {
-        ret = [ret stringByAppendingFormat:@"%d weeks and ", weeks];
+        ret = [ret stringByAppendingFormat:@"%ld weeks and ", (long)weeks];
     }
-    ret = [[ret stringByAppendingFormat:@"%d", days] stringByAppendingString:@" days"];
+    ret = [[ret stringByAppendingFormat:@"%ld", (long)days] stringByAppendingString:@" days"];
     
     return ret;
 }
@@ -114,7 +114,7 @@
 }
 
 - (void) generateHighWeightGraphPoints {
-    NSNumber *age = [self age];
+    /*
     double hbValue = 655.1
     + (9.563 * [self.metricPrePregnancyWeight doubleValue])
     + (1.850 * [self.metricHeight doubleValue])
@@ -123,7 +123,7 @@
     hbValue *= DEFAULT_ACTIVITY_LEVEL;
     
     NSArray *caloriesPerWeek;
-    
+    */
 }
 
 - (int) getWeightGain

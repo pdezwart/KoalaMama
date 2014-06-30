@@ -10,7 +10,6 @@
 
 @interface HMSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextInputDelegate, UIActionSheetDelegate>
 
-- (IBAction)measurementSystemChanged:(id)sender;
 - (IBAction)closeModalWindow:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *measurementSystemController;
