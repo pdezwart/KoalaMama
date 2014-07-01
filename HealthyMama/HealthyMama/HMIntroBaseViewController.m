@@ -28,8 +28,6 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"My class: %@ and index: %d", NSStringFromClass([self class]), self.index);
-    
     // Do any additional setup after loading the view.
 }
 

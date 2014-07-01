@@ -63,6 +63,7 @@
         // Figure out when 25 years ago was:
         NSTimeInterval defaultAge = -1 * YEAR_IN_SECONDS * DEFAULT_AGE;
         mother.dateOfBirth = [NSDate dateWithTimeIntervalSinceNow:defaultAge];
+        NSLog(@"date of birth: %@", mother.dateOfBirth);
     }
     return mother;
 }
@@ -128,8 +129,11 @@
 
 - (int) getWeightGain
 {
-    
     WeighIn* last = [WeighIn findFirstOrderedByAttribute:@"time" ascending:NO];
+    
+    if (last.imperialWeightValue == 0) {
+        return 0;
+    }
     
     return last.imperialWeightValue - self.imperialPrePregnancyWeightValue;
 }

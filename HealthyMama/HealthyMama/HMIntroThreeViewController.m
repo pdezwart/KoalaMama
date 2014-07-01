@@ -12,6 +12,9 @@
 
 @end
 
+// Intro Three
+// Ask for birthday
+
 @implementation HMIntroThreeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -25,12 +28,19 @@
 {
     [super viewDidLoad];
     self.index = 2;
+    
+    Mother* mother = [Mother getMother];
+    NSLog(@"**** Date of birth: %@", mother.dateOfBirth);
+    [self.birthdayDatePicker setDate:mother.dateOfBirth];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    Mother* mother = [Mother getMother];
+    
+    mother.dateOfBirth = [self.birthdayDatePicker date];
+    
+    [mother save];
 }
 
 @end

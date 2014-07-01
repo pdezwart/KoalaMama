@@ -12,4 +12,6 @@
 
 @interface HMIntroTwoViewController : HMIntroBaseViewController
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *dueDateDatePicker;
+
 @end

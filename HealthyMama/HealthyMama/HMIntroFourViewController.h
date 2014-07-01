@@ -10,6 +10,10 @@
 #import "HMIntroBaseViewController.h"
 
 
-@interface HMIntroFourViewController : HMIntroBaseViewController
+@interface HMIntroFourViewController : HMIntroBaseViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+- (IBAction)buttonCompletePushed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *heightPicker;
+@property (weak, nonatomic) IBOutlet UITextField *prePregnancyWeightInput;
 
 @end

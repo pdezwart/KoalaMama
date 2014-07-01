@@ -11,5 +11,6 @@
 
 
 @interface HMIntroThreeViewController : HMIntroBaseViewController
+@property (weak, nonatomic) IBOutlet UIDatePicker *birthdayDatePicker;
 
 @end

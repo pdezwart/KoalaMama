@@ -8,9 +8,13 @@
 
 #import "HMIntroTwoViewController.h"
 
+
 @interface HMIntroTwoViewController ()
 
 @end
+
+// Intro Two
+// Ask for due date
 
 @implementation HMIntroTwoViewController
 
@@ -25,12 +29,20 @@
 {
     [super viewDidLoad];
     self.index = 1;
+    
+    Mother* mother = [Mother getMother];
+    [self.dueDateDatePicker setDate:mother.estimatedDueDate];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidDisappear:animated];
+    
+    Mother* mother = [Mother getMother];
+    
+    mother.dateOfBirth = [self.dueDateDatePicker date];
+    
+    [mother save];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mother.h"
 
 @interface HMIntroBaseViewController : UIViewController
 

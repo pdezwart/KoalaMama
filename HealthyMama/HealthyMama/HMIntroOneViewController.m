@@ -12,6 +12,9 @@
 
 @end
 
+// Intro One
+// Basic text information
+
 @implementation HMIntroOneViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,10 +30,5 @@
     self.index = 0;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

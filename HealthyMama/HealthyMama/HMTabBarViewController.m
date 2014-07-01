@@ -31,7 +31,6 @@
         [intro setModalPresentationStyle:UIModalPresentationFullScreen];
         [self presentViewController:intro animated:YES completion:nil];
         
-        NSLog(@"Loading intro");
     }
 
     [super viewDidAppear:animated];
