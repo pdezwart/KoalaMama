@@ -30,5 +30,12 @@
     self.index = 0;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Intro_One"];
+}
+
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "HMWeightTrackerController.h"
+#import "Flurry.h"
+
 
 @interface HMWeightTrackerController ()
 
@@ -25,6 +27,8 @@
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [Flurry logEvent:@"Page_WeighTracker"];
+
     self.tableData = [WeighIn getWeighIns];
     [self.tableView reloadData];
     self.chartData = [WeighIn getWeighInsAsJson];

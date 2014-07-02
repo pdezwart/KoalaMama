@@ -10,6 +10,7 @@
 #import "FoodJournal.h"
 #import "WeighIn.h"
 #import "CalorieRequirement.h"
+#import "Flurry.h"
 
 @interface HMMainViewController ()
 
@@ -29,6 +30,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
  
+    [Flurry logEvent:@"Page_Main"];
+    
     [super viewDidAppear:animated];
 	// Do any additional setup after loading the view.
     

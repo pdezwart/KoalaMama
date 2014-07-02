@@ -30,8 +30,15 @@
     self.index = 2;
     
     Mother* mother = [Mother getMother];
-    NSLog(@"**** Date of birth: %@", mother.dateOfBirth);
+
     [self.birthdayDatePicker setDate:mother.dateOfBirth];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Intro_Three"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

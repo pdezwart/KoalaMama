@@ -80,6 +80,12 @@
 		4ECFA2D019117E6E00369396 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4ECFA2CF19117E6E00369396 /* js */; };
 		4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */; };
 		4EDF923D19621E1F002BF099 /* HMIntroBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF923C19621E1F002BF099 /* HMIntroBaseViewController.m */; };
+		4EDF92411963C5C9002BF099 /* libFlurry_5.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF92401963C5C9002BF099 /* libFlurry_5.1.0.a */; };
+		4EDF92441963C88D002BF099 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF92431963C88D002BF099 /* UUID.m */; };
+		4EDF924E1963CA17002BF099 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF924C1963CA17002BF099 /* SSKeychain.m */; };
+		4EDF924F1963CA17002BF099 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 4EDF924D1963CA17002BF099 /* VERSION */; };
+		4EDF92511963CBE8002BF099 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF92501963CBE8002BF099 /* Security.framework */; };
+		4EDF92531963D115002BF099 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDF92521963D115002BF099 /* SystemConfiguration.framework */; };
 		4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */; };
 		4EE6C9C91783B6D80021CD20 /* HMWeighInTrackerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */; };
 /* End PBXBuildFile section */
@@ -221,6 +227,15 @@
 		4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodEventViewController.m; sourceTree = "<group>"; };
 		4EDF923B19621E1F002BF099 /* HMIntroBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroBaseViewController.h; sourceTree = "<group>"; };
 		4EDF923C19621E1F002BF099 /* HMIntroBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroBaseViewController.m; sourceTree = "<group>"; };
+		4EDF923F1963C5C9002BF099 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		4EDF92401963C5C9002BF099 /* libFlurry_5.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.1.0.a; sourceTree = "<group>"; };
+		4EDF92421963C88D002BF099 /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
+		4EDF92431963C88D002BF099 /* UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
+		4EDF924B1963CA17002BF099 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		4EDF924C1963CA17002BF099 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		4EDF924D1963CA17002BF099 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		4EDF92501963CBE8002BF099 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4EDF92521963D115002BF099 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4EE6C9C51783B67B0021CD20 /* WeighInTrackerTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeighInTrackerTableCellView.xib; sourceTree = "<group>"; };
 		4EE6C9C71783B6D80021CD20 /* HMWeighInTrackerTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeighInTrackerTableCell.h; sourceTree = "<group>"; };
 		4EE6C9C81783B6D80021CD20 /* HMWeighInTrackerTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeighInTrackerTableCell.m; sourceTree = "<group>"; };
@@ -231,8 +246,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EDF92531963D115002BF099 /* SystemConfiguration.framework in Frameworks */,
+				4EDF92511963CBE8002BF099 /* Security.framework in Frameworks */,
 				4E5FDBB71753357800A27A2A /* CoreData.framework in Frameworks */,
 				4E5FDBB11753357800A27A2A /* UIKit.framework in Frameworks */,
+				4EDF92411963C5C9002BF099 /* libFlurry_5.1.0.a in Frameworks */,
 				4E5FDBB31753357800A27A2A /* Foundation.framework in Frameworks */,
 				4E5FDBB51753357800A27A2A /* CoreGraphics.framework in Frameworks */,
 				4E633CE7195935DB00FE5A9D /* Crashlytics.framework in Frameworks */,
@@ -276,6 +294,8 @@
 		4E5FDBAF1753357800A27A2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EDF92521963D115002BF099 /* SystemConfiguration.framework */,
+				4EDF92501963CBE8002BF099 /* Security.framework */,
 				4E633CE6195935DB00FE5A9D /* Crashlytics.framework */,
 				4E5FDBB01753357800A27A2A /* UIKit.framework */,
 				4E5FDBB21753357800A27A2A /* Foundation.framework */,
@@ -289,12 +309,9 @@
 		4E5FDBB81753357800A27A2A /* HealthyMama */ = {
 			isa = PBXGroup;
 			children = (
-				4EC219DA194D614C003E5768 /* Introduction */,
-				4EC219E4194D61BC003E5768 /* MR_Models */,
-				4EC219E6194D624C003E5768 /* Data */,
-				4EC219E5194D61DE003E5768 /* Models */,
-				4E5FDBB91753357800A27A2A /* www */,
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
+				4EC219E5194D61DE003E5768 /* Models */,
+				4EC219DA194D614C003E5768 /* Introduction */,
 				4E5FDBC11753357800A27A2A /* HMAppDelegate.h */,
 				4E5FDBC21753357800A27A2A /* HMAppDelegate.m */,
 				4E77B7CA1754789D00F28E27 /* HMFoodJournalViewController.h */,
@@ -318,6 +335,11 @@
 				4EB3315B1957AFDF0041956D /* HMTabBarViewController.h */,
 				4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */,
 				4EB478CE19620FFF00DEB3DB /* Images.xcassets */,
+				4EDF923E1963C5C9002BF099 /* Flurry */,
+				4EDF92451963C9C3002BF099 /* SSKeyChain */,
+				4EC219E4194D61BC003E5768 /* MR_Models */,
+				4EC219E6194D624C003E5768 /* Data */,
+				4E5FDBB91753357800A27A2A /* www */,
 			);
 			path = HealthyMama;
 			sourceTree = "<group>";
@@ -500,6 +522,8 @@
 				4E2069C91931BC8A006C5825 /* FoodJournal.m */,
 				4E77B75517546E0F00F28E27 /* WeighIn.h */,
 				4E77B75617546E0F00F28E27 /* WeighIn.m */,
+				4EDF92421963C88D002BF099 /* UUID.h */,
+				4EDF92431963C88D002BF099 /* UUID.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -514,6 +538,25 @@
 				4E5FDBBB1753357800A27A2A /* InfoPlist.strings */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		4EDF923E1963C5C9002BF099 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				4EDF923F1963C5C9002BF099 /* Flurry.h */,
+				4EDF92401963C5C9002BF099 /* libFlurry_5.1.0.a */,
+			);
+			path = Flurry;
+			sourceTree = SOURCE_ROOT;
+		};
+		4EDF92451963C9C3002BF099 /* SSKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				4EDF924B1963CA17002BF099 /* SSKeychain.h */,
+				4EDF924C1963CA17002BF099 /* SSKeychain.m */,
+				4EDF924D1963CA17002BF099 /* VERSION */,
+			);
+			name = SSKeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +641,7 @@
 				4E02B61E176EBAA0000E902B /* CaloriesPerWeek.plist in Resources */,
 				4EE6C9C61783B67B0021CD20 /* WeighInTrackerTableCellView.xib in Resources */,
 				4ECFA2D019117E6E00369396 /* js in Resources */,
+				4EDF924F1963CA17002BF099 /* VERSION in Resources */,
 				4E2069DA19345495006C5825 /* FoodJournalTableCellView.xib in Resources */,
 				4E165B5F193C39DF0083AF45 /* HMDataLoader.sqlite in Resources */,
 			);
@@ -648,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EDF92441963C88D002BF099 /* UUID.m in Sources */,
 				4E5FDBBF1753357800A27A2A /* main.m in Sources */,
 				4E5FDBC31753357800A27A2A /* HMAppDelegate.m in Sources */,
 				4E5FDBCC1753357900A27A2A /* HealthyMama.xcdatamodeld in Sources */,
@@ -670,6 +715,7 @@
 				4E5FDDE717533E2500A27A2A /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				4E5FDDE817533E2500A27A2A /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				4E5FDDE917533E2500A27A2A /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				4EDF924E1963CA17002BF099 /* SSKeychain.m in Sources */,
 				4E5FDDEA17533E2500A27A2A /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				4E5FDDEB17533E2500A27A2A /* NSPersistentStore+MagicalRecord.m in Sources */,
 				4E5FDDEC17533E2500A27A2A /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
@@ -814,6 +860,7 @@
 					"\"$(SRCROOT)/MagicalRecord-2.1/Project Files/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
 					/Users/pdezwart/Downloads/CorePlot_1.2/Binaries/iOS,
 					"\"$(SRCROOT)/../../CorePlot_1.5.1/Binaries/iOS\"",
+					"$(PROJECT_DIR)/Flurry",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -842,6 +889,7 @@
 					"\"$(SRCROOT)/MagicalRecord-2.1/Project Files/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
 					/Users/pdezwart/Downloads/CorePlot_1.2/Binaries/iOS,
 					"\"$(SRCROOT)/../../CorePlot_1.5.1/Binaries/iOS\"",
+					"$(PROJECT_DIR)/Flurry",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

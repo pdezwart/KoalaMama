@@ -7,6 +7,7 @@
 //
 
 #import "HMWeighInViewController.h"
+#import "Flurry.h"
 
 @interface HMWeighInViewController ()
 
@@ -14,11 +15,11 @@
 
 @implementation HMWeighInViewController
 
-
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Page_WeighIn"];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -33,11 +34,15 @@
     event.mother = [Mother getMother];
     event.time = [self.weighInDatePicker date];
     [event save];
+
+    [Flurry logEvent:@"Action_Settings_Save"];
     
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)cancelButtonClicked:(id)sender {
+    [Flurry logEvent:@"Action_Settings_Cancel"];
+    
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 @end

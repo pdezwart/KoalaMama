@@ -44,6 +44,13 @@
     self.prePregnancyWeightInput.text = [NSString stringWithFormat:@"%@", mother.imperialPrePregnancyWeight];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Intro_Four"];
+}
+
 - (IBAction)buttonCompletePushed:(id)sender {
     
     // Save height and weight:

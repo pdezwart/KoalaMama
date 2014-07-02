@@ -34,6 +34,13 @@
     [self.dueDateDatePicker setDate:mother.estimatedDueDate];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Intro_Two"];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];

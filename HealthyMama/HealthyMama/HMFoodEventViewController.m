@@ -7,6 +7,8 @@
 //
 
 #import "HMFoodEventViewController.h"
+#import "Flurry.h"
+
 
 @interface HMFoodEventViewController ()
 
@@ -49,6 +51,13 @@
     self.foodDate.tag = INPUT_DATE;
     self.foodName.tag = INPUT_FOOD;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Page_FoodEvent"];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -178,10 +187,14 @@
     fj.time = self.date;
     [fj save];
     
+    [Flurry logEvent:@"Action_FoodEvent_Save"];
+    
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)cancelButtonClicked:(id)sender {
+    [Flurry logEvent:@"Action_FoodEvent_Cancel"];
+
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 @end

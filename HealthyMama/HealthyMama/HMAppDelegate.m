@@ -7,6 +7,7 @@
 //
 
 #import "HMAppDelegate.h"
+#import "Flurry.h"
 #import <Crashlytics/Crashlytics.h>
 
 @implementation HMAppDelegate
@@ -37,6 +38,12 @@
     // Setup Crashlytics
     // Only include in release mode
     // [Crashlytics startWithAPIKey:@"e90b96e538046fef4eb9a54ab15156968bee5389"];
+    
+    // Setup Flurry
+    [Flurry setCrashReportingEnabled:NO];
+    [Flurry startSession:@"7M6337DYY283SVNT33C4"];
+    
+    [Flurry logEvent:@"App_Loaded"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

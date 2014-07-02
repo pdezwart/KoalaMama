@@ -8,6 +8,7 @@
 
 #import "HMSettingsViewController.h"
 #import "Mother.h"
+#import "Flurry.h"
 
 @interface HMSettingsViewController ()
 
@@ -24,6 +25,8 @@
 {
     [super viewDidAppear:animated];
 
+    [Flurry logEvent:@"Page_Settings"];
+    
     Mother *mother = [Mother getMother];
 
     // Load mom's info:

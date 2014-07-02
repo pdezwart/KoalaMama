@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Mother.h"
+#import "Flurry.h"
 
 @interface HMIntroBaseViewController : UIViewController
 

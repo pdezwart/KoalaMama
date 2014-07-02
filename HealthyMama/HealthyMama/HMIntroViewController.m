@@ -59,8 +59,6 @@
         return nil;
     }
     
-    NSLog(@"Current: %d, previous: %d", viewController.index, previousIndex);
-    
     return [self viewControllerAtIndex:previousIndex];
 }
 
@@ -72,8 +70,6 @@
         return nil;
     }
     
-    NSLog(@"Current: %d, next: %d", viewController.index, nextIndex);
-
     return [self viewControllerAtIndex:nextIndex];
 }
 

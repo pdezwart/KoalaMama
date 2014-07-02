@@ -7,6 +7,7 @@
 //
 
 #import "HMFoodJournalViewController.h"
+#import "Flurry.h"
 
 @interface HMFoodJournalViewController ()
 
@@ -38,6 +39,10 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
+    [Flurry logEvent:@"Page_FoodJournal"];
+
     // Get all of the existing journal entries
     self.data = [FoodJournal getJournal];
     
