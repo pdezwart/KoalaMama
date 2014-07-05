@@ -103,25 +103,22 @@
 
 + (NSNumber *) getCalorieIntake
 {
-    NSDate *now = [[NSDate alloc] init];
-    
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit ) fromDate:[NSDate date]];
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit ) fromDate:[NSDate date]];
 
     // Create midnight of this morning
     [components setHour:0];
     [components setMinute:0];
     [components setSecond:0];
     
-    NSDate *morning = [calendar dateByAddingComponents:components toDate:now options:0];
+    NSDate *morning = [calendar dateFromComponents:components];
     
     // Create midnight of this evening
     [components setHour:23];
     [components setMinute:59];
     [components setSecond:59];
     
-    NSDate *night = [calendar dateByAddingComponents:components toDate:now options:0];
-    
+    NSDate *night = [calendar dateFromComponents:components];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(time >= %@) AND (time <= %@)", morning, night];
 
     NSArray *todaysMeals = [FoodJournal findAllWithPredicate:predicate];
