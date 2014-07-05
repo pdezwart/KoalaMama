@@ -24,15 +24,17 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    // Show the tutorial for new users that have not use the app yet
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]) {
-        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhoneStoryboard" bundle:nil];
         HMIntroViewController *intro = [storyboard instantiateViewControllerWithIdentifier:@"HMIntroViewController"];
         [intro setModalPresentationStyle:UIModalPresentationFullScreen];
         [self presentViewController:intro animated:YES completion:nil];
         
+        return;
     }
 
+    // Do the normal stuff
     [super viewDidAppear:animated];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "HMFoodJournalViewController.h"
+#import "HMFoodEventViewController.h"
 #import "Flurry.h"
 
 @interface HMFoodJournalViewController ()
@@ -21,6 +22,7 @@
 
 @implementation HMFoodJournalViewController
 
+@synthesize noDataOverlayView;
 @synthesize chartData;
 @synthesize tableSections;
 @synthesize tableSectionDates;
@@ -44,7 +46,60 @@
     [Flurry logEvent:@"Page_FoodJournal"];
 
     // Get all of the existing journal entries
-    self.data = [FoodJournal getJournal];
+    self.tableData = [FoodJournal getJournal];
+    
+    // If there are no Weigh Ins yet, show the modal window indicating that they should add some
+    if ([self.tableData count] == 0 && !noDataOverlayView) {
+        // Get the window and status bar size:
+        CGRect viewPaneFrame = [[UIScreen mainScreen] bounds];
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        
+        // Put an overlay over everything, minus the status bar because thats not cool...
+        noDataOverlayView = [[UIView alloc] initWithFrame:CGRectMake(
+                                                                     0,
+                                                                     statusBarFrame.size.height,
+                                                                     viewPaneFrame.size.width,
+                                                                     viewPaneFrame.size.height - statusBarFrame.size.height)];
+        
+        // Add the alpha view:
+        UIView *alphaView = [[UIView alloc] initWithFrame:noDataOverlayView.frame];
+        [alphaView setBackgroundColor:[UIColor blackColor]];
+        [alphaView setAlpha:0.5];
+        
+        
+        // Put this in the middle with padding on the right and left
+        CGRect titleViewFrame = CGRectMake(40, 130, viewPaneFrame.size.width - 80, 30);
+        UITextView *titleView = [[UITextView alloc] initWithFrame:titleViewFrame];
+        
+        [titleView setText:@"Track Your Calorie Intake!"];
+        [titleView setBackgroundColor:UIColorFromString(@"rgba(255,234,189,1)")];
+        titleView.textAlignment = NSTextAlignmentCenter;
+        
+        CGRect bodyViewFrame = CGRectMake(40, 160, viewPaneFrame.size.width - 80, 100);
+        UITextView *bodyView = [[UITextView alloc] initWithFrame:bodyViewFrame];
+        
+        [bodyView setText:@"To use this feature, add each serving and its associated calories."];
+        [bodyView setBackgroundColor:[UIColor whiteColor]];
+        bodyView.textAlignment = NSTextAlignmentCenter;
+        
+        UIButton *addWeighInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        //[addWeighInButton addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchUpInside];
+        addWeighInButton.frame = CGRectMake(60, 220, viewPaneFrame.size.width - 120, 30);
+        [addWeighInButton setTitle:@"Add A Meal" forState:UIControlStateNormal];
+        [addWeighInButton addTarget:self action:@selector(addFoodEvent) forControlEvents:UIControlEventTouchUpInside];
+        
+        [noDataOverlayView addSubview:alphaView];
+        [noDataOverlayView addSubview:titleView];
+        [noDataOverlayView addSubview:bodyView];
+        [noDataOverlayView addSubview:addWeighInButton];
+        
+        [self.view addSubview:noDataOverlayView];
+        
+        return;
+    } else if ([self.tableData count] > 0 && noDataOverlayView) {
+        // We need to remove the old No Data view so people can see their stuff
+        [noDataOverlayView removeFromSuperview];
+    }
     
     // Build the table section headers
     [self buildTableSectionHeaderData];
@@ -81,14 +136,21 @@
 
 }
 
+- (void)addFoodEvent
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhoneStoryboard" bundle:nil];
+    HMFoodEventViewController *addFoodEvent = [storyboard instantiateViewControllerWithIdentifier:@"HMFoodEventViewController"];
+    [addFoodEvent setModalPresentationStyle:UIModalPresentationFullScreen];
+    [self presentViewController:addFoodEvent animated:YES completion:nil];
+}
+
 
 - (void)buildTableSectionHeaderData
 {
     // Build the table headers
     self.tableSections = [NSMutableDictionary dictionary];
-    for (FoodJournal *event in self.data) {
+    for (FoodJournal *event in self.tableData) {
         NSDate *key = [event getDate];
-        NSLog(@"%@", key);
         NSMutableArray *eventsOfDay = [self.tableSections objectForKey:key];
         if (eventsOfDay == nil) {
             eventsOfDay = [NSMutableArray array];
@@ -131,7 +193,7 @@
         cell = [topLevelObjects objectAtIndex:0];
     }
     
-    FoodJournal *event = self.data[indexPath.row];
+    FoodJournal *event = self.tableData[indexPath.row];
     
     // Configure the cell.
     cell.label.text = event.label;

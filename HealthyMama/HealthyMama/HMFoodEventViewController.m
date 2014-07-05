@@ -92,12 +92,24 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    autocompleteTableView.hidden = NO;
+    BOOL allowCharacter = YES;
     
-    NSString *substring = [NSString stringWithString:textField.text];
-    substring = [substring stringByReplacingCharactersInRange:range withString:string];
-    [self searchAutocompleteEntriesWithSubstring:substring];
-    return YES;
+    if (textField == self.foodCalories) {
+        // Only allow the character if the result of the field results in a numeric string
+        NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        NSString *expression = @"^[0-9]+$";
+        
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:nil];
+        allowCharacter = [regex numberOfMatchesInString:newString options:0 range:NSMakeRange(0, [newString length])];
+    } else if (textField == self.foodName) {
+        autocompleteTableView.hidden = NO;
+        
+        NSString *substring = [NSString stringWithString:textField.text];
+        substring = [substring stringByReplacingCharactersInRange:range withString:string];
+        [self searchAutocompleteEntriesWithSubstring:substring];
+    }
+
+    return allowCharacter;
 }
 
 - (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
@@ -178,8 +190,19 @@
     [self dismissKeyboard];
 }
 
-
 - (IBAction)saveButtonClicked:(id)sender {
+    
+    // Make sure we have at least one digit
+    if ([[self.foodCalories text] length] < 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing Calories" message:@"Please a calorie value." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+        [alert show];
+        return;
+    } else if ([[self.foodName text] length] < 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing Food Name" message:@"Please a food." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+        [alert show];
+        return;
+        
+    }
     
     FoodJournal *fj = [FoodJournal factory];
     fj.calories = [NSNumber numberWithInt:[self.foodCalories.text integerValue]];

@@ -76,8 +76,7 @@
     
     // Save the person's height:
     mother.imperialHeight = [NSNumber numberWithInt:(([self.heightPicker selectedRowInComponent:0] + 4) * 12 + (int)[self.heightPicker selectedRowInComponent:1])];
-    NSLog(@"Saving mother... %@", mother);
-    
+
     // Call save
     [mother save];
 }
