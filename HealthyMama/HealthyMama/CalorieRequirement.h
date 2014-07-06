@@ -4,6 +4,6 @@
 
 // + (void) saveWithBlock:(void(^)(NSManagedObjectContext *localContext))block completion:(MRSaveCompletionHandler)completion;
 
-+ (int) getRequirementsForAge:(int) age forActivityLevel:(int) activityLevel;
++ (int) getRequirementsForAge:(int)age forActivityLevel:(int)activityLevel forWeeksIntoPregnancy:(int)weeksIntoPregnancy;
 
 @end

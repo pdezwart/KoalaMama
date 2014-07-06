@@ -10,6 +10,7 @@
 
 + (Mother *)getMother;
 - (void) save;
+- (int) weeksIntoPregnancy;
 - (NSString * )timeLeftInPregnancy;
 - (BOOL)isMetric;
 - (void)makeMetric;
