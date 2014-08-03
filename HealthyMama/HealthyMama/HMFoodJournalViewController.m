@@ -131,7 +131,7 @@
     NSString *htmlFooterFile = [[NSBundle mainBundle] pathForResource:@"chartViewFooter" ofType:@"html" inDirectory:@"js"];
     NSString *htmlFooterString = [NSString stringWithContentsOfFile:htmlFooterFile encoding:NSUTF8StringEncoding error:nil];
     htmlString = [htmlString stringByAppendingString:htmlFooterString];
-    
+    NSLog(@"%@", jsonString);
     [self.chartView loadHTMLString:htmlString baseURL:baseURL];
 
 }
