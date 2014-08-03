@@ -21,6 +21,11 @@
 @synthesize estimatedDueDate;
 @synthesize dateOfBirth;
 
+- (void) selectionDidChange:(id<UITextInput>)textInput {}
+- (void) selectionWillChange:(id<UITextInput>)textInput {}
+- (void) textDidChange:(id<UITextInput>)textInput {}
+- (void) textWillChange:(id<UITextInput>)textInput {}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
