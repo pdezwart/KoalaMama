@@ -35,7 +35,7 @@
         NSCalendar* calendar = [NSCalendar currentCalendar];
         NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:obj.time];
         
-        [dataPoints addObject:[NSString stringWithFormat:@"[Date.UTC(%d, %d, %d), %@]", [components year], [components month], [components day], obj.imperialWeight]];
+        [dataPoints addObject:[NSString stringWithFormat:@"[Date.UTC(%d, %d, %d), %@]", [components year], [components month] - 1, [components day], obj.imperialWeight]];
     }
     
     return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
