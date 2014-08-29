@@ -96,8 +96,7 @@
     NSString *htmlHeaderFile = [[NSBundle mainBundle] pathForResource:@"chartViewHeader" ofType:@"html" inDirectory:@"js"];
     NSString *htmlString = [NSString stringWithContentsOfFile:htmlHeaderFile encoding:NSUTF8StringEncoding error:nil];
     
-    // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
-    NSString *jsonString = [NSString stringWithFormat:@"[{\"data\": %@, \"name\": \"Weight\"}]", self.chartData];
+    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = \"{value}lbs\"; var series = [{\"data\": %@, \"name\": \"Weight\"}];", self.chartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     

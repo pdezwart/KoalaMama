@@ -1,5 +1,44 @@
-        });
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: '',
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: {
+                second: '%H:%M:%S',
+                minute: '%H:%M',
+                hour: '%H:%M',
+                day: '%b %e',
+                week: '%b %e',
+                month: '%b \'%y',
+                year: '%Y'
+            },
+            labels: {
+                style: {
+                    fontSize: '30px'
+                },
+                y: 35
+            },
+            tickPixelInterval: 150
+        },
+        yAxis: {
+            title: '',
+            labels: {
+                style: {
+                    fontSize: '30px'
+                },
+                format: yAxisFormat
+            },
+            tickPixelInterval: 250
+        },
+        legend: { enabled: false },
+        credits: { enabled: false },
+        exporting: { enabled: false },
+        series: series
     });
+});
 </script>
 </body>
 </html>

@@ -8,6 +8,7 @@
 
 #import "HMAppDelegate.h"
 #import "Flurry.h"
+#import "HMTheme.h"
 #import <Crashlytics/Crashlytics.h>
 
 @implementation HMAppDelegate
@@ -33,6 +34,10 @@
         }
     }
     
+    // Setup themeing:
+    [HMTheme applyTheme];
+    
+    // Set up the database:
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HealthyMamaDB.sqlite"];
     
     // Setup Crashlytics

@@ -73,6 +73,7 @@
 		4E77B7C9175477B100F28E27 /* HMWeightTrackerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7C8175477B100F28E27 /* HMWeightTrackerController.m */; };
 		4E77B7CC1754789D00F28E27 /* HMFoodJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */; };
 		4E77B7CF1754834900F28E27 /* _WeighIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77B7CE1754834900F28E27 /* _WeighIn.m */; };
+		4E8F1DD6198E036D002DE779 /* HMTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8F1DD5198E036D002DE779 /* HMTheme.m */; };
 		4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EADD9C41753FF2F008604F6 /* _Mother.m */; };
 		4EB3315D1957AFDF0041956D /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */; };
 		4EB478CF19620FFF00DEB3DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB478CE19620FFF00DEB3DB /* Images.xcassets */; };
@@ -215,6 +216,8 @@
 		4E77B7CB1754789D00F28E27 /* HMFoodJournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodJournalViewController.m; sourceTree = "<group>"; };
 		4E77B7CD1754834900F28E27 /* _WeighIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _WeighIn.h; sourceTree = "<group>"; };
 		4E77B7CE1754834900F28E27 /* _WeighIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WeighIn.m; sourceTree = "<group>"; };
+		4E8F1DD5198E036D002DE779 /* HMTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTheme.m; sourceTree = "<group>"; };
+		4E8F1DD7198E037B002DE779 /* HMTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTheme.h; sourceTree = "<group>"; };
 		4EADD9C31753FF2F008604F6 /* _Mother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Mother.h; sourceTree = "<group>"; };
 		4EADD9C41753FF2F008604F6 /* _Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Mother.m; sourceTree = "<group>"; };
 		4EB3315B1957AFDF0041956D /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
@@ -310,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
+				4E8F1DD5198E036D002DE779 /* HMTheme.m */,
+				4E8F1DD7198E037B002DE779 /* HMTheme.h */,
 				4EC219E5194D61DE003E5768 /* Models */,
 				4EC219DA194D614C003E5768 /* Introduction */,
 				4E5FDBC11753357800A27A2A /* HMAppDelegate.h */,
@@ -726,6 +731,7 @@
 				4E5FDDF117533E2500A27A2A /* MagicalRecord+Setup.m in Sources */,
 				4E5FDDF217533E2500A27A2A /* MagicalRecord+ShorthandSupport.m in Sources */,
 				4E5FDDF317533E2500A27A2A /* MagicalRecord.m in Sources */,
+				4E8F1DD6198E036D002DE779 /* HMTheme.m in Sources */,
 				4E5FDDF6175340A900A27A2A /* Mother.m in Sources */,
 				4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */,
 				4E77B75717546E0F00F28E27 /* WeighIn.m in Sources */,

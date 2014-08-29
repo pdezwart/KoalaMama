@@ -123,7 +123,7 @@
     
     
     // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
-    NSString *jsonString = [NSString stringWithFormat:@"[{\"data\": %@, \"name\": \"Calories\"}]", self.chartData];
+    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = \"{value}cal\"; var series = [{\"data\": %@, \"name\": \"Calories\"}];", self.chartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     
@@ -131,7 +131,7 @@
     NSString *htmlFooterFile = [[NSBundle mainBundle] pathForResource:@"chartViewFooter" ofType:@"html" inDirectory:@"js"];
     NSString *htmlFooterString = [NSString stringWithContentsOfFile:htmlFooterFile encoding:NSUTF8StringEncoding error:nil];
     htmlString = [htmlString stringByAppendingString:htmlFooterString];
-    NSLog(@"%@", jsonString);
+    NSLog(@"%@", htmlString);
     [self.chartView loadHTMLString:htmlString baseURL:baseURL];
 
 }
