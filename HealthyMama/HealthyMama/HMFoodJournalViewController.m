@@ -24,6 +24,8 @@
 
 @synthesize noDataOverlayView;
 @synthesize chartData;
+@synthesize minChartData;
+@synthesize maxChartData;
 @synthesize tableSections;
 @synthesize tableSectionDates;
 @synthesize tableSectionDateFormatter;
@@ -112,6 +114,8 @@
 - (void)loadChart
 {
     self.chartData = [FoodJournal getJournalAsJson];
+    self.minChartData = [FoodJournal getMinCalorieIntake];
+    self.maxChartData = [FoodJournal getMaxCalorieIntake];
     
     // Get the base URL for referential local loading
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
@@ -123,7 +127,7 @@
     
     
     // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
-    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = \"{value}cal\"; var series = [{\"data\": %@, \"name\": \"Calories\"}];", self.chartData];
+    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = \"{value}cal\"; var series = [{\"data\": %@, \"name\": \"Calories\"}, {\"data\": %@, \"name\":\"\"}, {\"data\": %@, \"name\":\"\"}];", self.chartData, self.minChartData, self.maxChartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     
