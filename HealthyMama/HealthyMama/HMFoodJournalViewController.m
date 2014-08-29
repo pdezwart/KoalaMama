@@ -127,7 +127,7 @@
     
     
     // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
-    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = \"{value}cal\"; var series = [{\"data\": %@, \"name\": \"Calories\", \"type\": \"column\"}, {\"data\": %@, \"name\":\"\"}, {\"data\": %@, \"name\":\"\"}];", self.chartData, self.minChartData, self.maxChartData];
+    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = '{value}cal'; var series = [{data: %@, name: 'Calories', type: 'column'}, {data: %@, name:''}, {data: %@, name:''}];", self.chartData, self.minChartData, self.maxChartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     

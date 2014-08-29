@@ -24,6 +24,8 @@
 @synthesize tableView;
 @synthesize noDataOverlayView;
 @synthesize chartData;
+@synthesize minChartData;
+@synthesize maxChartData;
 
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -34,6 +36,8 @@
     self.tableData = [WeighIn getWeighIns];
     [self.tableView reloadData];
     self.chartData = [WeighIn getWeighInsAsJson];
+    self.minChartData = [WeighIn getMinWeight];
+    self.maxChartData = [WeighIn getMaxWeight];
 
     // If there are no Weigh Ins yet, show the modal window indicating that they should add some
     if ([self.tableData count] == 0 && !noDataOverlayView) {
@@ -96,7 +100,7 @@
     NSString *htmlHeaderFile = [[NSBundle mainBundle] pathForResource:@"chartViewHeader" ofType:@"html" inDirectory:@"js"];
     NSString *htmlString = [NSString stringWithContentsOfFile:htmlHeaderFile encoding:NSUTF8StringEncoding error:nil];
     
-    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = \"{value}lbs\"; var series = [{\"data\": %@, \"name\": \"Weight\"}];", self.chartData];
+    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = '{value}lbs'; var series = [{data: %@, name: 'Weight'}, {data: %@, name:''}, {data: %@, name:''}];", self.chartData, self.minChartData, self.maxChartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     

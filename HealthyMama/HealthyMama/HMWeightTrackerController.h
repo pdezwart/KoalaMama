@@ -15,6 +15,8 @@
 @property (nonatomic, retain) NSMutableArray *data;
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSString *chartData;
+@property (nonatomic, retain) NSString *minChartData;
+@property (nonatomic, retain) NSString *maxChartData;
 @property (nonatomic, retain) UIView *noDataOverlayView;
 @property (weak, nonatomic) IBOutlet UIView *graphContainerView;
 @property (weak, nonatomic) IBOutlet UIWebView *chartView;

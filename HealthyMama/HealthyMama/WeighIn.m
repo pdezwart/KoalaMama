@@ -12,6 +12,63 @@
 
 @implementation WeighIn
 
+
+
++ (NSString *)getMinWeight
+{
+    NSArray *weighIns = [self getWeighIns:YES];
+    
+    // Fill in all of the days between the first and last day with the expected minimum calories
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *oneDay = [[NSDateComponents alloc] init];
+    [oneDay setDay: 1];
+    
+    WeighIn *startEvent = [weighIns objectAtIndex:0];
+    WeighIn *endEvent = [weighIns objectAtIndex:[weighIns count] - 1];
+    
+    NSDate *startDate = [startEvent getDate];
+    NSDate *endDate = [endEvent getDate];
+    
+    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
+    
+    for (NSDate *date = [startDate copy]; [date compare: endDate] <= 0; date = [calendar dateByAddingComponents:oneDay toDate:date options:0]) {
+        NSLog( @"%@ in [%@,%@]", date, startDate, endDate );
+        
+        NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+        
+        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:100]]];
+    }
+    
+    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
+}
+
++ (NSString *)getMaxWeight
+{
+    NSArray *weighIns = [self getWeighIns:YES];
+    
+    // Fill in all of the days between the first and last day with the expected minimum calories
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *oneDay = [[NSDateComponents alloc] init];
+    [oneDay setDay: 1];
+    
+    WeighIn *startEvent = [weighIns objectAtIndex:0];
+    WeighIn *endEvent = [weighIns objectAtIndex:[weighIns count] - 1];
+    
+    NSDate *startDate = [startEvent getDate];
+    NSDate *endDate = [endEvent getDate];
+    
+    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
+    
+    for (NSDate *date = [startDate copy]; [date compare: endDate] <= 0; date = [calendar dateByAddingComponents:oneDay toDate:date options:0]) {
+        NSLog( @"%@ in [%@,%@]", date, startDate, endDate );
+        
+        NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+        
+        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:150]]];
+    }
+    
+    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];}
+
 + (NSArray *)getWeighIns {
     return [WeighIn getWeighIns:NO];
     
@@ -61,6 +118,14 @@
     NSString *stringDate = [formatter stringFromDate:self.time];
     
     return stringDate;
+}
+
+- (NSDate *)getDate {
+    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:self.time];
+    
+    return [calendar dateFromComponents:components];
 }
 
 @end

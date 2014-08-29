@@ -18,6 +18,10 @@
 + (NSArray *) getWeighIns:(BOOL)ascending;
 + (NSString *) getWeighInsAsJson;
 
++ (NSString *) getMinWeight;
++ (NSString *) getMaxWeight;
+
 - (void) save;
 - (int) daysIntoPregnancy;
+- (NSDate *) getDate;
 @end
