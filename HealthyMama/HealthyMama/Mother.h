@@ -1,5 +1,8 @@
 #import "_Mother.h"
 
+// Based on popular 40 week pregnancy from last period, not actual conception.
+#define PREGNANCY_IN_DAYS       280
+
 @interface Mother : _Mother {}
 
 + (NSNumber *)convertWeightToKilos:(NSNumber *)weight;
@@ -9,13 +12,16 @@
 
 
 + (Mother *)getMother;
-- (void) save;
-- (int) weeksIntoPregnancy;
+- (void)save;
+- (int)weeksIntoPregnancy;
+- (int)weeksIntoPregnancyForDate:(NSDate *)date;
+- (int)daysIntoPregnancyForDate:(NSDate *)date;
 - (NSString * )timeLeftInPregnancy;
 - (BOOL)isMetric;
 - (void)makeMetric;
 - (void)makeImperial;
-- (NSNumber *) age;
-- (int) getWeightGain;
+- (NSNumber *)getAge;
+- (int)getWeightGain;
+- (double)getBMI;
 
 @end

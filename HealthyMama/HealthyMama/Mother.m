@@ -24,9 +24,6 @@
 
 #define YEAR_IN_SECONDS         31536000
 
-// Based on popular 40 week pregnancy from last period, not actual conception.
-#define PREGNANCY_IN_DAYS       280
-
 + (NSNumber *)convertWeightToKilos:(NSNumber *)weight {
     return [NSNumber numberWithDouble:[weight doubleValue] * KG_TO_LBS];
 }
@@ -74,6 +71,10 @@
 }
 
 - (int)weeksIntoPregnancy {
+    return [self weeksIntoPregnancyForDate:[[NSDate alloc] initWithTimeIntervalSinceNow:0]];
+}
+
+- (int)weeksIntoPregnancyForDate:(NSDate *)date {
     // Figure out conception date based on popular 40 week (280 days) pregnancy:
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit ) fromDate:self.estimatedDueDate];
@@ -92,11 +93,38 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSUInteger unitFlags = NSWeekCalendarUnit;
     
-    components = [gregorian components:unitFlags fromDate:startOfPregnancy toDate:[[NSDate alloc] initWithTimeIntervalSinceNow:0] options:0];
+    components = [gregorian components:unitFlags fromDate:startOfPregnancy toDate:date options:0];
     
     NSInteger weeks = [components week];
     
     return (int)weeks;
+}
+
+- (int)daysIntoPregnancyForDate:(NSDate *)date
+{
+    // Figure out conception date based on popular 40 week (280 days) pregnancy:
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit ) fromDate:self.estimatedDueDate];
+    
+    // Create midnight of the date
+    [components setHour:0];
+    [components setMinute:0];
+    [components setSecond:0];
+    [components setYear:0];
+    [components setMonth:0];
+    [components setDay:-PREGNANCY_IN_DAYS];
+    
+    NSDate *startOfPregnancy = [calendar dateByAddingComponents:components toDate:self.estimatedDueDate options:0];
+    
+    // Now figure out how many weeks have passed since then:
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSUInteger unitFlags = NSDayCalendarUnit;
+    
+    components = [gregorian components:unitFlags fromDate:startOfPregnancy toDate:date options:0];
+    
+    NSInteger days = [components day];
+    
+    return (int)days;
 }
 
 - (NSString * )timeLeftInPregnancy {
@@ -129,7 +157,7 @@
     self.measurementSystem = IMPERIAL;
 }
 
-- (NSNumber *) age {
+- (NSNumber *) getAge {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSUInteger unitFlags = NSYearCalendarUnit;
@@ -137,19 +165,6 @@
     NSDateComponents *components = [gregorian components:unitFlags fromDate:self.dateOfBirth toDate:self.estimatedDueDate options:0];
     
     return [NSNumber numberWithInteger:[components year]];
-}
-
-- (void) generateHighWeightGraphPoints {
-    /*
-    double hbValue = 655.1
-    + (9.563 * [self.metricPrePregnancyWeight doubleValue])
-    + (1.850 * [self.metricHeight doubleValue])
-    - (4.676 * [[self age] doubleValue]);
-    
-    hbValue *= DEFAULT_ACTIVITY_LEVEL;
-    
-    NSArray *caloriesPerWeek;
-    */
 }
 
 - (int) getWeightGain
@@ -163,6 +178,10 @@
     return last.imperialWeightValue - self.imperialPrePregnancyWeightValue;
 }
 
+- (double)getBMI
+{
+    return self.imperialPrePregnancyWeightValue / (self.imperialHeightValue * self.imperialHeightValue);
+}
 
 
 @end

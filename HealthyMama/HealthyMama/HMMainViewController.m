@@ -39,7 +39,7 @@
     self.yourPregnancyLabel.text = [mother timeLeftInPregnancy];
     [self.yourPregnancyLabel sizeToFit];
     
-    int dailyCalorieRequirements = [CalorieRequirement getRequirementsForAge:[[mother age] intValue] forActivityLevel:2 forWeeksIntoPregnancy:[mother weeksIntoPregnancy]];
+    int dailyCalorieRequirements = [CalorieRequirement getRequirementsForAge:[[mother getAge] intValue] forActivityLevel:2 forWeeksIntoPregnancy:[mother weeksIntoPregnancy]];
     self.recommendedDailyCaloriesLabel.text = [NSString stringWithFormat:@"%d/%d", [[FoodJournal getCalorieIntake] intValue], dailyCalorieRequirements];
 
     self.currentWeightGainLabel.text = [NSString stringWithFormat:@"%d lbs", [mother getWeightGain]];

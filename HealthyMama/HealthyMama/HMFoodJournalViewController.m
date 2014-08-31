@@ -8,6 +8,7 @@
 
 #import "HMFoodJournalViewController.h"
 #import "HMFoodEventViewController.h"
+#import "CalorieRequirement.h"
 #import "Flurry.h"
 
 @interface HMFoodJournalViewController ()
@@ -24,8 +25,7 @@
 
 @synthesize noDataOverlayView;
 @synthesize chartData;
-@synthesize minChartData;
-@synthesize maxChartData;
+@synthesize recommendedChartData;
 @synthesize tableSections;
 @synthesize tableSectionDates;
 @synthesize tableSectionDateFormatter;
@@ -114,8 +114,7 @@
 - (void)loadChart
 {
     self.chartData = [FoodJournal getJournalAsJson];
-    self.minChartData = [FoodJournal getMinCalorieIntake];
-    self.maxChartData = [FoodJournal getMaxCalorieIntake];
+    self.recommendedChartData = [CalorieRequirement getRecommendedCalorieIntake];
     
     // Get the base URL for referential local loading
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
@@ -127,7 +126,7 @@
     
     
     // The header ends with "var dataSeries =". Now shove in the JSON data for the chart
-    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = '{value}cal'; var series = [{data: %@, name: 'Calories', type: 'column'}, {data: %@, name:''}, {data: %@, name:''}];", self.chartData, self.minChartData, self.maxChartData];
+    NSString *jsonString = [NSString stringWithFormat:@"var yAxisFormat = '{value}cal'; var series = [{data: %@, name: 'Calories', type: 'column'}, {data: %@, name:'Recommended'}];", self.chartData, self.recommendedChartData];
     
     htmlString = [htmlString stringByAppendingString:jsonString];
     
@@ -135,7 +134,7 @@
     NSString *htmlFooterFile = [[NSBundle mainBundle] pathForResource:@"chartViewFooter" ofType:@"html" inDirectory:@"js"];
     NSString *htmlFooterString = [NSString stringWithContentsOfFile:htmlFooterFile encoding:NSUTF8StringEncoding error:nil];
     htmlString = [htmlString stringByAppendingString:htmlFooterString];
-    NSLog(@"%@", htmlString);
+
     [self.chartView loadHTMLString:htmlString baseURL:baseURL];
 
 }

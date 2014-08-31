@@ -12,7 +12,47 @@
 
 @implementation WeighIn
 
++ (int)getMinWeightForDate:(NSDate *)date
+{
+    Mother *mother = [Mother getMother];
+    
+    double bmi = [mother getBMI];
+    // Start from the smalled BMI (highest weight gain) and move up
+    int totalMinWeightGain = 28;
+    if (bmi >= 30) {
+        totalMinWeightGain = 11;
+    } else if (bmi >= 25) {
+        totalMinWeightGain = 15;
+    } else if (bmi >= 28.5) {
+        totalMinWeightGain = 28;
+    }
+    
+    // Figure out the percentage of the pregnancy completed for the given date, bounded by 0 and 1
+    double percentage = MIN(1, MAX(0, (double)[mother daysIntoPregnancyForDate:date] / (double)PREGNANCY_IN_DAYS));
+    
+    return mother.imperialPrePregnancyWeightValue + (int)(totalMinWeightGain * percentage);
+}
 
++ (int)getMaxWeightForDate:(NSDate *)date
+{
+    Mother *mother = [Mother getMother];
+    
+    double bmi = [mother getBMI];
+    // Start from the smalled BMI (highest weight gain) and move up
+    int totalMaxWeightGain = 40;
+    if (bmi >= 30) {
+        totalMaxWeightGain = 20;
+    } else if (bmi >= 25) {
+        totalMaxWeightGain = 25;
+    } else if (bmi >= 28.5) {
+        totalMaxWeightGain = 40;
+    }
+    
+    // Figure out the percentage of the pregnancy completed for the given date, bounded by 0 and 1
+    float percentage = MIN(1, MAX(0, (double)[mother daysIntoPregnancyForDate:date] / (double)PREGNANCY_IN_DAYS));
+    
+    return mother.imperialPrePregnancyWeightValue + (int)(totalMaxWeightGain * percentage);
+}
 
 + (NSString *)getMinWeight
 {
@@ -31,12 +71,16 @@
     
     NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
     
-    for (NSDate *date = [startDate copy]; [date compare: endDate] <= 0; date = [calendar dateByAddingComponents:oneDay toDate:date options:0]) {
-        NSLog( @"%@ in [%@,%@]", date, startDate, endDate );
+    int weight = 0;
+    for (
+        NSDate *date = [startDate copy];
+        [date compare: endDate] <= 0;
+        date = [calendar dateByAddingComponents:oneDay toDate:date options:0]
+    ) {
         
         NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-        
-        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:100]]];
+        weight = [self getMinWeightForDate:date];
+        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %d, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], weight]];
     }
     
     return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
@@ -59,15 +103,16 @@
     
     NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
     
+    int weight = 0;
     for (NSDate *date = [startDate copy]; [date compare: endDate] <= 0; date = [calendar dateByAddingComponents:oneDay toDate:date options:0]) {
-        NSLog( @"%@ in [%@,%@]", date, startDate, endDate );
-        
+
         NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-        
-        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:150]]];
+        weight = [self getMaxWeightForDate:date];
+        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %d, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], weight]];
     }
     
-    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];}
+    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
+}
 
 + (NSArray *)getWeighIns {
     return [WeighIn getWeighIns:NO];

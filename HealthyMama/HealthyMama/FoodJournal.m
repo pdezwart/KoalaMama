@@ -15,60 +15,6 @@
     return [FoodJournal createInContext:localContext];
 }
 
-+ (NSString *)getMinCalorieIntake {
-    NSArray *journal = [self getJournal:YES];
-    
-    // Fill in all of the days between the first and last day with the expected minimum calories
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *oneDay = [[NSDateComponents alloc] init];
-    [oneDay setDay: 1];
-    
-    FoodJournal *startEvent = [journal objectAtIndex:0];
-    FoodJournal *endEvent = [journal objectAtIndex:[journal count] - 1];
-    
-    NSDate *startDate = [startEvent getDate];
-    NSDate *endDate = [endEvent getDate];
-    
-    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
-    
-    for (NSDate *date = [startDate copy]; [date compare: endDate] <= 0; date = [calendar dateByAddingComponents:oneDay toDate:date options:0]) {
-        NSLog( @"%@ in [%@,%@]", date, startDate, endDate );
-        
-        NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-        
-        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:500]]];
-    }
-    
-    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
-}
-
-+ (NSString *)getMaxCalorieIntake {
-    NSArray *journal = [self getJournal:YES];
-    
-    // Fill in all of the days between the first and last day with the expected minimum calories
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *oneDay = [[NSDateComponents alloc] init];
-    [oneDay setDay: 1];
-    
-    FoodJournal *startEvent = [journal objectAtIndex:0];
-    FoodJournal *endEvent = [journal objectAtIndex:[journal count] - 1];
-    
-    NSDate *startDate = [startEvent getDate];
-    NSDate *endDate = [endEvent getDate];
-    
-    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
-    
-    for (NSDate *date = [startDate copy]; [date compare: endDate] <= 0; date = [calendar dateByAddingComponents:oneDay toDate:date options:0]) {
-        NSLog( @"%@ in [%@,%@]", date, startDate, endDate );
-        
-        NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-        
-        [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@, marker:{enabled:false}}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:1500]]];
-    }
-    
-    return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
-}
-
 
 + (NSArray *)getJournal {
     return [FoodJournal getJournal:NO];
@@ -118,7 +64,6 @@
         [dataPoints addObject:[NSString stringWithFormat:@"{x: Date.UTC(%ld, %d, %d), y: %@}", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:dailyCalories]]];
     }
     
-    NSLog(@"Data Point: %@", [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]]);
     return [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]];
 }
 

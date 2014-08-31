@@ -4,8 +4,6 @@
 
 + (FoodJournal *) factory;
 + (NSArray *) getJournal;
-+ (NSString *) getMinCalorieIntake;
-+ (NSString *) getMaxCalorieIntake;
 + (NSArray *) getJournal:(BOOL)ascending;
 + (NSString *)getJournalAsJson;
 + (NSNumber *) getMostRecentCaloriesOfFood:(NSString *) foodName;
