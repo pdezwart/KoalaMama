@@ -9,6 +9,7 @@
 #import "WeighIn.h"
 #import "Mother.h"
 
+#define AVERAGE_DAILY_WEIGHT_VARIANCE 2;
 
 @implementation WeighIn
 
@@ -44,7 +45,7 @@
     // Figure out the percentage of the pregnancy completed for the given date, bounded by 0 and 1
     double percentage = MIN(1, MAX(0, (double)[mother daysIntoPregnancyForDate:date] / (double)PREGNANCY_IN_DAYS));
     
-    return mother.imperialPrePregnancyWeightValue + (int)(totalMinWeightGain * percentage);
+    return mother.imperialPrePregnancyWeightValue + (int)(totalMinWeightGain * percentage) - AVERAGE_DAILY_WEIGHT_VARIANCE;
 }
 
 + (int)getMaxWeightForDate:(NSDate *)date
@@ -79,7 +80,7 @@
     // Figure out the percentage of the pregnancy completed for the given date, bounded by 0 and 1
     float percentage = MIN(1, MAX(0, (double)[mother daysIntoPregnancyForDate:date] / (double)PREGNANCY_IN_DAYS));
     
-    return mother.imperialPrePregnancyWeightValue + (int)(totalMaxWeightGain * percentage);
+    return mother.imperialPrePregnancyWeightValue + (int)(totalMaxWeightGain * percentage) + AVERAGE_DAILY_WEIGHT_VARIANCE;
 }
 
 + (NSString *)getMinWeight
