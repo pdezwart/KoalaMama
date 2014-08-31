@@ -17,14 +17,28 @@
     Mother *mother = [Mother getMother];
     
     double bmi = [mother getBMI];
+    int totalMinWeightGain = 0;
     // Start from the smalled BMI (highest weight gain) and move up
-    int totalMinWeightGain = 28;
-    if (bmi >= 30) {
-        totalMinWeightGain = 11;
-    } else if (bmi >= 25) {
-        totalMinWeightGain = 15;
-    } else if (bmi >= 28.5) {
-        totalMinWeightGain = 28;
+    if (mother.expectingTwinsValue) {
+        if (bmi >= 30) {
+            totalMinWeightGain = 25;
+        } else if (bmi >= 25) {
+            totalMinWeightGain = 31;
+        } else if (bmi >= 18.5) {
+            totalMinWeightGain = 37;
+        } else {
+            totalMinWeightGain = 40;
+        }
+    } else {
+        if (bmi >= 30) {
+            totalMinWeightGain = 11;
+        } else if (bmi >= 25) {
+            totalMinWeightGain = 15;
+        } else if (bmi >= 18.5) {
+            totalMinWeightGain = 25;
+        } else {
+            totalMinWeightGain = 28;
+        }
     }
     
     // Figure out the percentage of the pregnancy completed for the given date, bounded by 0 and 1
@@ -38,14 +52,28 @@
     Mother *mother = [Mother getMother];
     
     double bmi = [mother getBMI];
+    int totalMaxWeightGain = 0;
     // Start from the smalled BMI (highest weight gain) and move up
-    int totalMaxWeightGain = 40;
-    if (bmi >= 30) {
-        totalMaxWeightGain = 20;
-    } else if (bmi >= 25) {
-        totalMaxWeightGain = 25;
-    } else if (bmi >= 28.5) {
-        totalMaxWeightGain = 40;
+    if (mother.expectingTwinsValue) {
+        if (bmi >= 30) {
+            totalMaxWeightGain = 42;
+        } else if (bmi >= 25) {
+            totalMaxWeightGain = 50;
+        } else if (bmi >= 18.5) {
+            totalMaxWeightGain = 54;
+        } else {
+            totalMaxWeightGain = 58;
+        }
+    } else {
+        if (bmi >= 30) {
+            totalMaxWeightGain = 20;
+        } else if (bmi >= 25) {
+            totalMaxWeightGain = 25;
+        } else if (bmi >= 18.5) {
+            totalMaxWeightGain = 35;
+        } else {
+            totalMaxWeightGain = 40;
+        }
     }
     
     // Figure out the percentage of the pregnancy completed for the given date, bounded by 0 and 1
@@ -57,6 +85,10 @@
 + (NSString *)getMinWeight
 {
     NSArray *weighIns = [self getWeighIns:YES];
+    
+    if ([weighIns count] <= 0) {
+        return @"[]";
+    }
     
     // Fill in all of the days between the first and last day with the expected minimum calories
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -89,6 +121,10 @@
 + (NSString *)getMaxWeight
 {
     NSArray *weighIns = [self getWeighIns:YES];
+    
+    if ([weighIns count] <= 0) {
+        return @"[]";
+    }
     
     // Fill in all of the days between the first and last day with the expected minimum calories
     NSCalendar *calendar = [NSCalendar currentCalendar];

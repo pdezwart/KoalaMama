@@ -34,6 +34,10 @@
 + (NSString *)getRecommendedCalorieIntake {
     NSArray *journal = [FoodJournal getJournal:YES];
     
+    if ([journal count] <= 0) {
+        return @"[]";
+    }
+    
     // Fill in all of the days between the first and last day with the expected minimum calories
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *oneDay = [[NSDateComponents alloc] init];
