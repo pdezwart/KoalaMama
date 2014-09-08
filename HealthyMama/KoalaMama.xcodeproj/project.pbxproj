@@ -125,24 +125,24 @@
 		4E2069D4193452A6006C5825 /* HMFoodJournalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodJournalTableCell.h; sourceTree = "<group>"; };
 		4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodJournalTableCell.m; sourceTree = "<group>"; };
 		4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodJournalTableCellView.xib; sourceTree = "<group>"; };
-		4E5FDBAC1753357800A27A2A /* HealthyMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5FDBAC1753357800A27A2A /* KoalaMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoalaMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5FDBB01753357800A27A2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E5FDBB21753357800A27A2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E5FDBB41753357800A27A2A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4E5FDBB61753357800A27A2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4E5FDBBA1753357800A27A2A /* HealthyMama-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HealthyMama-Info.plist"; sourceTree = "<group>"; };
+		4E5FDBBA1753357800A27A2A /* KoalaMama-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KoalaMama-Info.plist"; sourceTree = "<group>"; };
 		4E5FDBBC1753357800A27A2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E5FDBBE1753357800A27A2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4E5FDBC01753357800A27A2A /* HealthyMama-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthyMama-Prefix.pch"; sourceTree = "<group>"; };
+		4E5FDBC01753357800A27A2A /* KoalaMama-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KoalaMama-Prefix.pch"; sourceTree = "<group>"; };
 		4E5FDBC11753357800A27A2A /* HMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMAppDelegate.h; sourceTree = "<group>"; };
 		4E5FDBC21753357800A27A2A /* HMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMAppDelegate.m; sourceTree = "<group>"; };
 		4E5FDBC41753357800A27A2A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4E5FDBC61753357800A27A2A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4E5FDBC81753357800A27A2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4E5FDBCB1753357900A27A2A /* HealthyMama.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthyMama.xcdatamodel; sourceTree = "<group>"; };
-		4E5FDBD21753357900A27A2A /* HealthyMamaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyMamaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5FDBD21753357900A27A2A /* KoalaMamaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoalaMamaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5FDBD31753357900A27A2A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4E5FDBDC1753357900A27A2A /* HealthyMamaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HealthyMamaTests-Info.plist"; sourceTree = "<group>"; };
+		4E5FDBDC1753357900A27A2A /* KoalaMamaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KoalaMamaTests-Info.plist"; sourceTree = "<group>"; };
 		4E5FDBDE1753357900A27A2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E5FDBE01753357900A27A2A /* HealthyMamaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthyMamaTests.h; sourceTree = "<group>"; };
 		4E5FDBE11753357900A27A2A /* HealthyMamaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthyMamaTests.m; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 		4E5FDBAD1753357800A27A2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E5FDBAC1753357800A27A2A /* HealthyMama.app */,
-				4E5FDBD21753357900A27A2A /* HealthyMamaTests.octest */,
+				4E5FDBAC1753357800A27A2A /* KoalaMama.app */,
+				4E5FDBD21753357900A27A2A /* KoalaMamaTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 			children = (
 				4ECFA2CF19117E6E00369396 /* js */,
 				4E5FDBBE1753357800A27A2A /* main.m */,
-				4E5FDBC01753357800A27A2A /* HealthyMama-Prefix.pch */,
+				4E5FDBC01753357800A27A2A /* KoalaMama-Prefix.pch */,
 				4E5FDBC41753357800A27A2A /* Default.png */,
 				4E5FDBC61753357800A27A2A /* Default@2x.png */,
 				4E5FDBC81753357800A27A2A /* Default-568h@2x.png */,
@@ -375,7 +375,7 @@
 		4E5FDBDB1753357900A27A2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E5FDBDC1753357900A27A2A /* HealthyMamaTests-Info.plist */,
+				4E5FDBDC1753357900A27A2A /* KoalaMamaTests-Info.plist */,
 				4E5FDBDD1753357900A27A2A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -539,7 +539,7 @@
 				4E5FDBCA1753357900A27A2A /* HealthyMama.xcdatamodeld */,
 				4E165B5E193C39DF0083AF45 /* HMDataLoader.sqlite */,
 				4E02B61D176EBAA0000E902B /* CaloriesPerWeek.plist */,
-				4E5FDBBA1753357800A27A2A /* HealthyMama-Info.plist */,
+				4E5FDBBA1753357800A27A2A /* KoalaMama-Info.plist */,
 				4E5FDBBB1753357800A27A2A /* InfoPlist.strings */,
 			);
 			name = Data;
@@ -567,9 +567,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E5FDBAB1753357800A27A2A /* HealthyMama */ = {
+		4E5FDBAB1753357800A27A2A /* KoalaMama */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E5FDBE51753357900A27A2A /* Build configuration list for PBXNativeTarget "HealthyMama" */;
+			buildConfigurationList = 4E5FDBE51753357900A27A2A /* Build configuration list for PBXNativeTarget "KoalaMama" */;
 			buildPhases = (
 				4E5FDBA81753357800A27A2A /* Sources */,
 				4E5FDBA91753357800A27A2A /* Frameworks */,
@@ -580,14 +580,14 @@
 			);
 			dependencies = (
 			);
-			name = HealthyMama;
+			name = KoalaMama;
 			productName = HealthyMama;
-			productReference = 4E5FDBAC1753357800A27A2A /* HealthyMama.app */;
+			productReference = 4E5FDBAC1753357800A27A2A /* KoalaMama.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E5FDBD11753357900A27A2A /* HealthyMamaTests */ = {
+		4E5FDBD11753357900A27A2A /* KoalaMamaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E5FDBE81753357900A27A2A /* Build configuration list for PBXNativeTarget "HealthyMamaTests" */;
+			buildConfigurationList = 4E5FDBE81753357900A27A2A /* Build configuration list for PBXNativeTarget "KoalaMamaTests" */;
 			buildPhases = (
 				4E5FDBCD1753357900A27A2A /* Sources */,
 				4E5FDBCE1753357900A27A2A /* Frameworks */,
@@ -599,9 +599,9 @@
 			dependencies = (
 				4E5FDBD91753357900A27A2A /* PBXTargetDependency */,
 			);
-			name = HealthyMamaTests;
+			name = KoalaMamaTests;
 			productName = HealthyMamaTests;
-			productReference = 4E5FDBD21753357900A27A2A /* HealthyMamaTests.octest */;
+			productReference = 4E5FDBD21753357900A27A2A /* KoalaMamaTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -614,7 +614,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Pieter de Zwart";
 			};
-			buildConfigurationList = 4E5FDBA61753357800A27A2A /* Build configuration list for PBXProject "HealthyMama" */;
+			buildConfigurationList = 4E5FDBA61753357800A27A2A /* Build configuration list for PBXProject "KoalaMama" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -626,8 +626,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E5FDBAB1753357800A27A2A /* HealthyMama */,
-				4E5FDBD11753357900A27A2A /* HealthyMamaTests */,
+				4E5FDBAB1753357800A27A2A /* KoalaMama */,
+				4E5FDBD11753357900A27A2A /* KoalaMamaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -768,7 +768,7 @@
 /* Begin PBXTargetDependency section */
 		4E5FDBD91753357900A27A2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4E5FDBAB1753357800A27A2A /* HealthyMama */;
+			target = 4E5FDBAB1753357800A27A2A /* KoalaMama */;
 			targetProxy = 4E5FDBD81753357900A27A2A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -857,9 +857,9 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HealthyMama/HealthyMama-Prefix.pch";
+				GCC_PREFIX_HEADER = "HealthyMama/KoalaMama-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"/Volumes/Disk Image/HealthyMama/CorePlot_1.5.1/Source/framework\"/**";
-				INFOPLIST_FILE = "HealthyMama/HealthyMama-Info.plist";
+				INFOPLIST_FILE = "HealthyMama/KoalaMama-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MagicalRecord-2.1/Project Files/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
@@ -869,7 +869,7 @@
 					"$(PROJECT_DIR)/Flurry",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KoalaMama;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -886,9 +886,9 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HealthyMama/HealthyMama-Prefix.pch";
+				GCC_PREFIX_HEADER = "HealthyMama/KoalaMama-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"/Volumes/Disk Image/HealthyMama/CorePlot_1.5.1/Source/framework\"/**";
-				INFOPLIST_FILE = "HealthyMama/HealthyMama-Info.plist";
+				INFOPLIST_FILE = "HealthyMama/KoalaMama-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MagicalRecord-2.1/Project Files/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
@@ -898,7 +898,7 @@
 					"$(PROJECT_DIR)/Flurry",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KoalaMama;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -913,8 +913,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthyMama/HealthyMama-Prefix.pch";
-				INFOPLIST_FILE = "HealthyMamaTests/HealthyMamaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "HealthyMamaTests/KoalaMamaTests-Info.plist";
+				PRODUCT_NAME = KoalaMamaTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -930,8 +930,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthyMama/HealthyMama-Prefix.pch";
-				INFOPLIST_FILE = "HealthyMamaTests/HealthyMamaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "HealthyMamaTests/KoalaMamaTests-Info.plist";
+				PRODUCT_NAME = KoalaMamaTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -940,7 +940,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E5FDBA61753357800A27A2A /* Build configuration list for PBXProject "HealthyMama" */ = {
+		4E5FDBA61753357800A27A2A /* Build configuration list for PBXProject "KoalaMama" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E5FDBE31753357900A27A2A /* Debug */,
@@ -949,7 +949,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E5FDBE51753357900A27A2A /* Build configuration list for PBXNativeTarget "HealthyMama" */ = {
+		4E5FDBE51753357900A27A2A /* Build configuration list for PBXNativeTarget "KoalaMama" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E5FDBE61753357900A27A2A /* Debug */,
@@ -958,7 +958,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E5FDBE81753357900A27A2A /* Build configuration list for PBXNativeTarget "HealthyMamaTests" */ = {
+		4E5FDBE81753357900A27A2A /* Build configuration list for PBXNativeTarget "KoalaMamaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E5FDBE91753357900A27A2A /* Debug */,

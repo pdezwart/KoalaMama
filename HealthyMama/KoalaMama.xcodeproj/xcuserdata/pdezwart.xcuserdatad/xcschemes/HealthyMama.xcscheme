@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4E5FDBAB1753357800A27A2A"
                BuildableName = "HealthyMama.app"
-               BlueprintName = "HealthyMama"
-               ReferencedContainer = "container:HealthyMama.xcodeproj">
+               BlueprintName = "KoalaMama"
+               ReferencedContainer = "container:KoalaMama.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4E5FDBD11753357900A27A2A"
                BuildableName = "HealthyMamaTests.octest"
-               BlueprintName = "HealthyMamaTests"
-               ReferencedContainer = "container:HealthyMama.xcodeproj">
+               BlueprintName = "KoalaMamaTests"
+               ReferencedContainer = "container:KoalaMama.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E5FDBAB1753357800A27A2A"
             BuildableName = "HealthyMama.app"
-            BlueprintName = "HealthyMama"
-            ReferencedContainer = "container:HealthyMama.xcodeproj">
+            BlueprintName = "KoalaMama"
+            ReferencedContainer = "container:KoalaMama.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E5FDBAB1753357800A27A2A"
             BuildableName = "HealthyMama.app"
-            BlueprintName = "HealthyMama"
-            ReferencedContainer = "container:HealthyMama.xcodeproj">
+            BlueprintName = "KoalaMama"
+            ReferencedContainer = "container:KoalaMama.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E5FDBAB1753357800A27A2A"
             BuildableName = "HealthyMama.app"
-            BlueprintName = "HealthyMama"
-            ReferencedContainer = "container:HealthyMama.xcodeproj">
+            BlueprintName = "KoalaMama"
+            ReferencedContainer = "container:KoalaMama.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
