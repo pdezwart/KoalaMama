@@ -76,6 +76,7 @@
 		4EADD9C51753FF2F008604F6 /* _Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EADD9C41753FF2F008604F6 /* _Mother.m */; };
 		4EB3315D1957AFDF0041956D /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */; };
 		4EB478CF19620FFF00DEB3DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB478CE19620FFF00DEB3DB /* Images.xcassets */; };
+		4EC1221C19BEC98900DAF582 /* KoalaFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EC1221B19BEC98900DAF582 /* KoalaFont.ttf */; };
 		4EC219D9194D6139003E5768 /* HMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC219D8194D6139003E5768 /* HMIntroViewController.m */; };
 		4ECFA2D019117E6E00369396 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4ECFA2CF19117E6E00369396 /* js */; };
 		4ECFA2E61913098A00369396 /* HMFoodEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFA2E51913098A00369396 /* HMFoodEventViewController.m */; };
@@ -220,6 +221,7 @@
 		4EB3315B1957AFDF0041956D /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
 		4EB3315C1957AFDF0041956D /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
 		4EB478CE19620FFF00DEB3DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4EC1221B19BEC98900DAF582 /* KoalaFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KoalaFont.ttf; path = ../../KoalaFont.ttf; sourceTree = "<group>"; };
 		4EC219D7194D6139003E5768 /* HMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMIntroViewController.h; sourceTree = "<group>"; };
 		4EC219D8194D6139003E5768 /* HMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMIntroViewController.m; sourceTree = "<group>"; };
 		4ECFA2CF19117E6E00369396 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = "../../Highcharts-4.0.1/js"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		4E5FDBB81753357800A27A2A /* KoalaMama */ = {
 			isa = PBXGroup;
 			children = (
+				4EC1221819BEC93200DAF582 /* Fonts */,
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4EC219E5194D61DE003E5768 /* Models */,
 				4EC219DA194D614C003E5768 /* Introduction */,
@@ -477,6 +480,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		4EC1221819BEC93200DAF582 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4EC1221B19BEC98900DAF582 /* KoalaFont.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		4EC219DA194D614C003E5768 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +643,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC1221C19BEC98900DAF582 /* KoalaFont.ttf in Resources */,
 				4E5FDBBD1753357800A27A2A /* InfoPlist.strings in Resources */,
 				4E5FDBC51753357800A27A2A /* Default.png in Resources */,
 				4E5FDBC71753357800A27A2A /* Default@2x.png in Resources */,
