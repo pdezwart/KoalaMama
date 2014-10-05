@@ -205,7 +205,7 @@
     }
     
     FoodJournal *fj = [FoodJournal factory];
-    fj.calories = [NSNumber numberWithInt:[self.foodCalories.text integerValue]];
+    fj.calories = [NSNumber numberWithInt:(int)[self.foodCalories.text integerValue]];
     fj.label = self.foodName.text;
     fj.time = self.date;
     [fj save];

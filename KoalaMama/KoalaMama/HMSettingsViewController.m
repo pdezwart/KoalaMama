@@ -80,7 +80,7 @@
     
     
     // Save the person's height:
-    mother.imperialHeight = [NSNumber numberWithInt:(([self.heightPicker selectedRowInComponent:0] + 4) * 12 + (int)[self.heightPicker selectedRowInComponent:1])];
+    mother.imperialHeight = [NSNumber numberWithInt:((int)([self.heightPicker selectedRowInComponent:0] + 4) * 12 + (int)[self.heightPicker selectedRowInComponent:1])];
 
     // Call save
     [mother save];
@@ -100,9 +100,9 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
-        return [NSString stringWithFormat:@"%d ft", row + 4];
+        return [NSString stringWithFormat:@"%d ft", (int)row + 4];
     } else {
-        return [NSString stringWithFormat:@"%d in", row];
+        return [NSString stringWithFormat:@"%d in", (int)row];
     }
 }
 

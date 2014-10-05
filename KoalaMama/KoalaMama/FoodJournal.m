@@ -60,7 +60,7 @@
         NSCalendar* calendar = [NSCalendar currentCalendar];
         NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:day];
         
-        [dataPoints addObject:[NSString stringWithFormat:@"[Date.UTC(%ld, %d, %d), %@]", (long)[components year], [components month] - 1, [components day], [NSNumber numberWithInt:dailyCalories]]];
+        [dataPoints addObject:[NSString stringWithFormat:@"[Date.UTC(%d, %d, %d), %@]", (int)[components year], (int)[components month] - 1, (int)[components day], [NSNumber numberWithInt:dailyCalories]]];
     }
     
     NSLog(@"Data Point: %@", [NSString stringWithFormat:@"[%@]", [dataPoints componentsJoinedByString:@","]]);

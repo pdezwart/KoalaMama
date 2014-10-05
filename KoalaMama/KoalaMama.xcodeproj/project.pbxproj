@@ -21,6 +21,7 @@
 		4E2069CE1931BE04006C5825 /* _FoodJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069CD1931BE04006C5825 /* _FoodJournal.m */; };
 		4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */; };
 		4E2069DA19345495006C5825 /* FoodJournalTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */; };
+		4E5D5B1019E20A330049BFB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5D5B0F19E20A330049BFB3 /* QuartzCore.framework */; };
 		4E5FDBB11753357800A27A2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB01753357800A27A2A /* UIKit.framework */; };
 		4E5FDBB31753357800A27A2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB21753357800A27A2A /* Foundation.framework */; };
 		4E5FDBB51753357800A27A2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB41753357800A27A2A /* CoreGraphics.framework */; };
@@ -125,6 +126,7 @@
 		4E2069D4193452A6006C5825 /* HMFoodJournalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodJournalTableCell.h; sourceTree = "<group>"; };
 		4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodJournalTableCell.m; sourceTree = "<group>"; };
 		4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodJournalTableCellView.xib; sourceTree = "<group>"; };
+		4E5D5B0F19E20A330049BFB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4E5FDBAC1753357800A27A2A /* KoalaMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoalaMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5FDBB01753357800A27A2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E5FDBB21753357800A27A2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -248,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5D5B1019E20A330049BFB3 /* QuartzCore.framework in Frameworks */,
 				4EDF92531963D115002BF099 /* SystemConfiguration.framework in Frameworks */,
 				4EDF92511963CBE8002BF099 /* Security.framework in Frameworks */,
 				4E5FDBB71753357800A27A2A /* CoreData.framework in Frameworks */,
@@ -296,6 +299,7 @@
 		4E5FDBAF1753357800A27A2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E5D5B0F19E20A330049BFB3 /* QuartzCore.framework */,
 				4EDF92521963D115002BF099 /* SystemConfiguration.framework */,
 				4EDF92501963CBE8002BF099 /* Security.framework */,
 				4E633CE6195935DB00FE5A9D /* Crashlytics.framework */,
@@ -608,7 +612,7 @@
 			name = KoalaMamaTests;
 			productName = KoalaMamaTests;
 			productReference = 4E5FDBD21753357900A27A2A /* KoalaMamaTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 

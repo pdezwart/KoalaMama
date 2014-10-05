@@ -39,7 +39,6 @@
     if ([self.tableData count] == 0 && !noDataOverlayView) {
         // Get the window and status bar size:
         CGRect viewPaneFrame = [[UIScreen mainScreen] bounds];
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
         
         // Put an overlay over everything, minus the status bar because thats not cool...
         noDataOverlayView = [[UIView alloc] initWithFrame:CGRectMake(
