@@ -18,6 +18,15 @@
 
 @implementation HMMainViewController
 
+- (void)viewDidLoad
+{
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
+    [super viewDidLoad];
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
