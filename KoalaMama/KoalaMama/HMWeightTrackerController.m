@@ -44,9 +44,9 @@
         // Put an overlay over everything, minus the status bar because thats not cool...
         noDataOverlayView = [[UIView alloc] initWithFrame:CGRectMake(
                                                                    0,
-                                                                   statusBarFrame.size.height,
+                                                                   0,
                                                                    viewPaneFrame.size.width,
-                                                                   viewPaneFrame.size.height - statusBarFrame.size.height)];
+                                                                   viewPaneFrame.size.height)];
         
         // Add the alpha view:
         UIView *alphaView = [[UIView alloc] initWithFrame:noDataOverlayView.frame];
