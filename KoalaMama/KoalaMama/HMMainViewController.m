@@ -7,6 +7,7 @@
 //
 
 #import "HMMainViewController.h"
+#import "HMAppearance.h"
 #import "FoodJournal.h"
 #import "WeighIn.h"
 #import "CalorieRequirement.h"
@@ -20,10 +21,8 @@
 
 - (void)viewDidLoad
 {
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-    
+    [HMAppearance drawBackground:self.view];
+        
     [super viewDidLoad];
 }
 

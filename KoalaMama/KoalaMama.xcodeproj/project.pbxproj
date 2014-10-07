@@ -21,6 +21,7 @@
 		4E2069CE1931BE04006C5825 /* _FoodJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069CD1931BE04006C5825 /* _FoodJournal.m */; };
 		4E2069D6193452A7006C5825 /* HMFoodJournalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */; };
 		4E2069DA19345495006C5825 /* FoodJournalTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */; };
+		4E5608D319E39470006ADC00 /* HMAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5608D219E39470006ADC00 /* HMAppearance.m */; };
 		4E5D5B1019E20A330049BFB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5D5B0F19E20A330049BFB3 /* QuartzCore.framework */; };
 		4E5FDBB11753357800A27A2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB01753357800A27A2A /* UIKit.framework */; };
 		4E5FDBB31753357800A27A2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5FDBB21753357800A27A2A /* Foundation.framework */; };
@@ -126,6 +127,8 @@
 		4E2069D4193452A6006C5825 /* HMFoodJournalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFoodJournalTableCell.h; sourceTree = "<group>"; };
 		4E2069D5193452A6006C5825 /* HMFoodJournalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFoodJournalTableCell.m; sourceTree = "<group>"; };
 		4E2069D919345495006C5825 /* FoodJournalTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodJournalTableCellView.xib; sourceTree = "<group>"; };
+		4E5608D219E39470006ADC00 /* HMAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAppearance.m; sourceTree = "<group>"; };
+		4E5608D419E39494006ADC00 /* HMAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAppearance.h; sourceTree = "<group>"; };
 		4E5D5B0F19E20A330049BFB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4E5FDBAC1753357800A27A2A /* KoalaMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoalaMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5FDBB01753357800A27A2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -319,6 +322,8 @@
 				4E5FDBEB175335C100A27A2A /* iPhoneStoryboard.storyboard */,
 				4EC219E5194D61DE003E5768 /* Models */,
 				4EC219DA194D614C003E5768 /* Introduction */,
+				4E5608D419E39494006ADC00 /* HMAppearance.h */,
+				4E5608D219E39470006ADC00 /* HMAppearance.m */,
 				4E5FDBC11753357800A27A2A /* HMAppDelegate.h */,
 				4E5FDBC21753357800A27A2A /* HMAppDelegate.m */,
 				4E77B7CA1754789D00F28E27 /* HMFoodJournalViewController.h */,
@@ -728,6 +733,7 @@
 				4E5FDDE417533E2500A27A2A /* NSManagedObject+MagicalRecord.m in Sources */,
 				4E5FDDE517533E2500A27A2A /* NSManagedObject+MagicalRequests.m in Sources */,
 				4E5FDDE617533E2500A27A2A /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				4E5608D319E39470006ADC00 /* HMAppearance.m in Sources */,
 				4E5FDDE717533E2500A27A2A /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				4E5FDDE817533E2500A27A2A /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				4E5FDDE917533E2500A27A2A /* NSManagedObjectContext+MagicalThreading.m in Sources */,

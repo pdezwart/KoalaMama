@@ -8,6 +8,7 @@
 
 #import "HMWeightTrackerController.h"
 #import "HMWeighInViewController.h"
+#import "HMAppearance.h"
 #import "Flurry.h"
 
 
@@ -25,6 +26,11 @@
 @synthesize noDataOverlayView;
 @synthesize chartData;
 
+- (void) viewDidLoad
+{
+    [HMAppearance drawBackground:self.view];
+    [super viewDidLoad];
+}
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

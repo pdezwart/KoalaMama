@@ -7,6 +7,7 @@
 //
 
 #import "HMFoodEventViewController.h"
+#import "HMAppearance.h"
 #import "Flurry.h"
 
 
@@ -27,6 +28,8 @@
 
 - (void)viewDidLoad
 {
+    
+    [HMAppearance drawBackground:self.view];
     [super viewDidLoad];
     
     // Add ability to resign keyboard when touch outside of the text field:

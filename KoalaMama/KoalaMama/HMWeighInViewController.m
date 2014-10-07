@@ -7,6 +7,7 @@
 //
 
 #import "HMWeighInViewController.h"
+#import "HMAppearance.h"
 #import "Flurry.h"
 
 @interface HMWeighInViewController ()
@@ -14,6 +15,12 @@
 @end
 
 @implementation HMWeighInViewController
+
+- (void) viewDidLoad
+{
+    [HMAppearance drawBackground:self.view];
+    [super viewDidLoad];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

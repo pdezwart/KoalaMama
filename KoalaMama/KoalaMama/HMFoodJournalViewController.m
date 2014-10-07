@@ -8,6 +8,7 @@
 
 #import "HMFoodJournalViewController.h"
 #import "HMFoodEventViewController.h"
+#import "HMAppearance.h"
 #import "Flurry.h"
 
 @interface HMFoodJournalViewController ()
@@ -30,6 +31,7 @@
 
 - (void)viewDidLoad
 {
+    [HMAppearance drawBackground:self.view];
     [super viewDidLoad];
 
     // Initialize the date formatter:

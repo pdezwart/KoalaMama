@@ -34,6 +34,8 @@
     }
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"KoalaMamaDB.sqlite"];
+        
+    [[UITextView appearance] setBackgroundColor:[UIColor clearColor]];
     
     // Setup Crashlytics
     // Only include in release mode

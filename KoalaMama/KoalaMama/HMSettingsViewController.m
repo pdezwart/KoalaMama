@@ -7,6 +7,7 @@
 //
 
 #import "HMSettingsViewController.h"
+#import "HMAppearance.h"
 #import "Mother.h"
 #import "Flurry.h"
 
@@ -25,6 +26,13 @@
 - (void) selectionWillChange:(id<UITextInput>)textInput {}
 - (void) textDidChange:(id<UITextInput>)textInput {}
 - (void) textWillChange:(id<UITextInput>)textInput {}
+
+- (void)viewDidLoad
+{
+    [HMAppearance drawBackground:self.view];
+    
+    [super viewDidLoad];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

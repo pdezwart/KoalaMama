@@ -28,16 +28,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.index = 1;
     
     Mother* mother = [Mother getMother];
     [self.dueDateDatePicker setDate:mother.estimatedDueDate];
+
+    self.index = 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+
     [Flurry logEvent:@"Intro_Two"];
 }
 
@@ -47,7 +49,7 @@
     
     Mother* mother = [Mother getMother];
     
-    mother.dateOfBirth = [self.dueDateDatePicker date];
+    mother.estimatedDueDate = [self.dueDateDatePicker date];
     
     [mother save];
 }

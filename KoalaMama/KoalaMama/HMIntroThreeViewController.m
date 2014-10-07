@@ -27,16 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.index = 2;
     
     Mother* mother = [Mother getMother];
-
     [self.birthdayDatePicker setDate:mother.dateOfBirth];
+
+    self.index = 2;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     
     [Flurry logEvent:@"Intro_Three"];
 }

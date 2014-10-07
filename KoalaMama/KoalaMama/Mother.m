@@ -64,6 +64,8 @@
         // Figure out when 25 years ago was:
         NSTimeInterval defaultAge = -1 * YEAR_IN_SECONDS * DEFAULT_AGE;
         mother.dateOfBirth = [NSDate dateWithTimeIntervalSinceNow:defaultAge];
+        
+        [mother save];
     }
     return mother;
 }
